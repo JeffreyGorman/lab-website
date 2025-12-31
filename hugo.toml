@@ -1,0 +1,39 @@
+baseURL = 'https://example.org/'
+languageCode = 'en-uk'
+title = 'ExP Lab'
+theme = 'hugo-theme-console-dark'
+
+[params]
+  description = "Lab research group"
+  # Cutting off the page title to two chars for mobile (console-demo -> co)
+  titleCutting = false
+
+  # Set the animation style -- https://animate.style/
+  # To disable animations, please remove or comment animationStyle parameter
+  # animateStyle = "animated zoomIn fast" 
+
+  customCSS = ["css/custom.css"]
+
+  [[params.navlinks]]
+  name = "home/"
+  url = "/"
+
+  [[params.navlinks]]
+  name = "team/"
+  url = "team/"
+  
+  [[params.navlinks]]
+  name = "research/"
+  url = "research/"
+
+  [[params.navlinks]]
+  name = "publications/"
+  url = "publications/"
+
+  [[params.navlinks]]
+  name = "teaching/"
+  url = "teaching/"
+  
+  [[params.navlinks]]
+  name = "join/"
+  url = "join/"

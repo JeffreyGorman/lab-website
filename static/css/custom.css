@@ -1,0 +1,118 @@
+/* Force terminal container to always use flex layout */
+.terminal {
+    display: flex !important;
+    flex-direction: column !important;
+}
+
+/* Ensure consistent width and alignment */
+body, .terminal {
+    max-width: 800px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    width: 100% !important;
+}
+
+/* Lock header and nav in place */
+header, nav {
+    width: 100% !important;
+}
+
+/* Prevent navbar shift when toggling theme */
+/* Ensure the theme toggle area keeps a fixed width so showing/hiding .day-btn/.night-btn doesn't reflow the header */
+.theme-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 2.6rem;
+    max-width: 2.6rem;
+    position: relative;
+    margin-left: 2.5rem !important; /* More horizontal gap from nav links */
+    align-self: center;
+}
+.theme-toggle-inner {
+    position: relative;
+    width: 2.6rem;
+    height: 2.6rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.theme-toggle-inner .night-btn,
+.theme-toggle-inner .day-btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 2.6rem;
+    height: 2.6rem;
+    margin: -1.3rem 0 0 -1.3rem; /* Center icon exactly */
+    padding: 0;
+    display: inline-block !important;
+    line-height: 2.6rem;
+    text-align: center;
+    vertical-align: middle;
+}
+html:not([theme="dark"]) .day-btn {
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+}
+html[theme="dark"] .night-btn {
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* Fix nav bar shifting between day/night mode */
+.terminal-menu ul {
+    display: flex;
+    align-items: center;
+    /* Prevent space-between from causing nav to shift */
+    justify-content: flex-start;
+    gap: 1rem;
+}
+
+.terminal-menu > div {
+    display: flex !important;
+    align-items: center !important;
+    width: 100%;
+}
+
+@media (max-width: 600px) {
+  .terminal-menu > div {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    display: block !important;
+    width: 100%;
+  }
+  .terminal-menu ul {
+    display: block !important;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 0.5rem;
+    padding: 0;
+  }
+  .terminal-menu ul > li {
+    display: inline-block;
+    margin: 0 0.5rem 0.5rem 0.5rem;
+  }
+  .theme-toggle {
+    display: block !important;
+    width: 100%;
+    min-width: unset;
+    max-width: unset;
+    justify-content: center;
+    margin: 0 !important;
+    align-self: center;
+    text-align: center;
+  }
+  .theme-toggle-inner {
+    width: 2.6rem;
+    height: 2.6rem;
+    margin: 0 auto;
+  }
+}
+
+u, .underline {
+    text-decoration: underline !important;
+}
+
