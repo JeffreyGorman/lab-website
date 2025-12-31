@@ -30,9 +30,9 @@ theme = 'hugo-theme-console-dark'
   name = "publications/"
   url = "publications/"
 
-  [[params.navlinks]]
-  name = "teaching/"
-  url = "teaching/"
+#  [[params.navlinks]]
+#  name = "teaching/"
+#  url = "teaching/"
   
   [[params.navlinks]]
   name = "join/"
