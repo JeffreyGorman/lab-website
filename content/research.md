@@ -4,17 +4,60 @@ draft = false
 title = 'Research'
 +++
 
-We are semiconductor (dye) and DNA chemists operating at the intersection of synthesis, chemical biology, and quantum information science. Our goal is to accelerate the discovery of quantum materials by combining synthetic organic chemistry with the massive throughput of biological systems.
+<div class="research-item">
+  <img src="/images/research_helix.png" alt="DNA helix assembly of semiconductors">
+  <div class="research-item-content">
+
+## Harnessing Biology to Build Quantum Materials
+
+We are semiconductor and DNA chemists operating at the intersection of synthesis, chemical biology, and quantum information science. Our mission: **accelerate the discovery of quantum materials by combining synthetic organic chemistry with the massive throughput of biological systems.**
+
+  </div>
+</div>
+
+---
+
+<div class="research-item reverse">
+  <img src="/images/research_jablonski.png" alt="Jablonski diagram showing spin states">
+  <div class="research-item-content">
 
 ## Quantum Materials Through DNA Assembly
 
-We make organic qubits using photogenerated dye molecules, leveraging DNA self-assembly and synthetic chemistry to achieve sub-nm control over molecular interactions. This allows us to precisely engineer spin dynamics.
+We create organic spin centres from dye molecules. [By leveraging DNA](https://www.cell.com/chem/fulltext/S2451-9294(24)00116-5), we control their self-assembly with sub-nanometer precision over molecular interactions. [This enables us to precisely engineer spin dynamics](https://pubs.acs.org/doi/abs/10.1021/jacs.2c13743) in ways impossible with traditional chemistry.
 
-Our approach combines synthetic chemistry with DNA nanotechnology. By functionalising dyes with phosphoramidite groups, we install large aromatic systems directly onto DNA using solid-phase synthesis. This overcomes hydrophobicity and enables precise control of interactions.
+**Our approach:** We [synthetically install dyes with phosphoramidite groups](https://pubs.acs.org/doi/abs/10.1021/jacs.1c10241), allowing us to incorporate large aromatic systems directly onto DNA using solid-phase synthesis. This overcomes hydrophobicity challenges and provides unprecedented control over intermolecular interactions.
+
+  </div>
+</div>
+
+<div class="research-item">
+  <img src="/images/research_rbf.png" alt="High-throughput screening workflow">
+  <div class="research-item-content">
+
+## Key Achievements
+
+- First observation of two-triplet, four-electron spin quintet states on DNA
+- Programmable exciton arrays on DNA origami nanostructures
+- Single-molecule control of energy flow in excitonic systems
+
+  </div>
+</div>
+
+---
 
 ## Applications
 
 Our bio-inspired platform accelerates development of:
-- Quantum sensors and quantum information systems
-- High-efficiency LEDs and photovoltaics
-- Molecular electronics with tunable exciton transport
+
+**Quantum Information Systems**  
+Organic spin qubits with tunable coherence
+
+**Solar Energy & LEDs**  
+High-efficiency light harvesting and emission
+
+**Molecular Electronics**  
+Programmable exciton transport for next-generation devices
+
+---
+
+*By bridging chemistry, biology, and physics, we're creating materials that were previously impossible to make — and doing it faster than ever before.*

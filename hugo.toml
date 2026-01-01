@@ -14,26 +14,27 @@ theme = 'hugo-theme-console-dark'
 
   customCSS = ["css/custom.css"]
 
-  [[params.navlinks]]
-  name = "home/"
-  url = "/"
+[[params.navlinks]]
+name = "home/"
+url = "/"
 
-  [[params.navlinks]]
-  name = "team/"
-  url = "team/"
-  
-  [[params.navlinks]]
-  name = "research/"
-  url = "research/"
+[[params.navlinks]]
+name = "team/"
+url = "/team"
 
-  [[params.navlinks]]
-  name = "publications/"
-  url = "publications/"
+[[params.navlinks]]
+name = "research/"
+url = "/research"
 
-#  [[params.navlinks]]
-#  name = "teaching/"
-#  url = "teaching/"
-  
-  [[params.navlinks]]
-  name = "join/"
-  url = "join/"
+[[params.navlinks]]
+name = "publications/"
+url = "/publications"
+
+[[params.navlinks]]
+name = "join/"
+url = "/join"
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true

@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode }}">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>{{ .Site.Title }}{{ $url := urls.Parse .Page.Permalink }}{{ $url.Path }}</title>
+    {{ with .Site.Params.description }}<meta name="description" content="{{ . }}">{{ end }}
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="all,follow">
+    <meta name="googlebot" content="index,follow,snippet,archive">
+    <script src='{{ "hugo-theme-console/js/theme.js" | absURL }}'></script>
+    <link rel="stylesheet" href='{{ "hugo-theme-console/css/terminal-0.7.1.min.css" | absURL }}'>
+    <link rel="stylesheet" href='{{ "hugo-theme-console/css/animate-3.7.2.min.css" | absURL }}'>
+    <link rel="stylesheet" href='{{ "hugo-theme-console/css/console.css" | absURL }}'>
+    <link rel="stylesheet" href='{{ "hugo-theme-console/css/dark.css" | absURL }}'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha256-FMvZuGapsJLjouA6k7Eo2lusoAX9i0ShlWFG6qt7SLc=" crossorigin="anonymous">
+    {{ `
+      <!--[if lt IE 9]>
+          <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+          <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+      <![endif]-->
+    ` | safeHTML }}
+
+    {{- partial "favicon.html" . -}}
+    {{ with .OutputFormats.Get "RSS" }}
+      {{ printf `<link href="%s" rel="%s" type="%s" title="%s" />` .Permalink .Rel .MediaType.Type $.Site.Title | safeHTML }}
+    {{ end }}
+    {{- partial "opengraph.html" . -}}
+    {{- partial "twitter_cards.html" . -}}
+    {{ template "_internal/google_analytics.html" . }}
+
+    {{- partial "header.html" . -}}
+    
+    <style>
+      /* Hamburger menu styles */
+      .hamburger {
+        display: none;
+        flex-direction: column;
+        cursor: pointer;
+        padding: 5px;
+        background: none;
+        border: none;
+        z-index: 1001;
+      }
+      
+      .hamburger span {
+        width: 20px;
+        height: 2px;
+        background-color: currentColor;
+        margin: 2px 0;
+        transition: 0.3s;
+      }
+      
+      .hamburger.active span:nth-child(1) {
+        transform: rotate(-45deg) translate(-4px, 5px);
+      }
+      
+      .hamburger.active span:nth-child(2) {
+        opacity: 0;
+      }
+      
+      .hamburger.active span:nth-child(3) {
+        transform: rotate(45deg) translate(-4px, -5px);
+      }
+      
+      .mobile-controls {
+        display: none;
+        align-items: center;
+        gap: 15px;
+        margin-left: auto;
+      }
+      
+      /* Mobile styles */
+      @media (max-width: 768px) {
+        .hamburger {
+          display: flex;
+        }
+        
+        .mobile-controls {
+          display: flex;
+        }
+        
+        .terminal-nav {
+          position: relative;
+        }
+        
+        header.terminal-logo {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          width: 100%;
+        }
+        
+        header.terminal-logo .logo {
+          flex: 1;
+        }
+        
+        nav.terminal-menu {
+          display: none;
+          position: absolute;
+          top: 100%;
+          left: 0;
+          right: 0;
+          background: var(--background-color, #000);
+          padding: 20px;
+          z-index: 1000;
+          border-top: 1px solid currentColor;
+        }
+        
+        nav.terminal-menu.active {
+          display: block;
+        }
+        
+        nav.terminal-menu ul {
+          flex-direction: column !important;
+          align-items: flex-start !important;
+        }
+        
+        nav.terminal-menu li {
+          margin: 10px 0 !important;
+          width: 100%;
+        }
+        
+        /* Hide theme toggle in menu on mobile */
+        nav.terminal-menu li.theme-toggle {
+          display: none !important;
+        }
+        
+        /* Show theme toggle in header on mobile */
+        .mobile-theme-toggle {
+          display: flex;
+          align-items: center;
+        }
+      }
+      
+      /* Desktop - hide mobile controls */
+      @media (min-width: 769px) {
+        .mobile-theme-toggle {
+          display: none;
+        }
+      }
+    </style>
+{{- partial "header.html" . -}}
+{{- partial "extend_head.html" . -}}
+</head>
+<body class="terminal">
+    <div class="container">
+        <div class="terminal-nav">
+          <header class="terminal-logo">
+            <div class="logo terminal-prompt">
+              {{ $url := replace .Permalink ( printf "%s" .Site.BaseURL) "" }}
+              {{ $.Scratch.Add "path" .Site.BaseURL }}
+              <a href="{{ .Site.BaseURL }}" class="no-style {{ with .Site.Params.TitleCutting }}site-name{{ end }}">{{ .Site.Title }}</a>:~# 
+              {{ range $index, $element := split $url "/" }}{{ $.Scratch.Add "path" $element }}{{ if ne $element "" }}<a href='{{ $.Scratch.Get "path" }}'>{{ . }}</a>/{{ $.Scratch.Add "path" "/" }}{{ end }}{{ end }}
+            </div>
+            <div class="mobile-controls">
+              <div class="mobile-theme-toggle">
+                <span class="night-btn"><a href="#" id="night-switch-mobile" aria-haspopup="true" aria-label="Display preferences" aria-expanded="false"><i class="fas fa-moon" aria-hidden="true"></i></a></span>
+                <span class="day-btn"><a href="#" id="day-switch-mobile" aria-haspopup="true" aria-label="Display preferences" aria-expanded="false"><i class="fas fa-sun" aria-hidden="true"></i></a></span>
+              </div>
+              <button class="hamburger" id="hamburger" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+              </button>
+            </div>
+          </header>
+          <nav class="terminal-menu" id="terminal-menu">
+            <ul vocab="https://schema.org/" typeof="BreadcrumbList" style="display: flex; align-items: center; width: 100%;">
+              {{ range .Site.Params.navlinks }}
+              <li><a href="{{ absURL .url }}" typeof="ListItem">{{ .name }}</a></li>
+              {{ end }}
+              <li class="theme-toggle">
+                <div class="theme-toggle-inner">
+                  <span class="night-btn"><a href="#" id="night-switch" aria-haspopup="true" aria-label="Display preferences" aria-expanded="false"><i class="fas fa-moon" aria-hidden="true"></i></a></span>
+                  <span class="day-btn"><a href="#" id="day-switch" aria-haspopup="true" aria-label="Display preferences" aria-expanded="false"><i class="fas fa-sun" aria-hidden="true"></i></a></span>
+                </div>
+              </li>
+            </ul>
+          </nav>
+        </div>
+    </div>
+
+    <div class="container {{ .Site.Params.animateStyle }}" >
+        {{ block "main" . }}
+        {{ end }}
+    </div>
+
+    <div style="flex-grow: 1"></div>
+
+    <div class="container" >
+        {{ partial "footer.html" . }}
+    </div>
+
+    <script type="text/javascript">
+      var dayToggle = document.querySelector("#day-switch");
+      var nightToggle = document.querySelector("#night-switch");
+      var dayToggleMobile = document.querySelector("#day-switch-mobile");
+      var nightToggleMobile = document.querySelector("#night-switch-mobile");
+
+      if (dayToggle) dayToggle.addEventListener("click", () => changeThemeModeClick(0));
+      if (nightToggle) nightToggle.addEventListener("click", () => changeThemeModeClick(1));
+      if (dayToggleMobile) dayToggleMobile.addEventListener("click", () => changeThemeModeClick(0));
+      if (nightToggleMobile) nightToggleMobile.addEventListener("click", () => changeThemeModeClick(1));
+      
+      // Hamburger menu toggle
+      var hamburger = document.getElementById("hamburger");
+      var menu = document.getElementById("terminal-menu");
+      
+      if (hamburger && menu) {
+        hamburger.addEventListener("click", function() {
+          hamburger.classList.toggle("active");
+          menu.classList.toggle("active");
+        });
+        
+        // Close menu when clicking a link
+        var menuLinks = menu.querySelectorAll("a");
+        menuLinks.forEach(function(link) {
+          link.addEventListener("click", function() {
+            hamburger.classList.remove("active");
+            menu.classList.remove("active");
+          });
+        });
+      }
+    </script>
+<!-- Back to top button -->
+    <a href="#" class="back-to-top" id="backToTop" aria-label="Back to top">↑</a>
+
+    <script type="text/javascript">
+      // Back to top button functionality
+      var backToTopButton = document.getElementById("backToTop");
+      
+      window.addEventListener("scroll", function() {
+        if (window.pageYOffset > 300) {
+          backToTopButton.classList.add("show");
+        } else {
+          backToTopButton.classList.remove("show");
+        }
+      });
+      
+      backToTopButton.addEventListener("click", function(e) {
+        e.preventDefault();
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      });
+    </script>
+    
+  </body>
+</html>

@@ -27,10 +27,123 @@
 
 
 <meta name="twitter:title" content="Team"/>
-<meta name="twitter:description" content="Jeffrey Gorman - Assistant Professor, Materials Chemistry
-Jeff leads the &lsquo;Excitonics and Photochemistry Lab&rsquo; at Durham as the Materials Research Fellow.
-Jeff earned his PhD from Cambridge University in 2020, where he worked with Prof. Sir Richard Friend to pioneer new molecular assembly methods for semiconductors crucial for solar energy harvesting. He focused on deterministic, size-defined structures to study the evolution of excitons. Next, Jeff spent five years at MIT, working with Prof. Mark Bathe to develop DNA &lsquo;origami&rsquo; nanoparticles that array hundreds of molecular systems with high spatial and orientation fidelity, advancing applications in molecular computing."/>
+<meta name="twitter:description" content="Team Lead
 
+  
+  
+    Dr. Jeffrey Gorman 🇬🇧🇮🇪🇵🇭 - Assistant Professor of Materials Chemistry
+    Jeff leads the &#39;Excitonics and Photochemistry Lab&#39; at Durham as the Materials Research Fellow. Jeff earned his PhD from Cambridge University in 2020, where he worked with Prof. Sir Richard Friend to pioneer new molecular assembly methods for semiconductors crucial for solar energy harvesting. He focused on deterministic, size-defined structures to study the evolution of excitons. Next, Jeff spent five years at MIT, working with Prof. Mark Bathe to develop DNA &#39;origami&#39; nanoparticles that array hundreds of molecular systems with high spatial and orientation fidelity, advancing applications in molecular computing."/>
+
+<style>
+       
+      .hamburger {
+        display: none;
+        flex-direction: column;
+        cursor: pointer;
+        padding: 5px;
+        background: none;
+        border: none;
+        z-index: 1001;
+      }
+      
+      .hamburger span {
+        width: 20px;
+        height: 2px;
+        background-color: currentColor;
+        margin: 2px 0;
+        transition: 0.3s;
+      }
+      
+      .hamburger.active span:nth-child(1) {
+        transform: rotate(-45deg) translate(-4px, 5px);
+      }
+      
+      .hamburger.active span:nth-child(2) {
+        opacity: 0;
+      }
+      
+      .hamburger.active span:nth-child(3) {
+        transform: rotate(45deg) translate(-4px, -5px);
+      }
+      
+      .mobile-controls {
+        display: none;
+        align-items: center;
+        gap: 15px;
+        margin-left: auto;
+      }
+      
+       
+      @media (max-width: 768px) {
+        .hamburger {
+          display: flex;
+        }
+        
+        .mobile-controls {
+          display: flex;
+        }
+        
+        .terminal-nav {
+          position: relative;
+        }
+        
+        header.terminal-logo {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          width: 100%;
+        }
+        
+        header.terminal-logo .logo {
+          flex: 1;
+        }
+        
+        nav.terminal-menu {
+          display: none;
+          position: absolute;
+          top: 100%;
+          left: 0;
+          right: 0;
+          background: var(--background-color, #000);
+          padding: 20px;
+          z-index: 1000;
+          border-top: 1px solid currentColor;
+        }
+        
+        nav.terminal-menu.active {
+          display: block;
+        }
+        
+        nav.terminal-menu ul {
+          flex-direction: column !important;
+          align-items: flex-start !important;
+        }
+        
+        nav.terminal-menu li {
+          margin: 10px 0 !important;
+          width: 100%;
+        }
+        
+         
+        nav.terminal-menu li.theme-toggle {
+          display: none !important;
+        }
+        
+         
+        .mobile-theme-toggle {
+          display: flex;
+          align-items: center;
+        }
+      }
+      
+       
+      @media (min-width: 769px) {
+        .mobile-theme-toggle {
+          display: none;
+        }
+      }
+    </style>
+<link rel="stylesheet" href="http://localhost:1313/css/custom.css">
 </head>
 <body class="terminal">
     <div class="container">
@@ -40,20 +153,32 @@ Jeff earned his PhD from Cambridge University in 2020, where he worked with Prof
               
               
               <a href="http://localhost:1313/" class="no-style ">ExP Lab</a>:~# 
-              <a href='http://localhost:1313/team'>team</a>/</div>
+              <a href='http://localhost:1313/team/http://localhost:1313/team/http://localhost:1313/team/http://localhost:1313/team'>team</a>/
+            </div>
+            <div class="mobile-controls">
+              <div class="mobile-theme-toggle">
+                <span class="night-btn"><a href="#" id="night-switch-mobile" aria-haspopup="true" aria-label="Display preferences" aria-expanded="false"><i class="fas fa-moon" aria-hidden="true"></i></a></span>
+                <span class="day-btn"><a href="#" id="day-switch-mobile" aria-haspopup="true" aria-label="Display preferences" aria-expanded="false"><i class="fas fa-sun" aria-hidden="true"></i></a></span>
+              </div>
+              <button class="hamburger" id="hamburger" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+              </button>
+            </div>
           </header>
-          <nav class="terminal-menu">
+          <nav class="terminal-menu" id="terminal-menu">
             <ul vocab="https://schema.org/" typeof="BreadcrumbList" style="display: flex; align-items: center; width: 100%;">
               
               <li><a href="http://localhost:1313/" typeof="ListItem">home/</a></li>
               
-              <li><a href="http://localhost:1313/team/" typeof="ListItem">team/</a></li>
+              <li><a href="http://localhost:1313/team" typeof="ListItem">team/</a></li>
               
-              <li><a href="http://localhost:1313/research/" typeof="ListItem">research/</a></li>
+              <li><a href="http://localhost:1313/research" typeof="ListItem">research/</a></li>
               
-              <li><a href="http://localhost:1313/publications/" typeof="ListItem">publications/</a></li>
+              <li><a href="http://localhost:1313/publications" typeof="ListItem">publications/</a></li>
               
-              <li><a href="http://localhost:1313/join/" typeof="ListItem">join/</a></li>
+              <li><a href="http://localhost:1313/join" typeof="ListItem">join/</a></li>
               
               <li class="theme-toggle">
                 <div class="theme-toggle-inner">
@@ -69,11 +194,20 @@ Jeff earned his PhD from Cambridge University in 2020, where he worked with Prof
     <div class="container " >
         
 <h1>Team</h1>
-<p><strong>Jeffrey Gorman - Assistant Professor, Materials Chemistry</strong><br>
-Jeff leads the &lsquo;Excitonics and Photochemistry Lab&rsquo; at Durham as the Materials Research Fellow.
-Jeff earned his PhD from Cambridge University in 2020, where he worked with Prof. Sir Richard Friend to pioneer new molecular assembly methods for semiconductors crucial for solar energy harvesting. He focused on deterministic, size-defined structures to study the evolution of excitons. Next, Jeff spent five years at MIT, working with Prof. Mark Bathe to develop DNA &lsquo;origami&rsquo; nanoparticles that array hundreds of molecular systems with high spatial and orientation fidelity, advancing applications in molecular computing.</p>
-<p><strong>Masters Students</strong></p>
-
+<h2 id="team-lead">Team Lead</h2>
+<div class="team-member">
+  <img src="/images/team_JG.png" alt="Photo of Jeffrey Gorman">
+  <div class="team-member-info">
+    <h3>Dr. Jeffrey Gorman 🇬🇧🇮🇪🇵🇭 - Assistant Professor of Materials Chemistry</h3>
+    <p>Jeff leads the 'Excitonics and Photochemistry Lab' at Durham as the Materials Research Fellow. Jeff earned his PhD from Cambridge University in 2020, where he worked with Prof. Sir Richard Friend to pioneer new molecular assembly methods for semiconductors crucial for solar energy harvesting. He focused on deterministic, size-defined structures to study the evolution of excitons. Next, Jeff spent five years at MIT, working with Prof. Mark Bathe to develop DNA 'origami' nanoparticles that array hundreds of molecular systems with high spatial and orientation fidelity, advancing applications in molecular computing.</p>
+  </div>
+</div>
+<h2 id="masters-students">Masters Students</h2>
+<!-- 
+## PhD Students
+- Student 1
+- Student 2
+-->
 
     </div>
 
@@ -89,9 +223,54 @@ Jeff earned his PhD from Cambridge University in 2020, where he worked with Prof
     <script type="text/javascript">
       var dayToggle = document.querySelector("#day-switch");
       var nightToggle = document.querySelector("#night-switch");
+      var dayToggleMobile = document.querySelector("#day-switch-mobile");
+      var nightToggleMobile = document.querySelector("#night-switch-mobile");
 
-      dayToggle.addEventListener("click", () => changeThemeModeClick(0));
-      nightToggle.addEventListener("click", () => changeThemeModeClick(1));
+      if (dayToggle) dayToggle.addEventListener("click", () => changeThemeModeClick(0));
+      if (nightToggle) nightToggle.addEventListener("click", () => changeThemeModeClick(1));
+      if (dayToggleMobile) dayToggleMobile.addEventListener("click", () => changeThemeModeClick(0));
+      if (nightToggleMobile) nightToggleMobile.addEventListener("click", () => changeThemeModeClick(1));
+      
+      
+      var hamburger = document.getElementById("hamburger");
+      var menu = document.getElementById("terminal-menu");
+      
+      if (hamburger && menu) {
+        hamburger.addEventListener("click", function() {
+          hamburger.classList.toggle("active");
+          menu.classList.toggle("active");
+        });
+        
+        
+        var menuLinks = menu.querySelectorAll("a");
+        menuLinks.forEach(function(link) {
+          link.addEventListener("click", function() {
+            hamburger.classList.remove("active");
+            menu.classList.remove("active");
+          });
+        });
+      }
     </script>
+
+    <a href="#" class="back-to-top" id="backToTop" aria-label="Back to top">↑</a>
+
+    <script type="text/javascript">
+      
+      var backToTopButton = document.getElementById("backToTop");
+      
+      window.addEventListener("scroll", function() {
+        if (window.pageYOffset > 300) {
+          backToTopButton.classList.add("show");
+        } else {
+          backToTopButton.classList.remove("show");
+        }
+      });
+      
+      backToTopButton.addEventListener("click", function(e) {
+        e.preventDefault();
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      });
+    </script>
+    
   </body>
 </html>
