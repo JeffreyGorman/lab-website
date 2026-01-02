@@ -5,7 +5,7 @@ title = ''
 +++
 
 # <u>Ex</u>citonics + <u>P</u>hotochemisty (ExP) Lab  
-Team leader: Jeffrey Gorman at Durham University
+Team leader: Jeffrey Gorman @ Durham University, Dept. Chemistry
 
 ## Harnessing Biology to Accelerate Quantum Materials Discovery
 
