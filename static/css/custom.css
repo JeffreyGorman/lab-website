@@ -135,7 +135,8 @@ u, .underline {
 .hamburger span {
     width: 25px;
     height: 3px;
-    background-color: currentColor;
+    background-color: var(--primary-color) !important;
+    color: var(--primary-color) !important;
     margin: 3px 0;
     transition: 0.3s;
 }
@@ -412,9 +413,11 @@ html[theme="dark"] {
 /* Purple hamburger menu */
 .hamburger span {
   background-color: var(--primary-color) !important;
+  color: var(--primary-color) !important;
 }
 
 /* Purple hamburger when active (X shape) */
 .hamburger.active span {
   background-color: var(--primary-color) !important;
+  color: var(--primary-color) !important;
 }
