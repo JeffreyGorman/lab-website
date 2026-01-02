@@ -4,8 +4,8 @@ draft = false
 title = ''
 +++
 
-# <u>Ex</u>citonics + <u>P</u>hotochemisty (ExP) Lab @ Durham 
-
+# <u>Ex</u>citonics + <u>P</u>hotochemisty (ExP) Lab  
+Team leader: Jeffrey Gorman at Durham University
 
 ## Harnessing Biology to Accelerate Quantum Materials Discovery
 
@@ -21,7 +21,7 @@ By programming DNA to assemble organic semiconductors with nanometer precision, 
 
 We combine three disciplines to unlock biology's potential for materials chemistry:
 
-**Synthetic Organic Chemistry** – Design and synthesize new semiconductor building blocks  
+**Synthetic Organic Chemistry** – Design and synthesise new semiconductor building blocks  
 **DNA Nanotechnology** – Program biological assembly to create precise molecular architectures  
 **Ultrafast Spectroscopy** – Measure quantum properties at the nanoscale
 
@@ -34,7 +34,7 @@ This unique combination lets us explore vast chemical space rapidly, identifying
 Traditional materials chemistry: **~100 compounds per year**  
 Our DNA-programmed approach: **100,000+ variants tested in parallel**
 
-Biology has evolved exquisite molecular control over billions of years. We're tapping into this untapped resource to revolutionize how we discover functional materials.
+Biology has evolved exquisite molecular control over billions of years. We're tapping into this untapped resource to revolutionise how we discover functional materials.
 
 ---
 

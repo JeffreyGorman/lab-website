@@ -4,14 +4,12 @@ title = 'ExP Lab'
 theme = 'hugo-theme-console-dark'
 
 [params]
-  description = "Lab research group"
-  # Cutting off the page title to two chars for mobile (console-demo -> co)
+  description = "ExP Lab at Durham University - Dr. Jeffrey Gorman's research group studying quantum materials, DNA nanotechnology, and organic semiconductors through biological assembly"
+  author = ["Jeffrey Gorman"]
+  keywords = [
+    "Gorman Lab", "ExP Lab", "Durham Chemistry", "quantum materials", "DNA nanotechnology", "organic semiconductors", "photochemistry", "excitonics", "gorman lab durham", "jeffrey gorman durham"
+  ]
   titleCutting = false
-
-  # Set the animation style -- https://animate.style/
-  # To disable animations, please remove or comment animationStyle parameter
-  # animateStyle = "animated zoomIn fast" 
-
   customCSS = ["css/custom.css"]
 
 [[params.navlinks]]
@@ -33,6 +31,10 @@ url = "/publications"
 [[params.navlinks]]
 name = "join/"
 url = "/join"
+
+[social]
+twitter = ""
+facebook = ""
 
 [markup]
   [markup.goldmark]
