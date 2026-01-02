@@ -1,0 +1,10 @@
+{{- with .Params.image }}
+{{ $image := $.Resources.GetMatch . }}
+{{ with $image }}
+{{ $thumb := .Resize "400x" }}
+<!-- Social meta tags removed -->
+{{ end }}
+{{ end }}
+
+<meta name="twitter:title" content="{{ .Title }}"/>
+<meta name="twitter:description" content="{{ with .Description }}{{ . }}{{ else }}{{if .IsPage}}{{ .Summary }}{{ else }}{{ with .Site.Params.description }}{{ . }}{{ end }}{{ end }}{{ end -}}"/>
