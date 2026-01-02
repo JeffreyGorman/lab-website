@@ -15,8 +15,7 @@ We are semiconductor and DNA chemists operating at the intersection of synthesis
   </div>
 </div>
 
----
-
+<div class="bg-purple-light">
 <div class="research-item reverse">
   <img src="/images/research_jablonski.png" alt="Jablonski diagram showing spin states">
   <div class="research-item-content">
@@ -28,6 +27,7 @@ We create organic spin centres from dye molecules. [By leveraging DNA](https://w
 **Our approach:** We [synthetically install dyes with phosphoramidite groups](https://pubs.acs.org/doi/abs/10.1021/jacs.1c10241), allowing us to incorporate large aromatic systems directly onto DNA using solid-phase synthesis. This overcomes hydrophobicity challenges and provides unprecedented control over intermolecular interactions.
 
   </div>
+</div>
 </div>
 
 <div class="research-item">
@@ -43,7 +43,7 @@ We create organic spin centres from dye molecules. [By leveraging DNA](https://w
   </div>
 </div>
 
----
+<div class="bg-purple-medium">
 
 ## Applications
 
@@ -58,6 +58,8 @@ High-efficiency light harvesting and emission
 **Molecular Electronics**  
 Programmable exciton transport for next-generation devices
 
----
+</div>
 
-*By bridging chemistry, biology, and physics, we're creating materials that were previously impossible to make — and doing it faster than ever before.*
+<div style="margin-top: 40px;">
+<em>By bridging chemistry, biology, and physics, we're creating materials that were previously impossible to make — and doing it faster than ever before.</em>
+</div>

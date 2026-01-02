@@ -421,3 +421,60 @@ html[theme="dark"] {
   background-color: var(--primary-color) !important;
   color: var(--primary-color) !important;
 }
+
+/* Colored background sections - full width */
+.bg-purple-light,
+.bg-purple-medium {
+  padding: 40px 0;
+  margin-left: calc(-50vw + 50%);
+  margin-right: calc(-50vw + 50%);
+  padding-left: calc(50vw - 50%);
+  padding-right: calc(50vw - 50%);
+}
+
+.bg-purple-light {
+  background-color: rgba(155, 89, 182, 0.05);
+}
+
+.bg-purple-medium {
+  background-color: rgba(155, 89, 182, 0.08);
+}
+
+/* Dark mode versions */
+html[theme="dark"] .bg-purple-light {
+  background-color: rgba(183, 125, 214, 0.08);
+}
+
+html[theme="dark"] .bg-purple-medium {
+  background-color: rgba(183, 125, 214, 0.12);
+}
+
+/* Colored header background for specific pages */
+body[data-page="research"] .terminal-nav {
+  background-color: rgba(155, 89, 182, 0.05);
+  margin-left: calc(-50vw + 50%);
+  margin-right: calc(-50vw + 50%);
+  padding-left: calc(50vw - 50%);
+  padding-right: calc(50vw - 50%);
+}
+
+/* Dark mode */
+html[theme="dark"] body[data-page="research"] .terminal-nav {
+  background-color: rgba(183, 125, 214, 0.08);
+}
+
+/* Colored header/nav background for ALL pages */
+.terminal-nav {
+  background-color: rgba(155, 89, 182, 0.05);
+  margin-left: calc(-50vw + 50%);
+  margin-right: calc(-50vw + 50%);
+  padding-left: calc(50vw - 50%);
+  padding-right: calc(50vw - 50%);
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+/* Dark mode */
+html[theme="dark"] .terminal-nav {
+  background-color: rgba(183, 125, 214, 0.08);
+}

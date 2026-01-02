@@ -15,7 +15,8 @@ We welcome applicants with backgrounds in:
 
 Interested? **[Get in touch](mailto:jeffrey.e.gorman@durham.ac.uk)**
 
----
+<div class="bg-purple-light">
+
 
 ## PhD Studentships
 
@@ -24,7 +25,9 @@ Externally-funded PhD positions will be advertised online when available. There 
 - [SCOPE/EPSRC DLA](https://www.durham.ac.uk/departments/academic/science/research-excellence/science-doctoral-training/pgr-funding-routes/)
 - [Chinese Scholarship Council Scholarships](https://www.durham.ac.uk/study/scholarships/international/chinese-scholarships-council/)
 
----
+</div>
+<div style="margin-top: 40px;">
+
 
 ## Postdoctoral Fellowships
 
@@ -40,10 +43,13 @@ Grant-funded postdoctoral fellowships will be advertised online when available. 
 - [Career Development Fellowship](https://royalsociety.org/grants/career-development-fellowship/) – for researchers from Black heritage backgrounds
 - [Daphne Jackson Fellowship](https://daphnejackson.org/) – for those returning after a career break
 
----
+<div class="bg-purple-medium">
+
 
 ## Undergraduate Summer Internships
 
 Limited paid undergraduate research opportunities are available. Please [get in touch](mailto:jeffrey.e.gorman@durham.ac.uk) well ahead of deadlines to draft the strongest application possible.
 
 - [RSC Undergraduate Research Bursary](https://www.rsc.org/prizes-funding/funding/find-funding/undergraduate-research-bursaries/)
+
+</div>
