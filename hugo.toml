@@ -14,7 +14,7 @@ theme = 'hugo-theme-console-dark'
 
 [[params.navlinks]]
 name = "home/"
-url = "/"
+url = ""
 
 [[params.navlinks]]
 name = "team/"
