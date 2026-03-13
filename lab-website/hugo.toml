@@ -1,0 +1,42 @@
+baseURL = 'https://explab.co.uk/'
+languageCode = 'en-uk'
+title = 'ExP Lab'
+theme = 'hugo-theme-console-dark'
+
+[params]
+  description = "ExP Lab at Durham University - Dr. Jeffrey Gorman's research group studying quantum materials, DNA nanotechnology, and organic semiconductors through biological assembly"
+  author = ["Jeffrey Gorman"]
+  keywords = [
+    "Gorman Lab", "ExP Lab", "Durham Chemistry", "quantum materials", "DNA nanotechnology", "organic semiconductors", "photochemistry", "excitonics", "gorman lab durham", "jeffrey gorman durham"
+  ]
+  titleCutting = false
+  customCSS = ["css/custom.css"]
+
+[[params.navlinks]]
+name = "home/"
+url = ""
+
+[[params.navlinks]]
+name = "team/"
+url = "/team"
+
+[[params.navlinks]]
+name = "research/"
+url = "/research"
+
+[[params.navlinks]]
+name = "publications/"
+url = "/publications"
+
+[[params.navlinks]]
+name = "join/"
+url = "/join"
+
+[social]
+twitter = ""
+facebook = ""
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true

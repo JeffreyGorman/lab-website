@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ExP Lab</title>
+    <link>http://localhost:1313/</link>
+    <description>Recent content on ExP Lab</description>
+    <generator>Hugo</generator>
+    <language>en-uk</language>
+    <lastBuildDate>Tue, 30 Dec 2025 20:36:41 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Join</title>
+      <link>http://localhost:1313/join/</link>
+      <pubDate>Tue, 30 Dec 2025 20:36:41 +0000</pubDate>
+      <guid>http://localhost:1313/join/</guid>
+      <description>&lt;div class=&#34;bg-purple-light&#34;&gt;&#xA;&lt;h2 id=&#34;open-phd-position-13032026&#34;&gt;&lt;span style=&#34;color: #b22d64&#34;&gt; Open PhD Position [13/03/2026] &lt;/span&gt;&lt;/h2&gt;&#xA;&lt;p&gt;&lt;span style=&#34;color: #b22d64&#34;&gt; We have a fully funded PhD position (Home [UK] students only) on high-throughput synthesis of organic molecular dyes.&lt;/span&gt; &lt;strong&gt;&lt;a href=&#34;mailto:jeffrey.e.gorman@durham.ac.uk&#34;&gt;Email Jeff&lt;/a&gt;&lt;/strong&gt; &lt;span style=&#34;color: #b22d64&#34;&gt; with a CV and Cover Letter to apply! &lt;/span&gt;&lt;/p&gt;&#xA;&lt;/div&gt;&#xA;&lt;br&gt;&#xA;&lt;h2 id=&#34;were-looking-to-expand-the-team&#34;&gt;We&amp;rsquo;re Looking to Expand the Team&lt;/h2&gt;&#xA;&lt;p&gt;We welcome applicants with backgrounds in:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Synthetic organic chemistry&lt;/li&gt;&#xA;&lt;li&gt;Biosciences&lt;/li&gt;&#xA;&lt;li&gt;Materials chemistry/spectroscopy&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;&lt;strong&gt;We are especially keen to support in your cross-disciplinary training&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;Interested? &lt;strong&gt;&lt;a href=&#34;mailto:jeffrey.e.gorman@durham.ac.uk&#34;&gt;Get in touch&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Research</title>
+      <link>http://localhost:1313/research/</link>
+      <pubDate>Tue, 30 Dec 2025 20:36:41 +0000</pubDate>
+      <guid>http://localhost:1313/research/</guid>
+      <description>&lt;div class=&#34;research-item&#34;&gt;&#xA;  &lt;img src=&#34;http://localhost:1313/images/research_helix.png&#34; alt=&#34;DNA helix assembly of semiconductors&#34;&gt;&#xA;  &lt;div class=&#34;research-item-content&#34;&gt;&#xA;&lt;h2 id=&#34;harnessing-biology-to-build-quantum-materials&#34;&gt;Harnessing Biology to Build Quantum Materials&lt;/h2&gt;&#xA;&lt;p&gt;We are semiconductor and DNA chemists operating at the intersection of synthesis, chemical biology, and quantum information science. Our mission: &lt;strong&gt;accelerate the discovery of quantum materials by combining synthetic organic chemistry with the massive throughput of biological systems.&lt;/strong&gt;&lt;/p&gt;&#xA;  &lt;/div&gt;&#xA;&lt;/div&gt;&#xA;&lt;div class=&#34;bg-purple-light&#34;&gt;&#xA;&lt;div class=&#34;research-item reverse&#34;&gt;&#xA;  &lt;img src=&#34;http://localhost:1313/images/research_jablonski.png&#34; alt=&#34;Jablonski diagram showing spin states&#34;&gt;&#xA;  &lt;div class=&#34;research-item-content&#34;&gt;&#xA;&lt;h2 id=&#34;quantum-materials-through-dna-assembly&#34;&gt;Quantum Materials Through DNA Assembly&lt;/h2&gt;&#xA;&lt;p&gt;We create organic spin centres from dye molecules. &lt;a href=&#34;https://www.cell.com/chem/fulltext/S2451-9294(24)00116-5&#34;&gt;By leveraging DNA&lt;/a&gt;, we control their self-assembly with sub-nanometer precision over molecular interactions. &lt;a href=&#34;https://pubs.acs.org/doi/abs/10.1021/jacs.2c13743&#34;&gt;This enables us to precisely engineer spin dynamics&lt;/a&gt; in ways impossible with traditional chemistry.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Team</title>
+      <link>http://localhost:1313/team/</link>
+      <pubDate>Tue, 30 Dec 2025 20:36:41 +0000</pubDate>
+      <guid>http://localhost:1313/team/</guid>
+      <description>&lt;h2 id=&#34;team-lead&#34;&gt;Team Lead&lt;/h2&gt;&#xA;&lt;div class=&#34;team-member&#34;&gt;&#xA;  &lt;img src=&#34;http://localhost:1313/images/team_JG.png&#34; alt=&#34;Photo of Jeffrey Gorman&#34;&gt;&#xA;  &lt;div class=&#34;team-member-info&#34;&gt;&#xA;    &lt;h3&gt;Dr. Jeffrey Gorman 🇬🇧🇮🇪🇵🇭 - Assistant Professor of Materials Chemistry&lt;/h3&gt;&#xA;    &lt;p&gt;Jeff leads the &#39;Excitonics and Photochemistry Lab&#39; at Durham as the Materials Research Fellow. Jeff earned his PhD from Cambridge University in 2020, where he worked with Prof. Sir Richard Friend to pioneer new molecular assembly methods for semiconductors crucial for solar energy harvesting. He focused on deterministic, size-defined structures to study the evolution of excitons. Next, Jeff spent five years at MIT, working with Prof. Mark Bathe to develop DNA &#39;origami&#39; nanoparticles that array hundreds of molecular systems with high spatial and orientation fidelity, advancing applications in molecular computing.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Publications</title>
+      <link>http://localhost:1313/publications/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/publications/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://scholar.google.co.uk/citations?hl=en&amp;amp;user=dAKlZOAAAAAJ&amp;amp;view_op=list_works&amp;amp;sortby=pubdate&#34;&gt;All papers&lt;/a&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;listed-journal-articles-and-conference-papers&#34;&gt;Listed Journal Articles and Conference Papers&lt;/h2&gt;&#xA;&lt;!-- AUTO-GENERATED START - Do not edit below this line --&gt;&#xA;&lt;h2 id=&#34;2026&#34;&gt;2026&lt;/h2&gt;&#xA;&lt;p&gt;J. Gorman*, S. Orsborne, P. Budden, A. Sridhar, J. L. Greenfield, D. G. Congrave, R. Pandya, Y. Liu, S. Dowland, S. Ryan, H. Bronstein, J. R. Nitschke, A. Rao, R. Collepardo-Guevara, E. Stulz, F. Auras, R. H. Friend, &lt;em&gt;Exploring Size-Controlled Exciton Evolution Using DNA Libraries&lt;/em&gt;, 2026, &lt;strong&gt;148&lt;/strong&gt;, 8893–8903. &lt;a href=&#34;https://pubs.acs.org/doi/full/10.1021/jacs.5c21113&#34;&gt;[Paper]&lt;/a&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;2025&#34;&gt;2025&lt;/h2&gt;&#xA;&lt;p&gt;G. A. Knappe, J. Gorman, A. N. Bigley, S. P. Harvey, M. Bathe, Heterovalent Click Reactions on DNA Origami, &lt;em&gt;Bioconjugate Chemistry&lt;/em&gt;, 2025, &lt;strong&gt;36&lt;/strong&gt;, 476-485. &lt;a href=&#34;https://pubs.acs.org/doi/abs/10.1021/acs.bioconjchem.4c00552&#34;&gt;[Paper]&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
