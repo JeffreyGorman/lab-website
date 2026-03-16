@@ -6,7 +6,7 @@ title = ''
 
 
 # <u>Ex</u>citonics + <u>P</u>hotochemisty (ExP) Lab  
-Team leader: Jeffrey Gorman @ Durham University, Dept. Chemistry
+Team leader: [Jeffrey Gorman](https://www.durham.ac.uk/staff/jeffrey-e-gorman/) @ Durham University, Dept. Chemistry
 
 
 
