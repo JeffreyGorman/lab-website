@@ -5,14 +5,6 @@ title = 'Join'
 +++
 
 
-<div class="bg-purple-light">
-
-## <span style="color: #b22d64"> Open PhD Position [13/03/2026] </span>
-
-<span style="color: #b22d64"> We have a fully funded PhD position (Home [UK] students only) on high-throughput synthesis of organic molecular dyes.</span> **[Email Jeff](mailto:jeffrey.e.gorman@durham.ac.uk)** <span style="color: #b22d64"> with a CV and Cover Letter to apply! </span>
-
-</div>
-
 <br>
 
 ## We're Looking to Expand the Team

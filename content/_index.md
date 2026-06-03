@@ -5,19 +5,12 @@ title = ''
 +++
 
 
+<div class="bg-purple-light">
+
 # <u>Ex</u>citonics + <u>P</u>hotochemisty (ExP) Lab  
 Team leader: [Jeffrey Gorman](https://www.durham.ac.uk/staff/jeffrey-e-gorman/) @ Durham University, Dept. Chemistry
 
 
-
-
-## <span style="color: #b22d64"> Open PhD Position [13/03/2026]</span>
-
-<span style="color: #b22d64">We have a fully funded PhD position (Home [UK] students only) on high-throughput synthesis of organic molecular dyes, toward applications in quantum computing.</span> **[Email Jeff](mailto:jeffrey.e.gorman@durham.ac.uk)** <span style="color: #b22d64">with a CV and Cover Letter to apply!</span>
-
-
-
-<div class="bg-purple-light">
 
 ## Harnessing Biology to Accelerate Quantum Materials Discovery
 
