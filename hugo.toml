@@ -1,10 +1,11 @@
 baseURL = 'https://explab.co.uk/'
 languageCode = 'en-uk'
-title = 'ExP Lab'
+# title = 'ExP Lab'
+title = 'Jeffrey Gorman'
 theme = 'hugo-theme-console-dark'
 
 [params]
-  description = "ExP Lab at Durham University - Dr. Jeffrey Gorman's research group studying quantum materials, DNA nanotechnology, and organic semiconductors through biological assembly"
+  description = "Jeffrey Gorman at Durham University - Dr. Jeffrey Gorman's is a Fellow researching quantum materials, DNA nanotechnology, and organic semiconductors through biological assembly"
   author = ["Jeffrey Gorman"]
   keywords = [
     "Gorman Lab", "ExP Lab", "Durham Chemistry", "quantum materials", "DNA nanotechnology", "organic semiconductors", "photochemistry", "excitonics", "gorman lab durham", "jeffrey gorman durham"
@@ -17,7 +18,7 @@ name = "home/"
 url = ""
 
 [[params.navlinks]]
-name = "team/"
+name = "people/"
 url = "/team"
 
 [[params.navlinks]]
