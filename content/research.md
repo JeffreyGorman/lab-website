@@ -10,7 +10,7 @@ title = 'Research'
 
 ## Harnessing Biology to Build Quantum Materials
 
-We are semiconductor and DNA chemists operating at the intersection of synthesis, chemical biology, and quantum information science. Our mission: **accelerate the discovery of quantum materials by combining synthetic organic chemistry with the massive throughput of biological systems.**
+I am chromophore and DNA chemist operating at the intersection of synthesis, chemical biology, and quantum information science. My aim: **accelerate the discovery of quantum materials by combining synthetic organic chemistry with the massive throughput of biological systems.**
 
   </div>
 </div>
@@ -22,9 +22,9 @@ We are semiconductor and DNA chemists operating at the intersection of synthesis
 
 ## Quantum Materials Through DNA Assembly
 
-We create organic spin centres from dye molecules. [By leveraging DNA](https://www.cell.com/chem/fulltext/S2451-9294(24)00116-5), we control their self-assembly with sub-nanometer precision over molecular interactions. [This enables us to precisely engineer spin dynamics](https://pubs.acs.org/doi/abs/10.1021/jacs.2c13743) in ways impossible with traditional chemistry.
+I create organic spin centres from dye molecules. [By leveraging DNA](https://www.cell.com/chem/fulltext/S2451-9294(24)00116-5), we control their self-assembly with sub-nanometer precision over molecular interactions. [This enables me to precisely engineer spin dynamics](https://pubs.acs.org/doi/abs/10.1021/jacs.2c13743) in ways impossible with traditional chemistry.
 
-**Our approach:** We [synthetically install dyes with phosphoramidite groups](https://pubs.acs.org/doi/abs/10.1021/jacs.1c10241), allowing us to incorporate large aromatic systems directly onto DNA using solid-phase synthesis. This overcomes hydrophobicity challenges and provides unprecedented control over intermolecular interactions.
+**My approach:** I [synthetically install dyes with phosphoramidite groups](https://pubs.acs.org/doi/abs/10.1021/jacs.1c10241), allowing us to incorporate large aromatic systems directly onto DNA using solid-phase synthesis. This overcomes hydrophobicity challenges and provides unprecedented control over intermolecular interactions.
 
   </div>
 </div>
@@ -47,7 +47,7 @@ We create organic spin centres from dye molecules. [By leveraging DNA](https://w
 
 ## Applications
 
-Our bio-inspired platform accelerates development of:
+My bio-inspired platform aims to accelerate development of:
 
 **Quantum Information Systems**  
 Organic spin qubits with tunable coherence
@@ -61,5 +61,5 @@ Programmable exciton transport for next-generation devices
 </div>
 
 <div style="margin-top: 40px;">
-<em>By bridging chemistry, biology, and physics, we're creating materials that were previously impossible to make — and doing it faster than ever before.</em>
+<em>By bridging chemistry, biology, and physics, I'm creating materials that were previously impossible to make — and exploring how we have speed up this pipeline of discovery.</em>
 </div>

@@ -20,6 +20,7 @@ Interested? **[Get in touch](mailto:jeffrey.e.gorman@durham.ac.uk)**
 
 <div class="bg-purple-light">
 
+<!--
 
 ## PhD Studentships
 
@@ -48,6 +49,7 @@ Grant-funded postdoctoral fellowships will be advertised online when available. 
 
 <div class="bg-purple-medium">
 
+-->
 
 ## Undergraduate Summer Internships
 
