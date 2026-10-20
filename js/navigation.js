@@ -559,6 +559,7 @@ function updateDNA(prog) {
 
   clearTimeout(window.dnaTimer);
   window.dnaTimer = setTimeout(() => {
+    if (window.dnaSync) window.dnaSync();
     nodes.forEach(n => n.style.animationPlayState = '');
     strands.forEach(s => s.style.setProperty('--bar-animation', 'paused'));
   }, 100);

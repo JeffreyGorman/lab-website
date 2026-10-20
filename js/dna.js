@@ -39,4 +39,23 @@ export function initDNA() {
   });
 
   // (helix animation is now handled entirely by CSS :hover — see styles.css)
+  startHelixSync();
+}
+
+// Keep the balls and bars in step.  Each ball and each bar runs its own CSS animation; on a slow or busy phone they can start,
+// pause or resume a frame or two apart, and the gaps add up: the helix goes lopsided and the bars drift off their balls.
+// Every second (and after each play/pause) put them all back on one shared clock; their different delays still give the helix its shape.
+export function syncHelix() {
+  if (window.MOTION_ENABLED === false || !document.getAnimations) return;
+  const list = document.getAnimations().filter(a => (a.animationName === 'jump' || a.animationName === 'scale')
+    && a.effect && a.effect.target && a.effect.target.closest && a.effect.target.closest('.dna'));
+  if (list.length < 2) return;
+  const ref = list.find(a => a.playState === 'running') || list[0];
+  const t = ref.currentTime;
+  if (t == null) return;
+  list.forEach(a => { if (a !== ref && a.playState === ref.playState && Math.abs((a.currentTime || 0) - t) > 16) a.currentTime = t; });
+}
+function startHelixSync() {
+  window.dnaSync = syncHelix;
+  setInterval(() => { if (!document.hidden && !document.body.classList.contains('dna-off')) syncHelix(); }, 1000);
 }

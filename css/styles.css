@@ -2300,7 +2300,8 @@ body:not(.motion-off) .dna-cue span { animation: bounce 2s infinite; }
 body.motion-off .dna-cue { display: none; }
 .dna-annot { display: none; }
 @media (min-width: 769px) {
-  .section-3 { --dh: clamp(260px, calc((100svh - 290px) / 1.29), 520px); }
+  /* the helix + its side labels are about 1.8x as wide as the helix is tall, so on tall-but-narrow screens (iPad held upright) cap the height by the width, or the left labels run off the edge */
+  .section-3 { --dh: max(240px, min(clamp(260px, calc((100svh - 290px) / 1.29), 520px), calc(56vw - 16px))); }
   .section-3 .dna { height: var(--dh); width: calc(var(--dh) * 0.3929); position: relative; }
   .dna-annot { display: block; position: absolute; left: 50%; top: calc(-100% * 40 / 280); transform: translateX(-50%); height: calc(100% * 320 / 280); width: calc(100% * 610 / 110); overflow: visible; pointer-events: none; }
   .dna-annot [data-at] { opacity: 0; transition: opacity 0.3s ease; }
