@@ -17,6 +17,7 @@ import './s2-expand.js';
 import './replay.js';
 if (/firefox|fxios/i.test(navigator.userAgent)) document.documentElement.classList.add('is-firefox');   // Firefox rasterises will-change layers at a fixed low resolution (blurry bulb/flask on phones)
 if (/^((?!chrome|android|crios|fxios).)*safari/i.test(navigator.userAgent)) document.documentElement.classList.add('is-safari');   // lets the CSS drop the effects Safari renders slowly
+if (/iphone|ipad|ipod/i.test(navigator.userAgent) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1) || (/firefox/i.test(navigator.userAgent) && /android|mobile/i.test(navigator.userAgent))) document.documentElement.classList.add('is-ios-webkit');   // every iOS browser is WebKit, and phone Firefox also drops the SVG url() filter on <video>: use the overlay tint
 import { getStoredMotionPreference, setStoredMotionPreference } from './motion-state.js';
 
 // ─── SECTION 2 SIZING ──────────────────────────────────────

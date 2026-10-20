@@ -2694,10 +2694,8 @@ body.nav-on-dark .vacancy-card { display: none; }
 @media (prefers-reduced-motion: reduce) { .join-section .join-intro, .join-section .join-links, .vacancy-mini.flipping > * { transition: none; animation: none; } }
 body.nav-on-dark .vacancy-card { display: none; }
 
-/* Firefox: the SVG url() tint filter on the <video> isn't applied there either, so the video showed untinted.
-   Use the same grayscale + pink screen-blend overlay as Safari. */
-@supports (-moz-appearance: none) {
-  .hero-video { filter: grayscale(100%) contrast(1.1); }
-  .video-overlay { display: block; }
-  .section-1 { --hero-video-backdrop: #000; }
-}
+/* iPhone/iPad Firefox and Chrome (FxiOS/CriOS) are Safari's engine underneath, so they can't apply the SVG url() tint to the <video> either.
+   main.js adds .is-ios-webkit for them; use the same grayscale + pink screen-blend overlay as Safari. (Desktop/Android Firefox are fine.) */
+html.is-ios-webkit .hero-video { filter: grayscale(100%) contrast(1.1); }
+html.is-ios-webkit .video-overlay { display: block; }
+html.is-ios-webkit .section-1 { --hero-video-backdrop: #000; }
