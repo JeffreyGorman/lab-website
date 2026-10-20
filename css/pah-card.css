@@ -7,11 +7,11 @@
   background: var(--pah-card);
   display: flex; align-items: center; justify-content: center;
 }
-.pub-img.pah-img .pah-card-svg { display:block; width:100%; height:100%; aspect-ratio:16/10; max-height:30vh; padding:0; box-sizing:border-box; }
+.pub-img.pah-img .pah-card-svg { display:block; width:100%; height:100%; aspect-ratio:16/10; max-height:30svh; padding:0; box-sizing:border-box; }
 @media (max-aspect-ratio: 1/1) {
   .pub-img.pah-img .pah-card-svg { position:absolute; inset:0; max-height:none; aspect-ratio:auto; }
 }
-@media (max-height: 500px) and (orientation: landscape) { .pub-img.pah-img .pah-card-svg { aspect-ratio:16/6; max-height:18vh; } }
+@media (max-height: 500px) and (orientation: landscape) { .pub-img.pah-img .pah-card-svg { aspect-ratio:16/6; max-height:18svh; } }
 
 .pub-img.pah-img .pah-atom { font-family:'Departure Mono',ui-monospace,monospace; font-size:17px; fill:var(--pah-text); paint-order:stroke; stroke:var(--pah-face-o); stroke-width:4px; }
 .pub-img.pah-img .pah-dim { font-family:'Departure Mono',ui-monospace,monospace; font-size:22px; fill:var(--pah-text); }

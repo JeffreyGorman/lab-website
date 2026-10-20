@@ -56,7 +56,7 @@ body {
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   background: var(--color-secondary);
   overflow: hidden;
-  height: 100vh;
+  height: 100svh;
   width: 100vw;
 }
 body::before {
@@ -89,7 +89,7 @@ section {
 .section-4,
 .section-5,
 .section-6 {
-  height: 100vh !important;
+  height: 100svh !important;
   overflow: hidden;
   position: relative;
 }
@@ -98,8 +98,8 @@ section {
 .section-2 {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  height: 100vh !important;
-  min-height: 100vh;
+  height: 100svh !important;
+  min-height: 100svh;
   position: relative;
   background: linear-gradient(to right, #DBA5CD 0%, #DBA5CD 50%, #B8A5D6 50%, #B8A5D6 100%);
   overflow: hidden;
@@ -110,11 +110,11 @@ section {
   align-items: center;
   justify-content: flex-start;
   color: var(--color-text-light);
-  padding: var(--col-padding, 14vh 3vw 2vh);
+  padding: var(--col-padding, 14svh 3vw 2svh);
   transition: all 0.4s ease;
   box-sizing: border-box;
   overflow: hidden;
-  min-height: 100vh;
+  min-height: 100svh;
   min-width: 0;
   position: relative;       /* hosts its slice of the shared A/T/C/G canvas (js/dna-bg.js) */
   isolation: isolate;       /* …which sits above the column colour, below the text */
@@ -133,7 +133,7 @@ section {
 .content-grid-reactor {
   display: flex;
   flex-direction: column;
-  gap: 1.5vh;
+  gap: 1.5svh;
   width: 100%;
   max-width: 100%;
   align-items: stretch;
@@ -214,8 +214,8 @@ section {
   align-items: center;
   justify-content: center;
   overflow: visible !important;
-  height: var(--honeycomb-max-height, 48vh);
-  max-height: var(--honeycomb-max-height, 48vh);
+  height: var(--honeycomb-max-height, 48svh);
+  max-height: var(--honeycomb-max-height, 48svh);
 }
 #honeycomb-container canvas {
   display: block;
@@ -230,7 +230,7 @@ section {
 #reactor-site-wrapper {
   width: 100%;
   max-width: 100%;
-  max-height: 50vh;
+  max-height: 50svh;
   perspective: none;   /* was 3000px: removed for speed (Safari redrew the 3D scene every frame); looks almost the same */
   position: relative;
   overflow: visible !important;
@@ -239,8 +239,8 @@ section {
   flex: 0 1 auto;
   margin-top: auto;
   margin-bottom: auto;
-  height: var(--honeycomb-max-height, 48vh);
-  max-height: var(--honeycomb-max-height, 48vh);
+  height: var(--honeycomb-max-height, 48svh);
+  max-height: var(--honeycomb-max-height, 48svh);
 }
 #master-layout {
   display: flex;
@@ -779,7 +779,7 @@ body:not(.motion-off) .dna:hover .strand:before { animation-play-state: running;
 
 /* ─── HERO ─── */
 .section-1 {
-  height:100vh;
+  height:100svh;
   position:relative;
   z-index:1;
   overflow:hidden;
@@ -813,7 +813,7 @@ body:not(.motion-off) .dna:hover .strand:before { animation-play-state: running;
 .title-wrapper {
   position:absolute;
   left:0;
-  top:45vh;
+  top:45svh;
   width:100%;
   display:flex;
   justify-content:center;
@@ -1185,7 +1185,7 @@ body.nav-on-dark .navbar-menu a.active::after {
   flex-direction:column;
   align-items:center;
   text-align:center;
-  min-height:100vh;
+  min-height:100svh;
   position:relative;
   color:white;
 }
@@ -1363,7 +1363,7 @@ body.nav-on-dark .navbar-menu a.active::after {
   display: block;
   width: 100%;
   aspect-ratio: 16 / 10;
-  max-height: 30vh;                    /* keeps 3 columns on screen on short laptops */
+  max-height: 30svh;                    /* keeps 3 columns on screen on short laptops */
   object-fit: cover;
 }
 .pub-body { padding: clamp(16px, 1.8vw, 26px); }
@@ -1391,7 +1391,7 @@ body.nav-on-dark .navbar-menu a.active::after {
   .pubs-grid {
     grid-template-columns: 1fr;
     max-width: 760px;
-    gap: clamp(12px, 2vh, 24px);
+    gap: clamp(12px, 2svh, 24px);
   }
   .pub-card { flex-direction: row; }
   .pub-img {
@@ -1424,7 +1424,7 @@ body.nav-on-dark .navbar-menu a.active::after {
 
 /* Small / short screens: trim so everything still fits on one screen */
 @media (max-height: 680px) and (min-aspect-ratio: 1/1) {      /* short landscape windows */
-  .pub-img img { max-height: 20vh; }
+  .pub-img img { max-height: 20svh; }
 }
 @media (max-height: 700px) and (max-aspect-ratio: 1/1) {      /* small portrait phones */
   .pub-card .pub-blurb { display: none; }
@@ -1434,7 +1434,7 @@ body.nav-on-dark .navbar-menu a.active::after {
 /* Short landscape phones: keep all three columns on screen — smaller picture,
    compact title, no blurb */
 @media (max-height: 500px) and (orientation: landscape) {
-  .pub-img img { aspect-ratio: 16 / 6; max-height: 18vh; }
+  .pub-img img { aspect-ratio: 16 / 6; max-height: 18svh; }
   .pub-body { padding: 10px 12px; }
   .pub-card h3 { font-size: 11px; margin-bottom: 4px; }
   .pub-card .pub-title { font-size: var(--font-size-small); margin: 0; }
@@ -1455,7 +1455,7 @@ body.nav-on-dark .navbar-menu a.active::after {
   .section-3 {
     padding-top: 128px !important;
     padding-bottom: 44px !important;
-    gap: clamp(14px, 3vh, 32px) !important;
+    gap: clamp(14px, 3svh, 32px) !important;
     justify-content: center;
   }
 }
@@ -1649,7 +1649,7 @@ body.team-photo-filter-off .member-photo::after {
    the bio off the bottom on 720px-tall laptops), while on narrow phones
    it can use the full card width (it was capped at 55%). */
 .carousel-track .card .team-photo {
-  width: min(100%, 28vh);
+  width: min(100%, 28svh);
   max-width: none;
   margin-left: auto;
   margin-right: auto;
@@ -1683,12 +1683,12 @@ body.team-photo-filter-off .member-photo::after {
   --max-w: 1100px; --tile-max: 200px;
   --cols: var(--cols-d);
   --rows: var(--rows-d);
-  --gap: clamp(12px, 2vh, 28px);
+  --gap: clamp(12px, 2svh, 28px);
   --name-h: 50px;                      /* room for a 2-line name + spacing */
   --side: 90vw;                        /* width the grid may use */
   --reserved: calc(175px + var(--font-size-heading) * 1.1 + 20px); /* section padding + "Meet the Team" */
   --w-lim: calc((min(var(--side), var(--max-w)) - (var(--cols) - 1) * var(--gap)) / var(--cols));
-  --h-lim: calc((100vh - var(--reserved) - var(--rows) * var(--name-h) - (var(--rows) - 1) * var(--gap)) / var(--rows));
+  --h-lim: calc((100svh - var(--reserved) - var(--rows) * var(--name-h) - (var(--rows) - 1) * var(--gap)) / var(--rows));
   --tile: clamp(56px, min(var(--w-lim), var(--h-lim)), var(--tile-max));
 
   list-style: none;
@@ -1737,7 +1737,7 @@ body.team-photo-filter-off .member-photo::after {
     --side: 95vw;
     --reserved: calc(180px + var(--font-size-heading) * 1.1 + 16px);
     --name-h: 40px;
-    --gap: clamp(10px, 1.6vh, 16px);
+    --gap: clamp(10px, 1.6svh, 16px);
   }
   .team-tile-name { font-size: calc(var(--font-size-small) * 0.95); }
 }
@@ -1779,7 +1779,7 @@ body.team-photo-filter-off .member-photo::after {
   left: 50%;
   z-index: 5;
   width: min(680px, 88vw);
-  max-height: calc(100vh - 190px);
+  max-height: calc(100svh - 190px);
   overflow-y: auto;
   box-sizing: border-box;
   padding: 28px;
@@ -1857,7 +1857,7 @@ body.motion-off .team-bio.is-open { transition: none; }
     grid-template-columns: 1fr;
     row-gap: 16px;
     padding: 20px;
-    max-height: calc(100vh - 150px);
+    max-height: calc(100svh - 150px);
   }
   .team-bio .team-photo { width: min(150px, 42vw); }
 }
@@ -1867,7 +1867,7 @@ body.motion-off .team-bio.is-open { transition: none; }
     grid-template-columns: minmax(0, 110px) minmax(0, 1fr);
     column-gap: 18px;
     padding: 14px 16px;
-    max-height: calc(100vh - 90px);
+    max-height: calc(100svh - 90px);
     width: min(680px, 92vw);
   }
   .team-bio-name { font-size: 18px; }
@@ -1961,7 +1961,7 @@ body.motion-off .team-bio.is-open { transition: none; }
   /* NOTE: col-left and col-right both get the same top padding from
      sizeSection2() in main.js (--col-padding, set identically on both).
      A previous override here forced col-left's padding-top to a fixed
-     6vh and nudged it up further with margin-top:-8vh, which is why
+     6svh and nudged it up further with margin-top:-8svh, which is why
      col-left's text sat higher than col-right's and overlapped the
      title on mobile. Removed so both columns line up. */
 }
@@ -2019,7 +2019,7 @@ body.motion-off .team-bio.is-open { transition: none; }
 @media (max-width: 1439px) {
   .photon-label { font-size: 24px; }
   #honeycomb-container,
-  #reactor-site-wrapper { max-height: 42vh; }
+  #reactor-site-wrapper { max-height: 42svh; }
 }
 
 /* ── TABLET + MOBILE (≤1024px): shared compact/vertical layout ── */
@@ -2031,7 +2031,7 @@ body.motion-off .team-bio.is-open { transition: none; }
   .mobile-menu-overlay { display: block; }
   .section-2 { grid-template-columns: 1fr 1fr; }
 
-  .title-wrapper { top: 50vh; }
+  .title-wrapper { top: 50svh; }
   .word { font-size: clamp(20px, 6vw, 42px); }
   .lab-subtitle { font-size: clamp(20px, 6vw, 42px); }
   .hero-corner-label { font-size: calc(clamp(20px, 6vw, 42px) * var(--corner-label-ratio, 0.6)); }
@@ -2047,7 +2047,7 @@ body.motion-off .team-bio.is-open { transition: none; }
   .photon-label { font-size: 18px !important; }
   #flask-label { font-size: 16px !important; bottom: -40px !important; }
   #reactor-site-wrapper,
-  #honeycomb-container { max-height: 58vh; } /* NOTE: has no real effect — main.js's sizeSection2() sets an inline height+max-height on both elements, which always wins. The actual cap is the 640 in that function's honeyMax clamp. */
+  #honeycomb-container { max-height: 58svh; } /* NOTE: has no real effect — main.js's sizeSection2() sets an inline height+max-height on both elements, which always wins. The actual cap is the 640 in that function's honeyMax clamp. */
 
   /* vertical reactor stacking – bulb above flask, same on iPad & phone */
   #master-layout {
@@ -2055,7 +2055,7 @@ body.motion-off .team-bio.is-open { transition: none; }
     align-items: center !important;
     justify-content: space-around !important;
     height: 100% !important;
-    gap: var(--reactor-vertical-gap, 6vh) !important; /* room for the photon arrows between bulb and flask (was 9vh — the bulb/flask now grow into the space instead) */
+    gap: var(--reactor-vertical-gap, 6svh) !important; /* room for the photon arrows between bulb and flask (was 9svh — the bulb/flask now grow into the space instead) */
   }
   #lamp-wrapper,
   #flask-scene {
@@ -2111,7 +2111,7 @@ body.motion-off .team-bio.is-open { transition: none; }
 @media (max-width: 480px) {
   #flask-label { font-size: 12px !important; bottom: -30px !important; }
   .photon-label { font-size: 12px !important; }
-  #reactor-site-wrapper { max-height: 28vh; }
+  #reactor-site-wrapper { max-height: 28svh; }
 }
 
 
@@ -2198,8 +2198,8 @@ button.nav-dot { padding: 0; display: block; }
   .section-nav.bottom { bottom: 6px; }
 
   /* hero + title: size from the screen HEIGHT, not the width */
-  .word, .lab-subtitle { font-size: clamp(20px, 8vh, 40px); }
-  .hero-corner-label { font-size: clamp(14px, 4.5vh, 20px); }
+  .word, .lab-subtitle { font-size: clamp(20px, 8svh, 40px); }
+  .hero-corner-label { font-size: clamp(14px, 4.5svh, 20px); }
   .hero-corner-label.top-left { top: 66px; }
   .section-1 .hero-video { top: -10%; height: 120%; -webkit-mask-image: none; mask-image: none; } /* full-bleed again: landscape video fits a landscape screen */
 
@@ -2219,20 +2219,20 @@ button.nav-dot { padding: 0; display: block; }
 
   /* DNA section: shorter helix, less padding */
   .section-3 { padding: 56px 5% 10px !important; }
-  .section-3 .dna { height: min(280px, 60vh); }
+  .section-3 .dna { height: min(280px, 60svh); }
 
   /* Team: compact grid (the screen is short, so use more columns) */
   .section-4 { padding-top: 88px !important; padding-bottom: 16px !important; } /* clears the up-arrow */
-  .section-4 .team-heading { font-size: clamp(20px, 8vh, 32px); margin-bottom: 10px; }
+  .section-4 .team-heading { font-size: clamp(20px, 8svh, 32px); margin-bottom: 10px; }
   .section-4 .team-tiles {
     --cols: var(--cols-l); --rows: var(--rows-l);
-    --reserved: calc(104px + clamp(20px, 8vh, 32px) * 1.1 + 10px);
+    --reserved: calc(104px + clamp(20px, 8svh, 32px) * 1.1 + 10px);
     --name-h: 44px; --gap: 8px; --side: 90vw;
   }
 
   /* Publications + Join: tighter spacing so everything fits */
   .section-5, .section-6 { padding-top: 88px; padding-bottom: 20px; } /* clears the up-arrow */
-  .section-6 h2 { margin-bottom: 10px; font-size: clamp(24px, 8vh, 36px); }
+  .section-6 h2 { margin-bottom: 10px; font-size: clamp(24px, 8svh, 36px); }
   .join-intro { margin-bottom: 12px; line-height: 1.45; }
   .join-links { gap: 4px; margin-bottom: 8px; }
   .join-images { margin-top: 8px; gap: 20px; }
@@ -2300,7 +2300,7 @@ body:not(.motion-off) .dna-cue span { animation: bounce 2s infinite; }
 body.motion-off .dna-cue { display: none; }
 .dna-annot { display: none; }
 @media (min-width: 769px) {
-  .section-3 { --dh: clamp(260px, calc((100vh - 290px) / 1.29), 520px); }
+  .section-3 { --dh: clamp(260px, calc((100svh - 290px) / 1.29), 520px); }
   .section-3 .dna { height: var(--dh); width: calc(var(--dh) * 0.3929); position: relative; }
   .dna-annot { display: block; position: absolute; left: 50%; top: calc(-100% * 40 / 280); transform: translateX(-50%); height: calc(100% * 320 / 280); width: calc(100% * 610 / 110); overflow: visible; pointer-events: none; }
   .dna-annot [data-at] { opacity: 0; transition: opacity 0.3s ease; }
@@ -2347,7 +2347,7 @@ body.motion-off .dna-ic .g1, body.motion-off .dna-ic .g2 { transform: none; }
   .pubs-grid.has-focus .pub-card:not(.focus) h3 { display: none; }
   .pubs-grid.has-focus .pub-card:not(.focus) .pub-body { padding: 8px 12px; }
   .pubs-grid.has-focus .pub-card:not(.focus) .pub-title { font-size: var(--font-size-small); }
-  .pubs-grid.has-focus .pub-card.focus .pub-img { flex-basis: 100%; min-height: clamp(220px, 36vh, 380px); }
+  .pubs-grid.has-focus .pub-card.focus .pub-img { flex-basis: 100%; min-height: clamp(220px, 36svh, 380px); }
   .pubs-grid.has-focus .pub-card.focus .pub-body { flex-basis: 100%; }
   .pubs-grid.has-focus .pub-card.focus .pub-blurb { display: none; }
 }
@@ -2362,7 +2362,7 @@ body.motion-off .dna-ic .g1, body.motion-off .dna-ic .g2 { transform: none; }
 
 /* short phones: the growing card must leave room for all three */
 @media (max-aspect-ratio: 1/1) and (max-height: 780px) {
-  .pubs-grid.has-focus .pub-card.focus .pub-img { min-height: 24vh; }
+  .pubs-grid.has-focus .pub-card.focus .pub-img { min-height: 24svh; }
   .pubs-grid.has-focus .pub-card.focus h3 { display: none; }
   .pubs-grid.has-focus .pub-card.focus .pub-body { padding: 8px 14px; }
   .pubs-grid.has-focus .pub-card:not(.focus) .pub-img { min-height: 52px; }
@@ -2658,9 +2658,9 @@ body.nav-on-dark .vacancy-card { display: none; }
 /* ─── PhD advert card in the home Join section (links to join.html#phd) ───
    Small: picture left, text right.  While its animation plays it grows VERTICALLY, in place (title above, the picture wide, details
    below) and the rest of the section shrinks around it, like the phone publication cards (see zoomIn/zoomOut in js/pah-card.js). */
-.vacancy-mini { display: grid; grid-template-columns: 128px minmax(0, 1fr); grid-template-rows: 1fr auto; grid-template-areas: "art head" "art foot"; column-gap: 16px; row-gap: 4px; align-items: start; width: min(520px, 100%); margin: 0 auto 22px; padding: 10px 16px 10px 10px; border-radius: 14px; background: rgba(81, 41, 64, 0.55); color: #fff; text-decoration: none; text-align: left; box-sizing: border-box; transition: background 0.2s ease; }
+.vacancy-mini { display: grid; grid-template-columns: 128px minmax(0, 1fr); grid-template-rows: 1fr auto; grid-template-areas: "art head" "art foot"; column-gap: 16px; row-gap: 4px; align-items: start; width: min(520px, 100%); margin: 0 auto 22px; padding: 10px 16px 10px 10px; border-radius: 14px; background: rgba(81, 41, 64, 0.96); color: #fff; text-decoration: none; text-align: left; box-sizing: border-box; transition: background 0.2s ease; position: relative; z-index: 2; }   /* near-solid: the intro text above must never show through */
 .vacancy-mini[hidden] { display: none; }
-.vacancy-mini:hover, .vacancy-mini:focus-visible { background: rgba(81, 41, 64, 0.7); }
+.vacancy-mini:hover, .vacancy-mini:focus-visible { background: rgb(95, 50, 76); }
 .vacancy-mini-art { grid-area: art; align-self: center; position: relative; width: 100%; aspect-ratio: 1080 / 940; border-radius: 8px; overflow: hidden; background: #F0E0EA; display: block; }
 .vacancy-mini-art svg { display: block; width: 100%; height: 100%; pointer-events: none; }
 .vacancy-mini.no-art { grid-template-columns: minmax(0, 1fr); grid-template-areas: "head" "foot"; }
@@ -2677,8 +2677,8 @@ body.nav-on-dark .vacancy-card { display: none; }
 .vacancy-mini.is-open { grid-template-columns: minmax(0, 1fr); grid-template-rows: auto; grid-template-areas: "head" "art" "foot"; row-gap: 10px; padding: 14px 18px 16px; }
 .vacancy-mini.is-open .vacancy-mini-head, .vacancy-mini.is-open .vacancy-mini-foot { align-self: auto; }
 .vacancy-mini.is-open .vacancy-mini-title { font-size: clamp(16px, 2.2vw, 22px); font-weight: 900; color: #f08ab8; }
-.vacancy-mini.is-open .vacancy-mini-art { justify-self: center; width: min(100%, calc((100vh - 450px) * 1080 / 940)); min-width: 120px; border-radius: 12px; }
-@media (max-width: 768px) { .vacancy-mini.is-open { padding: 12px 12px 14px; } .vacancy-mini.is-open .vacancy-mini-art { width: min(100%, calc((100vh - 360px) * 1080 / 940)); } }
+.vacancy-mini.is-open .vacancy-mini-art { justify-self: center; width: min(100%, calc((100svh - 450px) * 1080 / 940)); min-width: 120px; border-radius: 12px; }
+@media (max-width: 768px) { .vacancy-mini.is-open { padding: 12px 12px 14px; } .vacancy-mini.is-open .vacancy-mini-art { width: min(100%, calc((100svh - 360px) * 1080 / 940)); } }
 .vacancy-mini.is-open .vacancy-mini-note { font-size: 14px; }
 .vacancy-mini.is-open .vacancy-mini-go { justify-self: start; padding: 8px 16px; border-radius: 30px; background: #b22d64; color: #fff; font-size: 14px; }
 .vacancy-mini.flipping > * { animation: vmFade 0.45s ease both; }
@@ -2717,3 +2717,17 @@ html.is-ios-webkit .section-1 { --hero-video-backdrop: #000; }
   body.has-vacancy .news-strip-list { display: block; }
   body.has-vacancy .vacancy-card { bottom: 180px; }
 }
+
+/* Phones: show the whole Join intro, then the advert card, links and logos — all at once, no clipping or overlap.
+   (The intro used to be squeezed by the flex layout and cut off mid-sentence; the card expands later and folds this text away.) */
+@media (max-width: 768px) and (orientation: portrait) {
+  .join-section > * { flex: none; }
+  .section-6 { padding-top: 124px; }
+  .section-6 h2 { margin-bottom: 12px; }
+  .join-intro { margin-bottom: 12px; line-height: 1.45; }
+  .vacancy-mini { margin-bottom: 10px; }
+  .join-links { gap: 4px; margin-bottom: 8px; }
+  .join-images { margin-top: 6px; gap: 20px; }
+  .join-images img { height: 24px; }
+}
+@media (max-width: 768px) and (orientation: portrait) and (max-height: 650px) { .join-images { display: none; } }
