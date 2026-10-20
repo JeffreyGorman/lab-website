@@ -10,6 +10,8 @@ import { prefersReducedMotion } from './motion-state.js';
 const { SECTION_IDS, SECTION_LABELS } = CONFIG;
 
 const content = document.getElementById('smooth-content');
+// Mid-tone of each section's background, used for the browser bars (home, research, DNA, team, publications, join)
+const SECTION_BARS = ['#D4A5C3', '#C9A5D1', '#9D88BE', '#746494', '#84749F', '#746494'];
 let currentSection = 0;
 let isAnimating = false;
 let s3Done = false;
@@ -19,6 +21,15 @@ let s3Completed = false;
 
 export function initNavigation() {
   window.currentSection = currentSection;
+  updateNavUI(0);
+
+  // ── the logo takes you back to the top (home) ──
+  const logo = document.querySelector('.navbar-logo');
+  if (logo) {
+    logo.setAttribute('role', 'link'); logo.setAttribute('tabindex', '0'); logo.setAttribute('aria-label', 'ExP Lab home'); logo.style.cursor = 'pointer';
+    logo.addEventListener('click', () => { if (currentSection !== 0) goToSection(0); });
+    logo.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); if (currentSection !== 0) goToSection(0); } });
+  }
 
   // ── build side dots ──
   const sideNav = document.getElementById('side-nav');
@@ -128,6 +139,22 @@ export function initNavigation() {
     if (currentSection === 2 && !s3Done) {
       if (s3Completed) {
         return dir === 1 ? 3 : 1;
+      }
+      // PHONE SWIPES: one swipe = one stop (bullet 1, bullet 2, bullet 3, then the next page); swiping back retraces them
+      if (window.__touchStep) {
+        const tn = Date.now();
+        if (tn - (window.__s3LastStep || 0) < 250) return null;
+        window.__s3LastStep = tn;
+        if (dir === 1) {
+          const nxt = S3_STOPS.find(sp => sp > s3Progress + 1);
+          if (nxt === undefined) { s3Done = true; s3Completed = true; updateDNA(2000); return 3; }
+          s3Progress = nxt; updateDNA(nxt);
+          return null;
+        }
+        const prev = [...S3_STOPS].reverse().find(sp => sp < s3Progress - 1);
+        if (prev !== undefined) { s3Progress = prev; updateDNA(prev); return null; }
+        if (s3Progress > 0) { s3Progress = 0; updateDNA(0); return null; }
+        return 1;
       }
       const nowT = Date.now();
       // STAGE HOLD: the reveal pauses at each bullet/label (see S3_STOPS); to go on, the reader has to start a fresh
@@ -296,7 +323,9 @@ export function initNavigation() {
     if (Math.abs(swipeDistance) > 50) {
       const direction = swipeDistance > 0 ? 1 : -1;
       window.__wheelAbs = 0; window.__s3LastAbs = 0;
+      window.__touchStep = true;
       const next = getNextSection(direction);
+      window.__touchStep = false;
       if (next !== null) {
         lastWheelNavTime = Date.now();
         goToSection(next);
@@ -467,6 +496,15 @@ function goToSection(index) {
 }
 
 function updateNavUI(index) {
+  // Safari/iPhone tints its top and bottom bars from the theme colour and the page background: follow the section on screen
+  const bar = SECTION_BARS[index];
+  if (bar) {
+    let tc = document.querySelector('meta[name="theme-color"]');
+    if (!tc) { tc = document.createElement('meta'); tc.name = 'theme-color'; document.head.appendChild(tc); }
+    tc.content = bar;
+    document.documentElement.style.backgroundColor = bar;
+    document.body.style.backgroundColor = bar;
+  }
   document.body.classList.toggle('nav-on-dark', index >= 3); // section-4 onward has a dark bg — fade nav to white
   document.querySelectorAll('.nav-dot').forEach((dot, i) => {
     dot.classList.toggle('active', i === index);

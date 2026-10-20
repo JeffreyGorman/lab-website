@@ -2699,3 +2699,20 @@ body.nav-on-dark .vacancy-card { display: none; }
 html.is-ios-webkit .hero-video { filter: grayscale(100%) contrast(1.1); }
 html.is-ios-webkit .video-overlay { display: block; }
 html.is-ios-webkit .section-1 { --hero-video-backdrop: #000; }
+
+/* Phones (portrait): the news strip is one slim row — NEWS, the latest headline cut to one line with an ellipsis, and an arrow to all news.
+   Same width and style as the PhD advert row above it. */
+@media (max-width: 768px) and (orientation: portrait) {
+  .news-strip { display: flex; align-items: baseline; gap: 10px; padding: 9px 14px; }
+  .news-strip-title { margin: 0; flex: none; }
+  .news-strip-list { flex: 1 1 auto; min-width: 0; display: block; }
+  .news-strip-list li { display: block; }
+  .news-strip-list li:nth-child(n+2) { display: none; }
+  .news-strip-list time { display: none; }
+  .news-strip-list .news-text { display: block; }
+  .news-strip-all { margin: 0; flex: none; font-size: 0; }
+  .news-strip-all span { font-size: 17px; line-height: 1; }
+  body.has-vacancy .news-strip { display: flex; }
+  body.has-vacancy .news-strip-list { display: block; }
+  body.has-vacancy .vacancy-card { bottom: 180px; }
+}
