@@ -1,0 +1,290 @@
+<svg class="pah-card-svg" data-end="14.3" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="-409 -413 1427 988" role="img" aria-labelledby="scTitle scDesc">
+  <title id="scTitle">Symmetry-breaking charge transfer in a perylene diimide dimer inside a six-helix bundle of a hexagonal DNA origami</title>
+  <desc id="scDesc">A blueprint sketch of a hexagon with six spokes is filled in by the DNA origami, rod by rod. The origami is about 80 nm across and carries several PDI dimers, marked by dots. Zooming in on one, looking down the six-helix bundle that forms the edge, shows two perylene diimide (PDI) molecules stacked and slightly twisted in the hollow of the bundle. A second zoom into that hollow reveals the chemical structure of the two PDIs, which separate and untwist so each can be seen, with a linker that fades out toward the DNA. Their placement is encoded by the DNA. A photon excites the dimer, then the symmetry breaks: an electron transfers from one PDI to the other, leaving a positive charge on the first and a negative charge on the second.</desc>
+  <animate attributeName="viewBox" values="-245 -299 1098 760;167.3 -189 761.4 470" begin="8.4s" dur="1.5s" fill="freeze" calcMode="spline" keyTimes="0;1" keySplines="0.5 0 0.2 1"/>
+  <defs>
+    <g id="scRings"><polygon points="-25.1,21.1 -31.3,10.6 -25,0 -12.5,0.1 -6.4,10.9 -12.9,21.2"/><polygon points="49.9,-0 44.2,10.8 31.2,10.8 25,-0 31.3,-10.6 44,-10.9"/><polygon points="25,-0 31.2,10.8 25.1,21.2 13,21.3 6.4,10.9 12.5,-0.1"/><polygon points="-49.9,0 -44.2,-10.8 -31.2,-10.8 -25,0 -31.3,10.6 -44,10.9"/><polygon points="25.1,-21.1 31.3,-10.6 25,-0 12.5,-0.1 6.4,-10.9 12.9,-21.2"/><polygon points="6.4,10.9 12.5,-0.1 6.4,-10.9 -6.4,-10.9 -12.5,0.1 -6.4,10.9"/><polygon points="-25,0 -31.2,-10.8 -25.1,-21.2 -13,-21.3 -6.4,-10.9 -12.5,0.1"/></g>
+    <g id="scBonds"><path d="M-12.9 21.2L-6.4 10.9M-12.5 0.1L-6.4 10.9M-13.8 2.8L-9.4 10.6M6.4 10.9L-6.4 10.9M-25.1 21.1L-12.9 21.2M-23.4 18.7L-14.6 18.8M12.9 -21.2L6.4 -10.9M12.9 -21.2L25.1 -21.1M14.6 -18.8L23.4 -18.7M-31.3 10.6L-44 10.9M-44 10.9L-47.9 3.7M-46.4 17.1L-42.9 11.6M-48.7 15.7L-45.2 10.2M31.3 -10.6L44 -10.9M47.9 -3.7L44 -10.9M46.4 -17.1L42.9 -11.6M48.7 -15.7L45.2 -10.2M-44.2 -10.8L-31.2 -10.8M-44.2 -10.8L-47.9 -3.7M-43 -11.5L-46.5 -17.1M-45.3 -10.1L-48.8 -15.7M31.2 10.8L44.2 10.8M47.9 3.7L44.2 10.8M48.8 15.7L45.3 10.1M46.5 17.1L43 11.5M-62.9 0.3L-54.1 0.1M62.9 -0.3L54.1 -0.1M6.4 -10.9L12.5 -0.1M9.4 -10.6L13.8 -2.8M6.4 -10.9L-6.4 -10.9M-12.5 0.1L-6.4 -10.9M-12.5 0.1L-25 0M6.4 10.9L12.5 -0.1M25 -0L12.5 -0.1M-13 -21.3L-6.4 -10.9M-14.1 -18.5L-9.4 -11.1M6.4 10.9L13 21.3M9.4 11.1L14.1 18.5M-13 -21.3L-25.1 -21.2M13 21.3L25.1 21.2M-25.1 -21.2L-31.2 -10.8M-23.8 -18.5L-28.3 -11M31.2 10.8L25.1 21.2M28.3 11L23.8 18.5M-25 0L-31.2 -10.8M25 -0L31.2 10.8M-25 0L-31.3 10.6M-23.8 2.8L-28.3 10.4M25 -0L31.3 -10.6M23.8 -2.8L28.3 -10.4M-25.1 21.1L-31.3 10.6M31.3 -10.6L25.1 -21.1" stroke="var(--pah-edge)" stroke-width="1.15" stroke-linecap="round"/>
+      <text x="-49.9" y="0.3" text-anchor="middle" dominant-baseline="central" class="pah-atom" style="font-size:10px;font-family:Inter,'Helvetica Neue',Arial,sans-serif;font-weight:500;stroke:none;fill:#512940">N</text>
+      <text x="49.9" y="0.3" text-anchor="middle" dominant-baseline="central" class="pah-atom" style="font-size:10px;font-family:Inter,'Helvetica Neue',Arial,sans-serif;font-weight:500;stroke:none;fill:#512940">N</text>
+      <text x="-49.8" y="20.2" text-anchor="middle" dominant-baseline="central" class="pah-atom" style="font-size:10px;font-family:Inter,'Helvetica Neue',Arial,sans-serif;font-weight:500;stroke:none;fill:#512940">O</text>
+      <text x="49.8" y="-19.6" text-anchor="middle" dominant-baseline="central" class="pah-atom" style="font-size:10px;font-family:Inter,'Helvetica Neue',Arial,sans-serif;font-weight:500;stroke:none;fill:#512940">O</text>
+      <text x="-49.9" y="-19.6" text-anchor="middle" dominant-baseline="central" class="pah-atom" style="font-size:10px;font-family:Inter,'Helvetica Neue',Arial,sans-serif;font-weight:500;stroke:none;fill:#512940">O</text>
+      <text x="49.9" y="20.2" text-anchor="middle" dominant-baseline="central" class="pah-atom" style="font-size:10px;font-family:Inter,'Helvetica Neue',Arial,sans-serif;font-weight:500;stroke:none;fill:#512940">O</text>
+    </g>
+    <g id="scLink" stroke="var(--pah-edge)" stroke-width="1.15" stroke-linecap="round"><path d="M-62.9 0.3L-73.7 -6.9" opacity="0.7"/><path d="M-73.7 -6.9L-84.1 0.8" opacity="0.45"/><path d="M-84.1 0.8L-94.9 -6.4" opacity="0.22"/><path d="M62.9 -0.3L73.7 6.9" opacity="0.7"/><path d="M73.7 6.9L84.1 -0.8" opacity="0.45"/><path d="M84.1 -0.8L94.9 6.4" opacity="0.22"/></g>
+    <clipPath id="scClip"><circle cx="0" cy="0" r="282"/></clipPath>
+  </defs>
+  <ellipse cx="0" cy="137" rx="215.2" ry="24" fill="#3a2a5c" opacity="0"><animate attributeName="opacity" values="0;0.16" begin="2.4s" dur="0.9s" fill="freeze"/></ellipse>
+  <!-- blueprint sketch -->
+  <g stroke="var(--pah-line)" stroke-width="1.4" stroke-linecap="round" opacity="0.85">
+    <animate attributeName="opacity" values="0.85;0.85;0.4" keyTimes="0;0.55;1" begin="0s" dur="3.4s" fill="freeze"/>
+    <ellipse cx="0" cy="0" rx="205" ry="118.9" stroke-dasharray="5 7"/>
+    <path d="M-241.9 0L241.9 0" stroke-dasharray="14 5 2 5" opacity="0"><animate attributeName="opacity" values="0;0.8" begin="0.1s" dur="0.4s" fill="freeze"/></path>
+    <path d="M0 -140.3L0 140.3" stroke-dasharray="14 5 2 5" opacity="0"><animate attributeName="opacity" values="0;0.8" begin="0.2s" dur="0.4s" fill="freeze"/></path>
+    <path d="M-114.8 -115.3L114.8 115.3" stroke-dasharray="14 5 2 5" opacity="0"><animate attributeName="opacity" values="0;0.8" begin="0.3s" dur="0.4s" fill="freeze"/></path>
+    <path d="M114.8 -115.3L-114.8 115.3" stroke-dasharray="14 5 2 5" opacity="0"><animate attributeName="opacity" values="0;0.8" begin="0.4s" dur="0.4s" fill="freeze"/></path>
+    <path d="M205 0L102.5 103" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1"><animate attributeName="stroke-dashoffset" values="1;0" begin="0.2s" dur="0.5s" fill="freeze"/></path>
+    <path d="M102.5 103L-102.5 103" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1"><animate attributeName="stroke-dashoffset" values="1;0" begin="0.3s" dur="0.5s" fill="freeze"/></path>
+    <path d="M-102.5 103L-205 0" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1"><animate attributeName="stroke-dashoffset" values="1;0" begin="0.3s" dur="0.5s" fill="freeze"/></path>
+    <path d="M-205 0L-102.5 -103" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1"><animate attributeName="stroke-dashoffset" values="1;0" begin="0.4s" dur="0.5s" fill="freeze"/></path>
+    <path d="M-102.5 -103L102.5 -103" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1"><animate attributeName="stroke-dashoffset" values="1;0" begin="0.4s" dur="0.5s" fill="freeze"/></path>
+    <path d="M102.5 -103L205 0" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1"><animate attributeName="stroke-dashoffset" values="1;0" begin="0.5s" dur="0.5s" fill="freeze"/></path>
+    <path d="M0 0L205 0" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1"><animate attributeName="stroke-dashoffset" values="1;0" begin="0.6s" dur="0.5s" fill="freeze"/></path>
+    <path d="M0 0L102.5 103" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1"><animate attributeName="stroke-dashoffset" values="1;0" begin="0.6s" dur="0.5s" fill="freeze"/></path>
+    <path d="M0 0L-102.5 103" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1"><animate attributeName="stroke-dashoffset" values="1;0" begin="0.7s" dur="0.5s" fill="freeze"/></path>
+    <path d="M0 0L-205 0" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1"><animate attributeName="stroke-dashoffset" values="1;0" begin="0.7s" dur="0.5s" fill="freeze"/></path>
+    <path d="M0 0L-102.5 -103" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1"><animate attributeName="stroke-dashoffset" values="1;0" begin="0.8s" dur="0.5s" fill="freeze"/></path>
+    <path d="M0 0L102.5 -103" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1"><animate attributeName="stroke-dashoffset" values="1;0" begin="0.9s" dur="0.5s" fill="freeze"/></path>
+    <circle cx="205" cy="0" r="13" opacity="0"><animate attributeName="opacity" values="0;1" begin="0.5s" dur="0.3s" fill="freeze"/></circle>
+    <circle cx="102.5" cy="103" r="13" opacity="0"><animate attributeName="opacity" values="0;1" begin="0.6s" dur="0.3s" fill="freeze"/></circle>
+    <circle cx="-102.5" cy="103" r="13" opacity="0"><animate attributeName="opacity" values="0;1" begin="0.6s" dur="0.3s" fill="freeze"/></circle>
+    <circle cx="-205" cy="0" r="13" opacity="0"><animate attributeName="opacity" values="0;1" begin="0.7s" dur="0.3s" fill="freeze"/></circle>
+    <circle cx="-102.5" cy="-103" r="13" opacity="0"><animate attributeName="opacity" values="0;1" begin="0.8s" dur="0.3s" fill="freeze"/></circle>
+    <circle cx="102.5" cy="-103" r="13" opacity="0"><animate attributeName="opacity" values="0;1" begin="0.9s" dur="0.3s" fill="freeze"/></circle>
+    <circle cx="0" cy="0" r="16" opacity="0"><animate attributeName="opacity" values="0;1" begin="0.6s" dur="0.3s" fill="freeze"/></circle>
+  </g>
+  <g opacity="0"><animate attributeName="opacity" values="0;1" begin="0.9s" dur="0.5s" fill="freeze"/>
+    <line x1="-205" y1="-14" x2="-205" y2="-149" stroke="var(--pah-line)" stroke-width="2" stroke-dasharray="6 6"/>
+    <line x1="205" y1="-14" x2="205" y2="-149" stroke="var(--pah-line)" stroke-width="2" stroke-dasharray="6 6"/>
+    <line x1="-193" y1="-137" x2="193" y2="-137" stroke="var(--pah-line)" stroke-width="2"/>
+    <path d="M -205 -137 L -191 -143 L -191 -131 Z" fill="var(--pah-line)"/><path d="M 205 -137 L 191 -143 L 191 -131 Z" fill="var(--pah-line)"/>
+    <rect x="-95" y="-165" width="190" height="52" rx="4" fill="var(--pah-card)"/><text x="0" y="-123" text-anchor="middle" class="pah-dim" aria-hidden="true" style="font-size:41px">~80 nm</text>
+  </g>
+  <!-- DNA origami: rim edge by edge, then spokes -->
+  <g>
+    <path d="M205 0L102.5 103" transform="translate(0,6)" stroke="var(--pah-edge)" stroke-width="17" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1"><animate attributeName="stroke-dashoffset" values="1;0" begin="1s" dur="0.4s" fill="freeze"/></path>
+    <path d="M205 0L102.5 103" stroke="var(--pah-edge)" stroke-width="17" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1"><animate attributeName="stroke-dashoffset" values="1;0" begin="1s" dur="0.4s" fill="freeze"/></path>
+    <path d="M205 0L102.5 103" stroke="var(--pah-hatch)" stroke-width="12" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1"><animate attributeName="stroke-dashoffset" values="1;0" begin="1s" dur="0.4s" fill="freeze"/></path>
+    <path d="M205 0L102.5 103" stroke="var(--pah-face)" stroke-width="9" stroke-dasharray="2 12" opacity="0"><animate attributeName="opacity" values="0;0.7" begin="1.3s" dur="0.3s" fill="freeze"/></path>
+  </g>
+  <g>
+    <path d="M102.5 103L-102.5 103" transform="translate(0,6)" stroke="var(--pah-edge)" stroke-width="17" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1"><animate attributeName="stroke-dashoffset" values="1;0" begin="1.1s" dur="0.4s" fill="freeze"/></path>
+    <path d="M102.5 103L-102.5 103" stroke="var(--pah-edge)" stroke-width="17" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1"><animate attributeName="stroke-dashoffset" values="1;0" begin="1.1s" dur="0.4s" fill="freeze"/></path>
+    <path d="M102.5 103L-102.5 103" stroke="var(--pah-hatch)" stroke-width="12" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1"><animate attributeName="stroke-dashoffset" values="1;0" begin="1.1s" dur="0.4s" fill="freeze"/></path>
+    <path d="M102.5 103L-102.5 103" stroke="var(--pah-face)" stroke-width="9" stroke-dasharray="2 12" opacity="0"><animate attributeName="opacity" values="0;0.7" begin="1.4s" dur="0.3s" fill="freeze"/></path>
+  </g>
+  <g>
+    <path d="M-102.5 103L-205 0" transform="translate(0,6)" stroke="var(--pah-edge)" stroke-width="17" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1"><animate attributeName="stroke-dashoffset" values="1;0" begin="1.3s" dur="0.4s" fill="freeze"/></path>
+    <path d="M-102.5 103L-205 0" stroke="var(--pah-edge)" stroke-width="17" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1"><animate attributeName="stroke-dashoffset" values="1;0" begin="1.3s" dur="0.4s" fill="freeze"/></path>
+    <path d="M-102.5 103L-205 0" stroke="var(--pah-hatch)" stroke-width="12" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1"><animate attributeName="stroke-dashoffset" values="1;0" begin="1.3s" dur="0.4s" fill="freeze"/></path>
+    <path d="M-102.5 103L-205 0" stroke="var(--pah-face)" stroke-width="9" stroke-dasharray="2 12" opacity="0"><animate attributeName="opacity" values="0;0.7" begin="1.6s" dur="0.3s" fill="freeze"/></path>
+  </g>
+  <g>
+    <path d="M-205 0L-102.5 -103" transform="translate(0,6)" stroke="var(--pah-edge)" stroke-width="17" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1"><animate attributeName="stroke-dashoffset" values="1;0" begin="1.4s" dur="0.4s" fill="freeze"/></path>
+    <path d="M-205 0L-102.5 -103" stroke="var(--pah-edge)" stroke-width="17" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1"><animate attributeName="stroke-dashoffset" values="1;0" begin="1.4s" dur="0.4s" fill="freeze"/></path>
+    <path d="M-205 0L-102.5 -103" stroke="var(--pah-hatch)" stroke-width="12" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1"><animate attributeName="stroke-dashoffset" values="1;0" begin="1.4s" dur="0.4s" fill="freeze"/></path>
+    <path d="M-205 0L-102.5 -103" stroke="var(--pah-face)" stroke-width="9" stroke-dasharray="2 12" opacity="0"><animate attributeName="opacity" values="0;0.7" begin="1.7s" dur="0.3s" fill="freeze"/></path>
+  </g>
+  <g>
+    <path d="M-102.5 -103L102.5 -103" transform="translate(0,6)" stroke="var(--pah-edge)" stroke-width="17" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1"><animate attributeName="stroke-dashoffset" values="1;0" begin="1.6s" dur="0.4s" fill="freeze"/></path>
+    <path d="M-102.5 -103L102.5 -103" stroke="var(--pah-edge)" stroke-width="17" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1"><animate attributeName="stroke-dashoffset" values="1;0" begin="1.6s" dur="0.4s" fill="freeze"/></path>
+    <path d="M-102.5 -103L102.5 -103" stroke="var(--pah-hatch)" stroke-width="12" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1"><animate attributeName="stroke-dashoffset" values="1;0" begin="1.6s" dur="0.4s" fill="freeze"/></path>
+    <path d="M-102.5 -103L102.5 -103" stroke="var(--pah-face)" stroke-width="9" stroke-dasharray="2 12" opacity="0"><animate attributeName="opacity" values="0;0.7" begin="1.8s" dur="0.3s" fill="freeze"/></path>
+  </g>
+  <g>
+    <path d="M102.5 -103L205 0" transform="translate(0,6)" stroke="var(--pah-edge)" stroke-width="17" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1"><animate attributeName="stroke-dashoffset" values="1;0" begin="1.7s" dur="0.4s" fill="freeze"/></path>
+    <path d="M102.5 -103L205 0" stroke="var(--pah-edge)" stroke-width="17" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1"><animate attributeName="stroke-dashoffset" values="1;0" begin="1.7s" dur="0.4s" fill="freeze"/></path>
+    <path d="M102.5 -103L205 0" stroke="var(--pah-hatch)" stroke-width="12" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1"><animate attributeName="stroke-dashoffset" values="1;0" begin="1.7s" dur="0.4s" fill="freeze"/></path>
+    <path d="M102.5 -103L205 0" stroke="var(--pah-face)" stroke-width="9" stroke-dasharray="2 12" opacity="0"><animate attributeName="opacity" values="0;0.7" begin="2s" dur="0.3s" fill="freeze"/></path>
+  </g>
+  <g>
+    <path d="M0 0L205 0" transform="translate(0,6)" stroke="var(--pah-edge)" stroke-width="15" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1"><animate attributeName="stroke-dashoffset" values="1;0" begin="1.8s" dur="0.4s" fill="freeze"/></path>
+    <path d="M0 0L205 0" stroke="var(--pah-edge)" stroke-width="15" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1"><animate attributeName="stroke-dashoffset" values="1;0" begin="1.8s" dur="0.4s" fill="freeze"/></path>
+    <path d="M0 0L205 0" stroke="var(--pah-hatch)" stroke-width="10" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1"><animate attributeName="stroke-dashoffset" values="1;0" begin="1.8s" dur="0.4s" fill="freeze"/></path>
+    <path d="M0 0L205 0" stroke="var(--pah-face)" stroke-width="7" stroke-dasharray="2 12" opacity="0"><animate attributeName="opacity" values="0;0.7" begin="2.1s" dur="0.3s" fill="freeze"/></path>
+  </g>
+  <g>
+    <path d="M0 0L102.5 103" transform="translate(0,6)" stroke="var(--pah-edge)" stroke-width="15" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1"><animate attributeName="stroke-dashoffset" values="1;0" begin="2s" dur="0.4s" fill="freeze"/></path>
+    <path d="M0 0L102.5 103" stroke="var(--pah-edge)" stroke-width="15" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1"><animate attributeName="stroke-dashoffset" values="1;0" begin="2s" dur="0.4s" fill="freeze"/></path>
+    <path d="M0 0L102.5 103" stroke="var(--pah-hatch)" stroke-width="10" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1"><animate attributeName="stroke-dashoffset" values="1;0" begin="2s" dur="0.4s" fill="freeze"/></path>
+    <path d="M0 0L102.5 103" stroke="var(--pah-face)" stroke-width="7" stroke-dasharray="2 12" opacity="0"><animate attributeName="opacity" values="0;0.7" begin="2.3s" dur="0.3s" fill="freeze"/></path>
+  </g>
+  <g>
+    <path d="M0 0L-102.5 103" transform="translate(0,6)" stroke="var(--pah-edge)" stroke-width="15" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1"><animate attributeName="stroke-dashoffset" values="1;0" begin="2.1s" dur="0.4s" fill="freeze"/></path>
+    <path d="M0 0L-102.5 103" stroke="var(--pah-edge)" stroke-width="15" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1"><animate attributeName="stroke-dashoffset" values="1;0" begin="2.1s" dur="0.4s" fill="freeze"/></path>
+    <path d="M0 0L-102.5 103" stroke="var(--pah-hatch)" stroke-width="10" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1"><animate attributeName="stroke-dashoffset" values="1;0" begin="2.1s" dur="0.4s" fill="freeze"/></path>
+    <path d="M0 0L-102.5 103" stroke="var(--pah-face)" stroke-width="7" stroke-dasharray="2 12" opacity="0"><animate attributeName="opacity" values="0;0.7" begin="2.4s" dur="0.3s" fill="freeze"/></path>
+  </g>
+  <g>
+    <path d="M0 0L-205 0" transform="translate(0,6)" stroke="var(--pah-edge)" stroke-width="15" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1"><animate attributeName="stroke-dashoffset" values="1;0" begin="2.3s" dur="0.4s" fill="freeze"/></path>
+    <path d="M0 0L-205 0" stroke="var(--pah-edge)" stroke-width="15" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1"><animate attributeName="stroke-dashoffset" values="1;0" begin="2.3s" dur="0.4s" fill="freeze"/></path>
+    <path d="M0 0L-205 0" stroke="var(--pah-hatch)" stroke-width="10" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1"><animate attributeName="stroke-dashoffset" values="1;0" begin="2.3s" dur="0.4s" fill="freeze"/></path>
+    <path d="M0 0L-205 0" stroke="var(--pah-face)" stroke-width="7" stroke-dasharray="2 12" opacity="0"><animate attributeName="opacity" values="0;0.7" begin="2.5s" dur="0.3s" fill="freeze"/></path>
+  </g>
+  <g>
+    <path d="M0 0L-102.5 -103" transform="translate(0,6)" stroke="var(--pah-edge)" stroke-width="15" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1"><animate attributeName="stroke-dashoffset" values="1;0" begin="2.4s" dur="0.4s" fill="freeze"/></path>
+    <path d="M0 0L-102.5 -103" stroke="var(--pah-edge)" stroke-width="15" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1"><animate attributeName="stroke-dashoffset" values="1;0" begin="2.4s" dur="0.4s" fill="freeze"/></path>
+    <path d="M0 0L-102.5 -103" stroke="var(--pah-hatch)" stroke-width="10" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1"><animate attributeName="stroke-dashoffset" values="1;0" begin="2.4s" dur="0.4s" fill="freeze"/></path>
+    <path d="M0 0L-102.5 -103" stroke="var(--pah-face)" stroke-width="7" stroke-dasharray="2 12" opacity="0"><animate attributeName="opacity" values="0;0.7" begin="2.7s" dur="0.3s" fill="freeze"/></path>
+  </g>
+  <g>
+    <path d="M0 0L102.5 -103" transform="translate(0,6)" stroke="var(--pah-edge)" stroke-width="15" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1"><animate attributeName="stroke-dashoffset" values="1;0" begin="2.5s" dur="0.4s" fill="freeze"/></path>
+    <path d="M0 0L102.5 -103" stroke="var(--pah-edge)" stroke-width="15" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1"><animate attributeName="stroke-dashoffset" values="1;0" begin="2.5s" dur="0.4s" fill="freeze"/></path>
+    <path d="M0 0L102.5 -103" stroke="var(--pah-hatch)" stroke-width="10" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1"><animate attributeName="stroke-dashoffset" values="1;0" begin="2.5s" dur="0.4s" fill="freeze"/></path>
+    <path d="M0 0L102.5 -103" stroke="var(--pah-face)" stroke-width="7" stroke-dasharray="2 12" opacity="0"><animate attributeName="opacity" values="0;0.7" begin="2.8s" dur="0.3s" fill="freeze"/></path>
+  </g>
+  <circle cx="205" cy="0" r="9" fill="var(--pah-edge)" opacity="0"><animate attributeName="opacity" values="0;1" begin="1.3s" dur="0.2s" fill="freeze"/></circle>
+  <circle cx="102.5" cy="103" r="9" fill="var(--pah-edge)" opacity="0"><animate attributeName="opacity" values="0;1" begin="1.4s" dur="0.2s" fill="freeze"/></circle>
+  <circle cx="-102.5" cy="103" r="9" fill="var(--pah-edge)" opacity="0"><animate attributeName="opacity" values="0;1" begin="1.6s" dur="0.2s" fill="freeze"/></circle>
+  <circle cx="-205" cy="0" r="9" fill="var(--pah-edge)" opacity="0"><animate attributeName="opacity" values="0;1" begin="1.7s" dur="0.2s" fill="freeze"/></circle>
+  <circle cx="-102.5" cy="-103" r="9" fill="var(--pah-edge)" opacity="0"><animate attributeName="opacity" values="0;1" begin="1.9s" dur="0.2s" fill="freeze"/></circle>
+  <circle cx="102.5" cy="-103" r="9" fill="var(--pah-edge)" opacity="0"><animate attributeName="opacity" values="0;1" begin="2s" dur="0.2s" fill="freeze"/></circle>
+  <circle cx="0" cy="0" r="12" fill="var(--pah-edge)" opacity="0"><animate attributeName="opacity" values="0;1" begin="2.2s" dur="0.3s" fill="freeze"/></circle>
+  <!-- PDI-dimer markers -->
+  <g opacity="0">
+    <animate attributeName="opacity" values="0;1;1;0.45" keyTimes="0;0.1;0.55;1" begin="2.9s" dur="1.1s" fill="freeze"/>
+    <circle cx="153.8" cy="51.5" r="6" fill="var(--honeycomb-bullet-active-photon)"/></g>
+  <g opacity="0">
+    <animate attributeName="opacity" values="0;1;1;0.45" keyTimes="0;0.1;0.55;1" begin="3s" dur="1s" fill="freeze"/>
+    <circle cx="-153.7" cy="51.5" r="6" fill="var(--honeycomb-bullet-active-photon)"/></g>
+  <g opacity="0">
+    <animate attributeName="opacity" values="0;1;1;0.45" keyTimes="0;0.1;0.55;1" begin="3s" dur="1s" fill="freeze"/>
+    <circle cx="-153.8" cy="-51.5" r="6" fill="var(--honeycomb-bullet-active-photon)"/></g>
+  <g opacity="0">
+    <animate attributeName="opacity" values="0;1;1;0.45" keyTimes="0;0.1;0.55;1" begin="3.1s" dur="0.9s" fill="freeze"/>
+    <circle cx="-0" cy="-103" r="6" fill="var(--honeycomb-bullet-active-photon)"/></g>
+  <g opacity="0">
+    <animate attributeName="opacity" values="0;1;1;0.45" keyTimes="0;0.1;0.55;1" begin="3.1s" dur="0.9s" fill="freeze"/>
+    <circle cx="153.8" cy="-51.5" r="6" fill="var(--honeycomb-bullet-active-photon)"/></g>
+  <g opacity="0">
+    <animate attributeName="opacity" values="0;1;1;0.45" keyTimes="0;0.1;0.55;1" begin="3.1s" dur="0.9s" fill="freeze"/>
+    <circle cx="102.5" cy="0" r="6" fill="var(--honeycomb-bullet-active-photon)"/></g>
+  <g opacity="0">
+    <animate attributeName="opacity" values="0;1;1;0.45" keyTimes="0;0.1;0.55;1" begin="3.2s" dur="0.8s" fill="freeze"/>
+    <circle cx="51.3" cy="51.5" r="6" fill="var(--honeycomb-bullet-active-photon)"/></g>
+  <g opacity="0">
+    <animate attributeName="opacity" values="0;1;1;0.45" keyTimes="0;0.1;0.55;1" begin="3.2s" dur="0.8s" fill="freeze"/>
+    <circle cx="-51.2" cy="51.5" r="6" fill="var(--honeycomb-bullet-active-photon)"/></g>
+  <g opacity="0">
+    <animate attributeName="opacity" values="0;1;1;0.45" keyTimes="0;0.1;0.55;1" begin="3.3s" dur="0.7s" fill="freeze"/>
+    <circle cx="-102.5" cy="0" r="6" fill="var(--honeycomb-bullet-active-photon)"/></g>
+  <g opacity="0">
+    <animate attributeName="opacity" values="0;1;1;0.45" keyTimes="0;0.1;0.55;1" begin="3.3s" dur="0.7s" fill="freeze"/>
+    <circle cx="-51.3" cy="-51.5" r="6" fill="var(--honeycomb-bullet-active-photon)"/></g>
+  <g opacity="0">
+    <animate attributeName="opacity" values="0;1;1;0.45" keyTimes="0;0.1;0.55;1" begin="3.3s" dur="0.7s" fill="freeze"/>
+    <circle cx="51.3" cy="-51.5" r="6" fill="var(--honeycomb-bullet-active-photon)"/></g>
+  <g opacity="0">
+    <animate attributeName="opacity" values="0;1" begin="2.9s" dur="0.2s" fill="freeze"/>
+    <circle cx="0" cy="103" r="16" fill="none" stroke="var(--honeycomb-bullet-active-photon)" stroke-width="3"><animate attributeName="r" values="12;24;12" dur="1.6s" begin="3.5s" repeatCount="indefinite"/><animate attributeName="opacity" values="1;0.3;1" dur="1.6s" begin="3.5s" repeatCount="indefinite"/></circle>
+    <circle cx="0" cy="103" r="8" fill="var(--honeycomb-bullet-active-photon)"/>
+  </g>
+  <g opacity="0"><animate attributeName="opacity" values="0;1" begin="3.8s" dur="0.5s" fill="freeze"/>
+    <line x1="0" y1="103" x2="376.1" y2="-181.4" stroke="var(--pah-line)" stroke-width="2" stroke-dasharray="6 6"/>
+    <line x1="0" y1="103" x2="426.6" y2="303.8" stroke="var(--pah-line)" stroke-width="2" stroke-dasharray="6 6"/>
+  </g>
+  <circle cx="0" cy="103" r="0" fill="var(--pah-face)" fill-opacity=".55" stroke="var(--pah-edge)" stroke-width="4">
+    <animate attributeName="cx" values="0;548" begin="3.8s" dur="0.9s" fill="freeze" calcMode="spline" keyTimes="0;1" keySplines="0.45 0 0.2 1"/><animate attributeName="cy" values="103;46" begin="3.8s" dur="0.9s" fill="freeze" calcMode="spline" keyTimes="0;1" keySplines="0.45 0 0.2 1"/><animate attributeName="r" values="0;285" begin="3.8s" dur="0.9s" fill="freeze" calcMode="spline" keyTimes="0;1" keySplines="0.45 0 0.2 1"/>
+  </circle>
+  <g transform="translate(548,46)">
+   <g clip-path="url(#scClip)">
+    <g>
+     <animateTransform attributeName="transform" type="scale" values="1;3.3" begin="8.4s" dur="1.5s" fill="freeze" calcMode="spline" keyTimes="0;1" keySplines="0.5 0 0.2 1"/>
+     <g>
+      <animate attributeName="opacity" values="1;0" begin="8.5s" dur="1.1s" fill="freeze"/>
+    <g transform="translate(176,0)" opacity="0"><animate attributeName="opacity" values="0;1" begin="4.9s" dur="0.3s" fill="freeze"/>
+      <circle r="88" fill="var(--pah-hatch)" stroke="var(--pah-edge)" stroke-width="4"/>
+      <path d="M0 0L78 28.4M0 0L61.2 56.1M0 0L35.1 75.2M0 0L3.6 82.9M0 0L-28.4 78M0 0L-56.1 61.2M0 0L-75.2 35.1M0 0L-82.9 3.6M0 0L-78 -28.4M0 0L-61.2 -56.1M0 0L-35.1 -75.2M0 0L-3.6 -82.9M0 0L28.4 -78M0 0L56.1 -61.2M0 0L75.2 -35.1M0 0L82.9 -3.6" stroke="var(--pah-face)" stroke-width="2" opacity=".75"/>
+      <circle cx="75.2" cy="27.4" r="5.5" fill="var(--pah-edge)"/>
+      <circle cx="-75.2" cy="-27.4" r="5.5" fill="var(--pah-edge)"/>
+    </g>
+    <g transform="translate(88,152.4)" opacity="0"><animate attributeName="opacity" values="0;1" begin="5s" dur="0.3s" fill="freeze"/>
+      <circle r="88" fill="var(--pah-hatch)" stroke="var(--pah-edge)" stroke-width="4"/>
+      <path d="M0 0L47.6 68M0 0L18 81M0 0L-14.4 81.7M0 0L-44.6 70M0 0L-68 47.6M0 0L-81 18M0 0L-81.7 -14.4M0 0L-70 -44.6M0 0L-47.6 -68M0 0L-18 -81M0 0L14.4 -81.7M0 0L44.6 -70M0 0L68 -47.6M0 0L81 -18M0 0L81.7 14.4M0 0L70 44.6" stroke="var(--pah-face)" stroke-width="2" opacity=".75"/>
+      <circle cx="45.9" cy="65.5" r="5.5" fill="var(--pah-edge)"/>
+      <circle cx="-45.9" cy="-65.5" r="5.5" fill="var(--pah-edge)"/>
+    </g>
+    <g transform="translate(-88,152.4)" opacity="0"><animate attributeName="opacity" values="0;1" begin="5.1s" dur="0.3s" fill="freeze"/>
+      <circle r="88" fill="var(--pah-hatch)" stroke="var(--pah-edge)" stroke-width="4"/>
+      <path d="M0 0L0 83M0 0L-31.8 76.7M0 0L-58.7 58.7M0 0L-76.7 31.8M0 0L-83 0M0 0L-76.7 -31.8M0 0L-58.7 -58.7M0 0L-31.8 -76.7M0 0L-0 -83M0 0L31.8 -76.7M0 0L58.7 -58.7M0 0L76.7 -31.8M0 0L83 -0M0 0L76.7 31.8M0 0L58.7 58.7M0 0L31.8 76.7" stroke="var(--pah-face)" stroke-width="2" opacity=".75"/>
+      <circle cx="0" cy="80" r="5.5" fill="var(--pah-edge)"/>
+      <circle cx="-0" cy="-80" r="5.5" fill="var(--pah-edge)"/>
+    </g>
+    <g transform="translate(-176,0)" opacity="0"><animate attributeName="opacity" values="0;1" begin="5.2s" dur="0.3s" fill="freeze"/>
+      <circle r="88" fill="var(--pah-hatch)" stroke="var(--pah-edge)" stroke-width="4"/>
+      <path d="M0 0L-47.6 68M0 0L-70 44.6M0 0L-81.7 14.4M0 0L-81 -18M0 0L-68 -47.6M0 0L-44.6 -70M0 0L-14.4 -81.7M0 0L18 -81M0 0L47.6 -68M0 0L70 -44.6M0 0L81.7 -14.4M0 0L81 18M0 0L68 47.6M0 0L44.6 70M0 0L14.4 81.7M0 0L-18 81" stroke="var(--pah-face)" stroke-width="2" opacity=".75"/>
+      <circle cx="-45.9" cy="65.5" r="5.5" fill="var(--pah-edge)"/>
+      <circle cx="45.9" cy="-65.5" r="5.5" fill="var(--pah-edge)"/>
+    </g>
+    <g transform="translate(-88,-152.4)" opacity="0"><animate attributeName="opacity" values="0;1" begin="5.3s" dur="0.3s" fill="freeze"/>
+      <circle r="88" fill="var(--pah-hatch)" stroke="var(--pah-edge)" stroke-width="4"/>
+      <path d="M0 0L-78 28.4M0 0L-82.9 -3.6M0 0L-75.2 -35.1M0 0L-56.1 -61.2M0 0L-28.4 -78M0 0L3.6 -82.9M0 0L35.1 -75.2M0 0L61.2 -56.1M0 0L78 -28.4M0 0L82.9 3.6M0 0L75.2 35.1M0 0L56.1 61.2M0 0L28.4 78M0 0L-3.6 82.9M0 0L-35.1 75.2M0 0L-61.2 56.1" stroke="var(--pah-face)" stroke-width="2" opacity=".75"/>
+      <circle cx="-75.2" cy="27.4" r="5.5" fill="var(--pah-edge)"/>
+      <circle cx="75.2" cy="-27.4" r="5.5" fill="var(--pah-edge)"/>
+    </g>
+    <g transform="translate(88,-152.4)" opacity="0"><animate attributeName="opacity" values="0;1" begin="5.4s" dur="0.3s" fill="freeze"/>
+      <circle r="88" fill="var(--pah-hatch)" stroke="var(--pah-edge)" stroke-width="4"/>
+      <path d="M0 0L-80.2 -21.5M0 0L-65.8 -50.5M0 0L-41.5 -71.9M0 0L-10.8 -82.3M0 0L21.5 -80.2M0 0L50.5 -65.8M0 0L71.9 -41.5M0 0L82.3 -10.8M0 0L80.2 21.5M0 0L65.8 50.5M0 0L41.5 71.9M0 0L10.8 82.3M0 0L-21.5 80.2M0 0L-50.5 65.8M0 0L-71.9 41.5M0 0L-82.3 10.8" stroke="var(--pah-face)" stroke-width="2" opacity=".75"/>
+      <circle cx="-77.3" cy="-20.7" r="5.5" fill="var(--pah-edge)"/>
+      <circle cx="77.3" cy="20.7" r="5.5" fill="var(--pah-edge)"/>
+    </g>
+    <circle cx="132" cy="76.2" r="8" fill="var(--pah-edge)" stroke="var(--pah-face)" stroke-width="2.5" opacity="0"><animate attributeName="opacity" values="0;1" begin="5.6s" dur="0.3s" fill="freeze"/></circle>
+    <circle cx="0" cy="152.4" r="8" fill="var(--pah-edge)" stroke="var(--pah-face)" stroke-width="2.5" opacity="0"><animate attributeName="opacity" values="0;1" begin="5.7s" dur="0.3s" fill="freeze"/></circle>
+    <circle cx="-132" cy="76.2" r="8" fill="var(--pah-edge)" stroke="var(--pah-face)" stroke-width="2.5" opacity="0"><animate attributeName="opacity" values="0;1" begin="5.7s" dur="0.3s" fill="freeze"/></circle>
+    <circle cx="-132" cy="-76.2" r="8" fill="var(--pah-edge)" stroke="var(--pah-face)" stroke-width="2.5" opacity="0"><animate attributeName="opacity" values="0;1" begin="5.8s" dur="0.3s" fill="freeze"/></circle>
+    <circle cx="-0" cy="-152.4" r="8" fill="var(--pah-edge)" stroke="var(--pah-face)" stroke-width="2.5" opacity="0"><animate attributeName="opacity" values="0;1" begin="5.8s" dur="0.3s" fill="freeze"/></circle>
+    <circle cx="132" cy="-76.2" r="8" fill="var(--pah-edge)" stroke="var(--pah-face)" stroke-width="2.5" opacity="0"><animate attributeName="opacity" values="0;1" begin="5.9s" dur="0.3s" fill="freeze"/></circle>
+     </g>
+    <g opacity="0"><!-- lower PDI -->
+      <animate attributeName="opacity" values="0;1" begin="5.5s" dur="0.5s" fill="freeze"/>
+      <g>
+        <animateTransform attributeName="transform" type="translate" values="0,0;-15,28" calcMode="spline" keyTimes="0;1" keySplines="0.45 0 0.2 1" begin="8.4s" dur="1.5s" fill="freeze"/>
+      <g>
+        <animateTransform attributeName="transform" type="rotate" values="0;-6" begin="8.4s" dur="1.5s" fill="freeze" calcMode="spline" keyTimes="0;1" keySplines="0.45 0 0.2 1"/>
+        <use href="#scRings" fill="var(--pah-face-o)" fill-opacity="1"/>
+        <use href="#scRings" fill="var(--honeycomb-bullet-active-photon)" opacity="0"><animate attributeName="opacity" values="0;0.75;0.75;0" keyTimes="0;0.2;0.75;1" begin="10.9s" dur="1.8s" fill="freeze"/></use>
+        <use href="#scBonds"/><use href="#scLink"/>
+      </g>
+      </g>
+    </g>
+    <g opacity="0"><!-- upper PDI (twisted) -->
+      <animate attributeName="opacity" values="0;1" begin="5.8s" dur="0.5s" fill="freeze"/>
+      <g>
+        <animateTransform attributeName="transform" type="translate" values="0,0;15,-28" calcMode="spline" keyTimes="0;1" keySplines="0.45 0 0.2 1" begin="8.4s" dur="1.5s" fill="freeze"/>
+      <g transform="rotate(-14)">
+        <animateTransform attributeName="transform" type="rotate" values="-14;9" begin="8.4s" dur="1.5s" fill="freeze" calcMode="spline" keyTimes="0;1" keySplines="0.45 0 0.2 1"/>
+        <use href="#scRings" fill="var(--pah-face-o)" fill-opacity=".82"/>
+        <use href="#scRings" fill="var(--honeycomb-bullet-active-photon)" opacity="0"><animate attributeName="opacity" values="0;0.75;0.75;0" keyTimes="0;0.2;0.75;1" begin="10.9s" dur="1.8s" fill="freeze"/></use>
+        <use href="#scBonds"/><use href="#scLink"/>
+      </g>
+      </g>
+    </g>
+    </g>
+   </g>
+   <g opacity="0">
+    <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.15;0.6;1" begin="10.4s" dur="0.8s" fill="freeze"/>
+    <animateTransform attributeName="transform" type="translate" values="-33.5,-21.8; 0,0" begin="10.4s" dur="0.5s" fill="freeze" calcMode="spline" keyTimes="0;1" keySplines="0.25 0.1 0.25 1"/>
+    <g transform="translate(-127.1,-207.1) rotate(33)">
+     <path d="M0 0 q10 -13 20 0 t20 0 t20 0 t20 0 t20 0 t20 0 t20 0" stroke="var(--honeycomb-bullet-active-photon)" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+     <path d="M79 -11 L95 0 L79 11 Z" fill="var(--honeycomb-bullet-active-photon)"/>
+    </g>
+   </g>
+   <g class="pah-var pah-var-a">
+    <g transform="translate(-49.5,92.4)" opacity="0">
+     <animateTransform attributeName="transform" type="translate" values="-49.5,92.4; 49.5,-92.4" begin="12.5s" dur="0.7s" fill="freeze" calcMode="spline" keyTimes="0;1" keySplines="0.4 0 0.2 1"/>
+     <animate attributeName="opacity" values="0;1" begin="12.5s" dur="0.15s" fill="freeze"/><circle r="15" fill="var(--honeycomb-bullet-active-electron)" stroke="var(--pah-face)" stroke-width="4"/><line x1="-7.5" y1="0" x2="7.5" y2="0" stroke="var(--pah-face)" stroke-width="4" stroke-linecap="round"/></g>
+    <g transform="translate(-49.5,92.4)" opacity="0"><animate attributeName="opacity" values="0;1" begin="12.8s" dur="0.3s" fill="freeze"/><circle r="15" fill="var(--pah-face)" stroke="#b22d64" stroke-width="4"/><line x1="-7.5" y1="0" x2="7.5" y2="0" stroke="#b22d64" stroke-width="4" stroke-linecap="round"/><line x1="0" y1="-7.5" x2="0" y2="7.5" stroke="#b22d64" stroke-width="4" stroke-linecap="round"/></g>
+    <circle cx="49.5" cy="-92.4" r="15" fill="none" stroke="var(--honeycomb-bullet-active-electron)" stroke-width="3" opacity="0"><animate attributeName="r" values="15;38" begin="13.2s" dur="0.9s" fill="freeze"/><animate attributeName="opacity" values="0.7;0" begin="13.2s" dur="0.9s" fill="freeze"/></circle>
+   </g>
+   <g class="pah-var pah-var-b" display="none">
+    <g transform="translate(49.5,-92.4)" opacity="0">
+     <animateTransform attributeName="transform" type="translate" values="49.5,-92.4; -49.5,92.4" begin="12.5s" dur="0.7s" fill="freeze" calcMode="spline" keyTimes="0;1" keySplines="0.4 0 0.2 1"/>
+     <animate attributeName="opacity" values="0;1" begin="12.5s" dur="0.15s" fill="freeze"/><circle r="15" fill="var(--honeycomb-bullet-active-electron)" stroke="var(--pah-face)" stroke-width="4"/><line x1="-7.5" y1="0" x2="7.5" y2="0" stroke="var(--pah-face)" stroke-width="4" stroke-linecap="round"/></g>
+    <g transform="translate(49.5,-92.4)" opacity="0"><animate attributeName="opacity" values="0;1" begin="12.8s" dur="0.3s" fill="freeze"/><circle r="15" fill="var(--pah-face)" stroke="#b22d64" stroke-width="4"/><line x1="-7.5" y1="0" x2="7.5" y2="0" stroke="#b22d64" stroke-width="4" stroke-linecap="round"/><line x1="0" y1="-7.5" x2="0" y2="7.5" stroke="#b22d64" stroke-width="4" stroke-linecap="round"/></g>
+    <circle cx="-49.5" cy="92.4" r="15" fill="none" stroke="var(--honeycomb-bullet-active-electron)" stroke-width="3" opacity="0"><animate attributeName="r" values="15;38" begin="13.2s" dur="0.9s" fill="freeze"/><animate attributeName="opacity" values="0.7;0" begin="13.2s" dur="0.9s" fill="freeze"/></circle>
+   </g>
+   <g opacity="0"><animate attributeName="opacity" values="0;1" begin="5.9s" dur="0.5s" fill="freeze"/><animate attributeName="opacity" values="1;0" begin="8.4s" dur="0.5s" fill="freeze"/><text x="0" y="-301" text-anchor="middle" class="pah-label" aria-hidden="true" style="font-size:41px">six-helix bundle</text></g>
+   <g opacity="0"><animate attributeName="opacity" values="0;1" begin="5.9s" dur="0.5s" fill="freeze"/><animate attributeName="opacity" values="1;0" begin="8.4s" dur="0.5s" fill="freeze"/>
+    <line x1="-264" y1="14" x2="-264" y2="353" stroke="var(--pah-line)" stroke-width="2" stroke-dasharray="6 6"/>
+    <line x1="264" y1="14" x2="264" y2="353" stroke="var(--pah-line)" stroke-width="2" stroke-dasharray="6 6"/>
+    <line x1="-252" y1="341" x2="252" y2="341" stroke="var(--pah-line)" stroke-width="2"/>
+    <path d="M -264 341 L -250 335 L -250 347 Z" fill="var(--pah-line)"/><path d="M 264 341 L 250 335 L 250 347 Z" fill="var(--pah-line)"/>
+    <rect x="-95" y="315" width="190" height="52" rx="4" fill="var(--pah-card)"/><text x="0" y="355" text-anchor="middle" class="pah-dim" aria-hidden="true" style="font-size:41px">~6 nm</text>
+   </g>
+   <g opacity="0"><animate attributeName="opacity" values="0;1" begin="10.1s" dur="0.5s" fill="freeze"/><line x1="134.5" y1="-137.4" x2="307" y2="-155.5" stroke="var(--pah-line)" stroke-width="2"/><circle cx="134.5" cy="-137.4" r="4" fill="var(--pah-line)"/><text x="315" y="-146.5" class="pah-label" aria-hidden="true" style="font-size:25px">PDI</text></g>
+   <g opacity="0"><animate attributeName="opacity" values="0;1" begin="10.1s" dur="0.5s" fill="freeze"/><line x1="35.5" y1="137.4" x2="307" y2="165.9" stroke="var(--pah-line)" stroke-width="2"/><circle cx="35.5" cy="137.4" r="4" fill="var(--pah-line)"/><text x="315" y="174.9" class="pah-label" aria-hidden="true" style="font-size:25px">PDI</text></g>
+   <g opacity="0"><animate attributeName="opacity" values="0;1" begin="12.5s" dur="0.5s" fill="freeze"/><rect x="-268" y="193" width="536" height="40" rx="4" fill="var(--pah-card)" fill-opacity="0.92"/><text x="0" y="223" text-anchor="middle" class="pah-label" aria-hidden="true" style="font-size:25px">symmetry breaking charge transfer</text></g>
+  </g>
+  <g opacity="0"><animate attributeName="opacity" values="0;1" begin="2.6s" dur="0.5s" fill="freeze"/><text x="0" y="179" text-anchor="middle" class="pah-label" aria-hidden="true" style="font-size:41px">DNA origami</text></g>
+</svg>

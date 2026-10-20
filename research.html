@@ -1,0 +1,900 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Research – ExP Lab</title>
+<style>
+  :root {
+    --dna-bg-color: rgba(255,255,255,0.06);
+    --color-primary: #b22d64;
+    --color-dark: #512940;
+    --color-bg-left: #B8A5D6;
+    --color-bg-right: #DBA5CD;
+    --color-text-light: #ffffff;
+    --font-size-base: 16px;
+    --font-size-large: 22px;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    color: var(--color-text-light);
+    background: linear-gradient(135deg, #7D6B9D 0%, #6A5B8A 100%);
+    background-attachment: fixed;
+    isolation: isolate;
+    min-height: 100vh;
+  }
+  .top-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 24px 5%;
+    background: #f4f1f7;
+  }
+  .top-bar-right {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+  .motion-label {
+    color: var(--color-primary);
+    font-size: 14px;
+    font-weight: 600;
+    white-space: nowrap;
+  }
+  .motion-label-state { display: inline-block; min-width: 22px; }
+  .motion-switch {
+    position: relative;
+    display: inline-block;
+    width: 40px;
+    height: 22px;
+    cursor: pointer;
+    vertical-align: middle;
+  }
+  .motion-switch input { opacity: 0; width: 0; height: 0; position: absolute; }
+  .motion-slider {
+    position: absolute;
+    inset: 0;
+    background: rgba(178, 45, 100, 0.25);
+    border: 1px solid rgba(178, 45, 100, 0.5);
+    border-radius: 22px;
+    transition: background 0.2s ease, border-color 0.2s ease;
+  }
+  .motion-slider::before {
+    content: '';
+    position: absolute;
+    height: 16px;
+    width: 16px;
+    left: 2px;
+    top: 2px;
+    background: var(--color-primary);
+    border-radius: 50%;
+    transition: transform 0.2s ease;
+  }
+  .motion-switch input:checked + .motion-slider {
+    background: var(--color-primary);
+    border-color: var(--color-primary);
+  }
+  .motion-switch input:checked + .motion-slider::before {
+    background: #fff;
+    transform: translateX(18px);
+  }
+  .back-link {
+    color: var(--color-primary);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 15px;
+    opacity: 0.9;
+  }
+  .back-link:hover { opacity: 1; }
+  .back-link::before { content: '← '; }
+  .logo {
+    font-weight: 900;
+    letter-spacing: -1px;
+    font-size: 20px;
+    color: var(--color-dark);
+  }
+  .logo-exp {
+    color: var(--color-primary);
+  }
+  main {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 10px 5% 0;
+  }
+  h1 {
+    font-size: clamp(36px, 6vw, 64px);
+    font-weight: 900;
+    letter-spacing: -1px;
+    margin: 10px 0 10px;
+    color: #fff;
+  }
+  .intro {
+    font-size: clamp(16px, 1.6vw, 20px);
+    max-width: 700px;
+    opacity: 0.85;
+    margin-bottom: 40px;
+    color: #fff;
+  }
+  /* Each block carries the same background color as its counterpart on
+     the main page (col-left / col-right / DNA section), so this page
+     reads as a natural single-column continuation of that color story. */
+  .research-block {
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 60px 5%;
+    margin: 0; /* hard transition between blocks — no gap, no rounded corners */
+  }
+  .research-block-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: center;
+  }
+  .research-block.reverse .research-text { order: 2; }
+  .research-block.reverse .research-visual { order: 1; }
+  .block-excitonics { background: linear-gradient(135deg, #B8A5D6 0%, #9D8BC4 100%); }
+  .block-photochem { background: linear-gradient(135deg, #DBA5CD 0%, #C895BD 100%); }
+  .block-dna { background: linear-gradient(135deg, #A890C8 0%, #9380B5 100%); }
+  .research-text h2 {
+    font-size: clamp(24px, 3vw, 34px);
+    font-weight: 900;
+    margin-bottom: 16px;
+    color: var(--color-primary);
+  }
+  .research-text p {
+    font-size: var(--font-size-base);
+    line-height: 1.6;
+    opacity: 0.95;
+    margin-bottom: 14px;
+  }
+  .research-text h3 { margin: 0 0 10px; font-weight: 700; font-size: 18px; }
+  .research-text ul { margin: 0; padding-left: 20px; line-height: 1.8; opacity: 0.95; }
+  .research-visual {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 380px;
+  }
+  #honeycomb-container {
+    width: 100%;
+    height: 380px !important;
+    max-height: 380px !important;
+    position: relative;
+  }
+  #reactor-site-wrapper {
+    height: 380px !important;
+    max-height: 380px !important;
+  }
+  .dna-visual-wrapper {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+  @media (max-width: 768px) {
+    .research-block {
+      padding: 28px 20px;
+    }
+    .research-block-inner {
+      grid-template-columns: 1fr;
+    }
+    .research-block.reverse .research-text,
+    .research-block.reverse .research-visual,
+    .research-text, .research-visual {
+      order: initial;
+    }
+    .research-visual, #honeycomb-container, #reactor-site-wrapper {
+      min-height: 300px;
+      height: 300px !important;
+      max-height: 300px !important;
+    }
+  }
+
+  /* ── Reused component styles (honeycomb / reactor / DNA) ── */
+#honeycomb-container {
+  width: 100%;
+  flex: 0 1 auto;
+  min-height: 0;
+  margin-top: auto;
+  margin-bottom: auto;
+  background: transparent;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: visible !important;
+  height: var(--honeycomb-max-height, 48vh);
+  max-height: var(--honeycomb-max-height, 48vh);
+}
+#honeycomb-container canvas {
+  display: block;
+  width: 100% !important;
+  height: 100% !important;
+  background: transparent;
+  cursor: pointer;
+  overflow: visible !important;
+}
+
+/* ─── REACTOR ─── */
+#reactor-site-wrapper {
+  width: 100%;
+  max-width: 100%;
+  max-height: 50vh;
+  perspective: 3000px;
+  position: relative;
+  overflow: visible !important;
+  min-height: 120px;
+  min-width: 0;
+  flex: 0 1 auto;
+  margin-top: auto;
+  margin-bottom: auto;
+  height: var(--honeycomb-max-height, 48vh);
+  max-height: var(--honeycomb-max-height, 48vh);
+}
+#master-layout {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0;
+  transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
+  transform: rotateX(5deg) rotateY(0deg);
+  width: 100%;
+  height: 100%;
+  position: relative;
+  --reactor-scale: 0.64;
+}
+.tech-line {
+  border: 2px solid var(--color-dark);
+}
+.wire {
+  position: absolute;
+  transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
+  top: 50%;
+  left: 50%;
+  pointer-events: none;
+  transform: translateZ(0);
+  will-change: transform;
+}
+#lamp-wrapper {
+  position: relative;
+  transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
+  flex: 0 0 calc(500px * var(--reactor-scale, 0.64));
+  perspective: 3000px;
+  will-change: transform; /* Safari parity with #flask-scene, see note below */
+}
+#lamp-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 500px;
+  height: 500px;
+  transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
+  transform: translate(-50%, -50%) scale3d(var(--reactor-scale, 0.64), var(--reactor-scale, 0.64), var(--reactor-scale, 0.64)) rotateX(-20deg);
+}
+#bulb {
+  position: relative;
+  width: 500px;
+  height: 500px;
+  transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
+  transform: translateZ(0); /* Safari fix: see note above #flask-container */
+}
+.filament-rod {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 8px;
+  height: 100px;
+  margin-top: 30px;
+  background: #010101;
+}
+.reactor-active .filament-rod {
+  animation: bulbPower 6s ease-in-out infinite;
+}
+
+#arc-svg {
+  position: absolute;
+  top: 55%;
+  left: 52%;
+  width: 96px;
+  height: 40px;
+  z-index: 10;
+  margin-left: -60px;
+  margin-top: 30px;
+}
+.arc-path {
+  fill: none;
+  stroke: #010101;
+  stroke-width: 4;
+}
+.reactor-active .arc-path {
+  animation: arcFade 6s ease-in-out infinite;
+}
+
+.base-panel {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background: rgba(255, 255, 255, 0.15) !important;
+  border: 1.5px solid #eeeef2;
+}
+#flask-scene {
+  position: relative;
+  transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
+  flex: 0 0 calc(500px * var(--reactor-scale, 0.64));
+  will-change: transform;
+  perspective: 3000px;
+}
+/* Note: #flask-container has always had its own `transform` (below),
+   which is why the flask kept its 3D look in Safari while the bulb
+   (whose #bulb wrapper had no transform of its own) went flat. */
+#flask-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 500px;
+  height: 500px;
+  transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
+  transform: translate(-50%, -50%) scale3d(var(--reactor-scale, 0.64), var(--reactor-scale, 0.64), var(--reactor-scale, 0.64)) rotateX(-20deg) translateZ(0);
+}
+.neck-side {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background: #51294010 !important;
+  border-left: 2px solid var(--color-dark);
+  border-right: 2px solid var(--color-dark);
+}
+.neck-rim {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border-radius: 50%;
+  border: 3px solid var(--color-dark) !important;
+  background: transparent !important;
+}
+.reactor-active .neck-rim {
+  animation: rimGlow 6s linear infinite;
+}
+
+.liquid-layer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border-radius: 50%;
+  transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
+  background: rgba(149, 135, 145, 0.15);
+  border: 1px solid rgba(149, 135, 145, 0.1);
+  will-change: transform;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  transform: translateZ(0);
+  /* Always attached (not scoped to .reactor-active like the rest of the
+     reactor) so toggling Motion pauses/resumes it in place instead of
+     resetting it via the .reactor-active remove/re-add restart trick —
+     this one's fine being a continual start/stop, per request. */
+  animation: liquidReact 6s linear infinite;
+}
+
+.vortex-ring {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border-radius: 50%;
+  transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
+  border: 6px solid transparent;
+  background: conic-gradient(from 0deg, var(--color-dark), rgba(81, 41, 64, 0.4) 30%, transparent 50%);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: destination-out;
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  filter: drop-shadow(0 0 5px rgba(81, 41, 64, 0.4));
+  will-change: transform;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+.stir-bar {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100px;
+  height: 24px;
+  margin-left: -50px;
+  margin-top: -12px;
+  background: transparent;
+  transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
+}
+  content: "";
+  position: absolute;
+  inset: -2px;
+  border: 2px solid var(--color-dark);
+  border-radius: 12px;
+  box-sizing: content-box;
+}
+.stir-bar::before { transform: translateZ(4px); background: #fff; }
+.stir-bar::after  { transform: translateZ(-4px); background: #b9a9b9; }
+.glass-envelope {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border: 1.5px solid rgba(81, 41, 64, 0.2);
+  border-radius: 50%;
+  pointer-events: none;
+  will-change: transform;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+#flask-shadow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  height: 400px;
+  margin-left: -200px;
+  margin-top: -200px;
+  background: radial-gradient(ellipse at center, rgba(1, 1, 1, 0.2) 0%, transparent 60%);
+  border-radius: 50%;
+  transform: translateY(260px) rotateX(90deg);
+  pointer-events: none;
+  z-index: -1;
+  filter: blur(2px);
+  will-change: transform;
+}
+.sparkle {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: var(--color-primary);
+  border-radius: 50%;
+  pointer-events: none;
+  opacity: 0;
+  box-shadow: 0 0 8px var(--color-primary);
+}
+.reactor-active .sparkle {
+  animation: sparkleBlast 6s linear infinite;
+}
+
+/* ─── PHOTON FIELD (arrows) ─── */
+#photon-field-wrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  pointer-events: none;
+  z-index: 50;
+  overflow: visible;
+}
+.photon-field {
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+.photon-label {
+  fill: var(--color-primary);
+  font-size: 38px;
+  font-weight: bold;
+  letter-spacing: 4px;
+  font-family: 'Departure Mono', monospace;
+  opacity: 0;
+  animation: textFlash 6s ease-in-out infinite;
+  display: none;
+}
+.growing-line {
+  fill: none;
+  stroke: var(--color-primary);
+  stroke-width: 2.5;
+  /* stroke-dasharray: 1; */
+  filter: drop-shadow(0 0 6px rgba(178, 45, 100, 0.6));
+  vector-effect: non-scaling-stroke;
+}
+.arrow-tip {
+  fill: var(--color-primary);
+  filter: drop-shadow(0 0 4px rgba(178, 45, 100, 0.6));
+}
+
+/* ─── REACTOR OVERLAY LABELS ─── */
+#reactor-labels-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 100;
+  overflow: hidden;
+}
+.reactor-label {
+  position: absolute;
+  font-family: 'Departure Mono', monospace;
+  font-weight: bold;
+  -webkit-text-stroke: 0.5px currentColor;
+  color: var(--color-primary);
+  white-space: nowrap;
+  text-align: center;
+  letter-spacing: 2px;
+}
+.reactor-label.light-text {
+  font-size: var(--light-font-size);
+}
+.reactor-active .reactor-label.light-text {
+  animation: textFlash 6s ease-in-out infinite;
+}
+
+.reactor-label.photoredox-text {
+  font-size: var(--photoredox-font-size);
+}
+.reactor-active .reactor-label.photoredox-text {
+  animation: labelFlash 6s linear infinite;
+}
+.reactor-label.photoredox-text.stacked {
+  line-height: 1.1;
+}
+
+/* ─── KEYFRAMES (animations) ─── */
+@keyframes slideIn {
+  from { width: 0; }
+  to { width: 100%; }
+}
+@keyframes bounce {
+  0%,20%,50%,80%,100% { transform: translateY(0); }
+  40% { transform: translateY(-10px); }
+  60% { transform: translateY(-5px); }
+}
+@keyframes bulbPower {
+  0%,50% { background:#f2eef2; box-shadow:0 0 60px 20px rgba(178,45,100,0.6); } /* on */
+  62%,75% { background:#512940; }               /* dimming */
+  80%,100% { background:#010101; stroke:#010101; opacity:1; box-shadow:0 0 0px transparent; filter:brightness(1); }
+}
+@keyframes arcFade {
+  0%,5% { stroke:#010101; opacity:0; }
+  10%,40% { stroke:#f2eef2; opacity:1; filter:drop-shadow(0 0 5px #b22d64); }
+  50%,100% { stroke:#010101; opacity:0; }
+}
+@keyframes rimGlow {
+  0%,57% { box-shadow:0 0 0px transparent; border-color:#f2eef2; }
+  58%,70% { box-shadow:0 0 20px rgba(178,45,100,0.8),0 0 40px rgba(178,45,100,0.4); border-color:#f2eef2; }
+  75%,100% { box-shadow:0 0 0px transparent; border-color:#f2eef2; }
+}
+@keyframes liquidReact {
+  0%,55% { background:rgba(149,135,145,0.15); box-shadow:none; }
+  58% { background:rgba(178,45,100,0.5); }
+  60% { background:rgba(242,238,242,0.7); box-shadow:0 0 30px rgba(178,45,100,0.8); }
+  85%,100% { background:rgba(149,135,145,0.15); box-shadow:none; }
+}
+@keyframes sparkleBlast {
+  0%,57% { opacity:0; transform:translate(0,0) scale(0); }
+  58% { opacity:1; transform:translate(0,0) scale(1); }
+  62% { opacity:0.8; transform:translate(var(--sx), var(--sy)) scale(0.5); }
+  65%,100% { opacity:0; transform:translate(var(--sx), var(--sy)) scale(0); }
+}
+@keyframes labelFlash {
+  0%,58% { opacity:0; }
+  62%,75% { opacity:1; }
+  80%,100% { opacity:0; }
+}
+@keyframes textFlash {
+  0%,5% { opacity:0; }
+  10%,50% { opacity:1; }
+  55%,100% { opacity:0; }
+}
+@keyframes jump {
+  25% { translate:0 0 1px; }
+  50% { transform:translateX(var(--destination)); }
+  75% { translate:0 0 -1px; }
+}
+@keyframes scale {
+  /* the bar must shrink exactly as fast as the two balls approach each other: the balls ease in-out
+     (jump), so the bar uses the matching halves of that curve in each quarter-cycle */
+  0%   { transform:translate3d(-50%,-50%,-2px) scaleX(1); animation-timing-function:cubic-bezier(.42,0,1,1); }
+  25%  { transform:translate3d(-50%,-50%,-2px) scaleX(0); animation-timing-function:cubic-bezier(0,0,.58,1); }
+  50%  { transform:translate3d(-50%,-50%,-2px) scaleX(1); animation-timing-function:cubic-bezier(.42,0,1,1); }
+  75%  { transform:translate3d(-50%,-50%,-2px) scaleX(0); animation-timing-function:cubic-bezier(0,0,.58,1); }
+  100% { transform:translate3d(-50%,-50%,-2px) scaleX(1); }
+}
+.dna {
+  height: 280px;
+  width: 110px;
+  margin:0 auto;
+  display:grid;
+  grid-template-rows: repeat(var(--total), 1fr); /* was undefined — each row's height was ambiguous, so .strand__node's height:100% couldn't reliably resolve */
+  transform-style:preserve-3d;
+  perspective: 500px; /* the keyframes' subtle Z-translate needs a perspective context to actually read as depth */
+  gap:0.5vmin;
+}
+.strand {
+  --speed:2;
+  /* Linear distribution across the full cycle (was sine-compressed,
+     0.06–0.71 range, which weighted most rows toward the near-flat part
+     of the cycle when paused — that's what was reading as "flattened").
+     This spreads all 13 rows evenly across the full swap motion. */
+  --delay:calc((var(--index) / var(--total)) * var(--speed) * -1s);
+  width:100%;
+  transform-style:preserve-3d;
+  display:flex;
+  justify-content:space-between;
+}
+.strand__node {
+  background:var(--bg, white);
+  height:100%;
+  aspect-ratio:1;
+  border-radius:50%;
+  border:1px solid rgba(255,255,255,0.3);
+  /* Default: static (paused with a negative delay renders the
+     delay-adjusted keyframe immediately, giving a staggered helical
+     snapshot rather than the flat rest state). Runs only via :hover
+     (below) or the scroll-driven reveal in navigation.js's updateDNA()
+     — which sets this play-state directly via inline style and already
+     handles "animate while the bullets reveal, then stop for good". */
+  animation: jump calc(var(--speed) * 1s) var(--delay,0) infinite ease-in-out;
+  animation-play-state: paused;
+}
+.strand:before {
+  content:"";
+  position:absolute;
+  top:50%;
+  left:50%;
+  width:94%;
+  height:30%;
+  background:white;
+  transform:translate3d(-50%,-50%,-2px);
+  transform-origin:center;
+  animation: scale calc(var(--speed) * 1s) var(--delay,0) infinite linear;
+  /* JS can't style a ::before pseudo-element directly, so updateDNA()
+     controls it indirectly via this custom property instead. */
+  animation-play-state: var(--bar-animation, paused);
+  border:1px solid rgba(255,255,255,0.3);
+}
+.strand__node:first-of-type { --destination:calc((280px * (2 / 5)) - 100%); }
+.strand__node:last-of-type { --destination:calc((-280px * (2 / 5)) + 100%); animation-direction:reverse; }
+
+/* Hover plays it — but only while Motion is enabled */
+body:not(.motion-off) .dna:hover .strand__node { animation-play-state: running; }
+body:not(.motion-off) .dna:hover .strand:before { animation-play-state: running; }
+.dna-info h3 {
+  margin-bottom:15px;
+  font-size: var(--font-size-large);
+  opacity:0;
+  transition:opacity 0.3s ease;
+}
+.dna-info ul {
+  list-style:none;
+  padding:0;
+}
+.dna-info li {
+  padding:8px 0;
+  padding-left:20px;
+  position:relative;
+  opacity:0;
+  transition:opacity 0.3s ease;
+  font-size: var(--font-size-base);
+}
+.dna-info li::before {
+  content:'→';
+  position:absolute;
+  left:0;
+  color:rgba(255,255,255,0.6);
+}
+/* This page: DNA spins continuously while Motion is on (not hover-gated
+   like the main page, since there's no scroll-reveal mechanic here —
+   this page exists to showcase the animations). */
+body:not(.motion-off) .dna .strand__node { animation-play-state: running; }
+body:not(.motion-off) .dna .strand:before { animation-play-state: running; }
+  .research-text p + h3 { margin-top: 18px; }
+  .research-text a, .intro a { color: inherit; text-decoration: underline; }
+  .sr-only { position: absolute !important; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
+  .dna-bg { position: fixed; inset: 0; width: 100%; height: 100%; z-index: -1; pointer-events: none; display: block; }
+  /* Consistency pass 4: one left edge for hero + bands; bands tint the page but sit BEHIND the A/T/C/G background */
+  main { width: 90%; max-width: 1100px; padding: 10px 0 0; }
+  /* The coloured bands sit BEHIND the A/T/C/G background, but their text and links must stay clickable: the band colour lives on
+     a ::before at z-index -2 and the block itself is an ordinary box above the page. */
+  .research-block { z-index: auto; transform: none; left: auto; margin-left: calc(50% - 50vw); }
+  .research-block::before { content: ""; position: absolute; inset: 0; z-index: -2; pointer-events: none; }
+  .research-block.block-excitonics, .research-block.block-photochem, .research-block.block-dna { background: none; }
+  .research-block.block-excitonics::before { background: linear-gradient(135deg, #B8A5D6 0%, #9D8BC4 100%); }
+  .research-block.block-photochem::before { background: linear-gradient(135deg, #DBA5CD 0%, #C895BD 100%); }
+  .research-block.block-dna::before { background: linear-gradient(135deg, #A890C8 0%, #9380B5 100%); }
+</style>
+<link rel="stylesheet" href="css/subnav.css?v=p72">
+<style id="site-footer-css">.site-footer{padding:28px 16px 22px;text-align:center;font:12px/1.4 Inter,"Helvetica Neue",Arial,sans-serif;letter-spacing:.02em;color:rgba(255,255,255,.55);position:relative;z-index:1}</style>
+</head>
+<body data-dna-bg data-dna-fixed>
+  <header class="site-nav">
+    <a class="site-nav-logo" href="index.html" aria-label="ExP Lab home"><img class="logo-fade" src="images/research_rbf.png" alt="" /><img class="logo-fade" src="images/research_helix.png" alt="" /><img class="logo-fade" src="images/research_jablonski.png" alt="" /></a>
+    <label class="motion-switch site-nav-motion-mobile" title="Toggle animations"><input type="checkbox" id="motionCheckboxMobile" checked aria-label="Animations"><span class="motion-slider"></span></label>
+    <button type="button" class="site-nav-burger" id="siteNavBurger" aria-label="Menu" aria-expanded="false" aria-controls="siteNavMenu"><svg viewBox="0 0 48 48" width="34" height="34" fill="none" stroke="currentColor" stroke-linecap="round" aria-hidden="true" focusable="false"><path class="hb-curve" d="M7 6 Q24 74 41 6" stroke-width="2.5"/><line class="hb-l1" x1="16" y1="33" x2="32" y2="33" stroke-width="4"/><line class="hb-l2" x1="12.5" y1="23" x2="35.5" y2="23" stroke-width="4"/><line class="hb-l3" x1="9.5" y1="13" x2="38.5" y2="13" stroke-width="4"/></svg></button>
+    <ul class="site-nav-menu" id="siteNavMenu">
+      <li class="motion-switch-item"><span class="motion-label">Motion: <span class="motion-label-state" id="motionLabelState">On</span></span>
+        <label class="motion-switch" title="Toggle animations (applies across the whole site)"><input type="checkbox" id="motionCheckbox" checked aria-label="Animations"><span class="motion-slider"></span></label></li>
+      <li><a href="index.html">Home</a></li><li><a href="research.html" aria-current="page">Research</a></li><li><a href="index.html#s4">Team</a></li><li><a href="publications.html">Publications</a></li><li><a href="join.html">Join</a></li>
+    </ul>
+  </header>
+
+  <main>
+    <h1>Research</h1>
+    <p class="intro">
+      We combine three disciplines to unlock biology's potential for materials chemistry:
+      synthetic organic chemistry, to design and make new semiconductor building blocks;
+      DNA nanotechnology, to program biological assembly into precise molecular
+      architectures; and ultrafast spectroscopy, to measure quantum properties at the
+      nanoscale. By programming DNA to assemble organic semiconductors with nanometre
+      precision, we can create libraries of thousands of quantum materials in parallel,
+      accelerating the discovery of materials for quantum sensors, LEDs, photovoltaics
+      and quantum information systems.
+    </p>
+
+    <div class="research-block block-excitonics">
+     <div class="research-block-inner">
+      <div class="research-text">
+        <h2>Excitonics</h2>
+        <p>
+          We synthesise organic semiconductors and precisely control their intermolecular
+          distance using DNA. By tailoring how excited molecules communicate, we aim to
+          create next-generation materials for energy conversion, sensing, and quantum
+          information technologies.
+        </p>
+        <p>
+          We create organic spin centres from dye molecules.
+          <a href="https://www.cell.com/chem/fulltext/S2451-9294(24)00116-5" target="_blank" rel="noopener">By leveraging DNA<span class="sr-only"> (opens in a new tab)</span></a>,
+          we control their self-assembly with sub-nanometre precision, which lets us
+          <a href="https://pubs.acs.org/doi/abs/10.1021/jacs.2c13743" target="_blank" rel="noopener">engineer spin dynamics<span class="sr-only"> (opens in a new tab)</span></a>
+          in ways that are impossible with traditional chemistry. We
+          <a href="https://pubs.acs.org/doi/abs/10.1021/jacs.1c10241" target="_blank" rel="noopener">synthetically install dyes with phosphoramidite groups<span class="sr-only"> (opens in a new tab)</span></a>,
+          so large aromatic systems can be built directly into DNA by solid-phase
+          synthesis, overcoming hydrophobicity challenges and giving unprecedented
+          control over intermolecular interactions.
+        </p>
+        <h3>Key achievements</h3>
+        <ul>
+          <li>First observation of two-triplet, four-electron spin quintet states on DNA</li>
+          <li>Programmable exciton arrays on DNA origami nanostructures</li>
+          <li>Single-molecule control of energy flow in excitonic systems</li>
+        </ul>
+      </div>
+      <div class="research-visual">
+        <div id="honeycomb-container"></div>
+      </div>
+     </div>
+    </div>
+
+    <div class="research-block block-photochem reverse">
+     <div class="research-block-inner">
+      <div class="research-text">
+        <h2>Photochemistry</h2>
+        <p>
+          We are interested in using light to unlock new modes of organic reactivity. Our
+          research explores how energy transfer, electron transfer, and spin dynamics can be
+          combined to control reaction pathways, enabling selective transformations that are
+          difficult or impossible to achieve using conventional thermal chemistry.
+        </p>
+        <p>
+          Current projects include photoredox catalysis, screening the triplet activity of
+          photoredox catalysts, and the synthesis of new organic photosensitisers.
+        </p>
+      </div>
+      <div class="research-visual">
+        <div id="reactor-site-wrapper" class="reactor-active">
+          <div id="master-layout">
+            <!-- LAMP -->
+            <div id="lamp-wrapper">
+              <div id="lamp-container">
+                <div id="bulb">
+                  <div class="filament-rod" style="margin-left:-22px;"></div>
+                  <div class="filament-rod" style="margin-left:18px;"></div>
+                  <svg id="arc-svg" viewBox="0 0 100 40">
+                    <path class="arc-path" d="M 30 20 L 35 15 L 45 25 L 55 10 L 65 25 L 75 20" />
+                  </svg>
+                </div>
+              </div>
+            </div>
+
+            <!-- PHOTON FIELD (arrows) - generated by reactor.js -->
+            <div id="photon-field-wrapper">
+              <svg id="photon-arrows-svg" class="photon-field">
+                <g id="photon-lines-group"></g>
+              </svg>
+            </div>
+
+            <!-- FLASK -->
+            <div id="flask-scene">
+              <div id="flask-container">
+                <div class="stir-bar" id="stirrer"></div>
+                <div id="flask-shadow"></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- REACTOR OVERLAY LABELS -->
+          <div id="reactor-labels-overlay">
+            <div class="reactor-label light-text" id="light-label">LIGHT</div>
+            <div class="reactor-label photoredox-text" id="photoredox-label">PHOTOREDOX</div>
+          </div>
+        </div>
+      </div>
+     </div>
+    </div>
+
+    <div class="research-block block-dna">
+     <div class="research-block-inner">
+      <div class="research-text">
+        <h2>Why use DNA?</h2>
+        <h3>Programmable assembly</h3>
+        <ul>
+          <li>Robust self-assembly</li>
+          <li>0.35 nm spatial resolution</li>
+          <li>Chemically editable (e.g. semiconductor)</li>
+        </ul>
+      </div>
+      <div class="research-visual">
+        <div class="dna-visual-wrapper">
+          <div class="dna" id="dna-root" style="--total:13;"></div>
+        </div>
+      </div>
+     </div>
+    </div>
+  </main>
+
+  <script type="module">
+    import { initDnaBackground } from './js/dna-bg.js';
+    try { initDnaBackground(); } catch (e) { console.warn(e); }
+    import { initHoneycomb } from './js/honeycomb.js';
+    import { initReactor, positionPhotonArrows, positionReactorLabels, restartReactorAnimations, freezeArrowsAtGoodFrame } from './js/reactor.js';
+    import { initDNA } from './js/dna.js';
+    import { getStoredMotionPreference, setStoredMotionPreference } from './js/motion-state.js';
+
+    window.MOTION_ENABLED = getStoredMotionPreference();
+    document.body.classList.toggle('motion-off', !window.MOTION_ENABLED);
+    { const cb = document.getElementById('motionCheckbox'); if (cb) cb.checked = window.MOTION_ENABLED;
+      const ls = document.getElementById('motionLabelState'); if (ls) ls.textContent = window.MOTION_ENABLED ? 'On' : 'Off'; }
+    window.FORCE_REACTOR_HORIZONTAL = true; // bulb/flask always stay side-by-side on this page, even on mobile
+
+    initHoneycomb();
+    initReactor();
+    initDNA();
+    if (window.MOTION_ENABLED) restartReactorAnimations();
+    else freezeArrowsAtGoodFrame();
+
+    function reposition() {
+      positionPhotonArrows();
+      positionReactorLabels();
+    }
+    window.addEventListener('resize', reposition);
+    window.addEventListener('load', reposition);
+    setTimeout(reposition, 300);
+    setTimeout(reposition, 1000);
+
+    // ── Motion toggle ──
+    const checkbox = document.getElementById('motionCheckbox');
+    const labelState = document.getElementById('motionLabelState');
+    checkbox?.addEventListener('change', () => {
+      const enabled = checkbox.checked;
+      window.MOTION_ENABLED = enabled;
+      setStoredMotionPreference(enabled);
+      document.body.classList.toggle('motion-off', !enabled);
+      if (labelState) labelState.textContent = enabled ? 'On' : 'Off';
+      if (enabled) {
+        restartReactorAnimations();
+      } else {
+        freezeArrowsAtGoodFrame();
+      }
+    });
+  </script>
+<script src="js/subnav.js" defer></script>
+<footer class="site-footer">© 2026 Jeffrey Gorman. All rights reserved.</footer>
+</body>
+</html>

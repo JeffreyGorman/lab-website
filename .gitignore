@@ -1,0 +1,13 @@
+# Things that should never be published (Cloudflare only gets what is committed)
+.DS_Store
+*.bak
+*.bak*
+*.bak[0-9]*
+_to_delete/
+_source_media/
+# editor / tooling
+node_modules/
+.env
+
+# hand-off folders from other chats (they sit beside this folder, but just in case)
+handoff_*/

@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Page not found – ExP Lab</title>
+<style>
+  :root {
+    --dna-bg-color: rgba(255,255,255,0.06);
+    --color-primary: #b22d64;
+    --color-bg-left: #B8A5D6;
+    --color-bg-right: #DBA5CD;
+    --color-text-light: #ffffff;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    color: var(--color-text-light);
+    background: linear-gradient(135deg, #7D6B9D 0%, #6A5B8A 100%);
+    background-attachment: fixed;
+    isolation: isolate;
+    min-height: 100vh;
+  }
+  .top-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 24px 5%;
+  }
+  .top-bar-right {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+  .logo { font-weight: 900; letter-spacing: -1px; font-size: 20px; }
+  .logo-exp { color: var(--color-primary); }
+  .back-link {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 15px;
+    opacity: 0.9;
+  }
+  .back-link:hover { opacity: 1; }
+  .back-link::before { content: '← '; }
+  .motion-label { color: #fff; font-size: 14px; font-weight: 600; white-space: nowrap; }
+  .motion-label-state { display: inline-block; min-width: 22px; }
+  .motion-switch { position: relative; display: inline-block; width: 40px; height: 22px; cursor: pointer; vertical-align: middle; }
+  .motion-switch input { opacity: 0; width: 0; height: 0; position: absolute; }
+  .motion-slider { position: absolute; inset: 0; background: rgba(255,255,255,0.25); border: 1px solid rgba(255,255,255,0.6); border-radius: 22px; transition: background 0.2s ease, border-color 0.2s ease; }
+  .motion-slider::before { content: ''; position: absolute; height: 16px; width: 16px; left: 2px; top: 2px; background: #fff; border-radius: 50%; transition: transform 0.2s ease; }
+  .motion-switch input:checked + .motion-slider { background: #fff; }
+  .motion-switch input:checked + .motion-slider::before { background: var(--color-primary); transform: translateX(18px); }
+
+  main {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 10px 5% 100px;
+  }
+  h1 {
+    font-size: clamp(36px, 6vw, 60px);
+    font-weight: 900;
+    letter-spacing: -1px;
+    margin: 10px 0 20px;
+  }
+  .intro {
+    font-size: clamp(16px, 1.6vw, 20px);
+    line-height: 1.6;
+    opacity: 0.95;
+    margin-bottom: 20px;
+  }
+  .backgrounds-list {
+    margin: 0 0 50px;
+    padding-left: 20px;
+    line-height: 1.8;
+    opacity: 0.95;
+  }
+  section.join-block {
+    padding: 40px 0;
+    border-top: 1px solid rgba(255,255,255,0.25);
+    scroll-margin-top: 30px; /* so #anchors don't land flush under the very top edge */
+  }
+  section.join-block:first-of-type { border-top: none; }
+  section.join-block h2 {
+    font-size: clamp(24px, 3vw, 32px);
+    font-weight: 900;
+    margin-bottom: 16px;
+    color: #fff;
+  }
+  section.join-block p {
+    line-height: 1.65;
+    opacity: 0.95;
+    margin-bottom: 14px;
+  }
+  section.join-block ul {
+    line-height: 1.8;
+    opacity: 0.95;
+    padding-left: 20px;
+  }
+  .contact-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 40px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 17px;
+  }
+  .contact-link:hover { opacity: 0.85; }
+  .join-block a { color: inherit; text-decoration: underline; }
+  .sr-only { position: absolute !important; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
+  .dna-bg { position: fixed; inset: 0; width: 100%; height: 100%; z-index: -1; pointer-events: none; display: block; }
+  /* Consistency pass 2: frosted cards like the home page, arrow links instead of underlined bullets */
+  section.join-block { padding: 28px clamp(20px, 3vw, 36px); margin: 0 0 24px; background: rgba(255,255,255,0.1); -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.2); border-radius: 12px; }
+  section.join-block:first-of-type { margin-top: 8px; border-top: 1px solid rgba(255,255,255,0.2); }
+  section.join-block ul { list-style: none; padding-left: 0; opacity: 1; }
+  section.join-block li { margin: 0 0 6px; line-height: 1.5; }
+  @font-face { font-family: 'Departure Mono'; src: url('fonts/DepartureMono-Regular.woff2') format('woff2'); font-display: swap; }
+  .strand-art { margin: 28px 0 8px; display: flex; flex-wrap: wrap; justify-content: flex-start; gap: 6px 4px; font-family: 'Departure Mono', ui-monospace, monospace; }
+  .bp { display: flex; flex-direction: column; align-items: center; gap: 0; opacity: 0; transform: translateY(8px); animation: bpIn .45s ease forwards; }
+  .bp .b { width: 28px; height: 28px; border-radius: 50%; display: grid; place-items: center; font-size: 14px; color: #3d1f31; font-weight: 700; }
+  .bp .rung { width: 3px; height: 16px; background: rgba(255,255,255,.55); }
+  .bp.bad .rung { background: repeating-linear-gradient(#ff7b7b 0 3px, transparent 3px 6px); }
+  .bp.bad .b.bot { background: #ff7b7b !important; color: #fff; animation: badFlash 1.1s ease-in-out .2s 3; }
+  .bp.nick .b.bot { transform: translateX(-5px); }
+  .bp.nick + .bp .b.bot { transform: translateX(5px); }
+  .nick-label { flex-basis: 100%; font-size: 13px; color: #f08ab8; margin: 2px 0 0; font-family: 'Departure Mono', ui-monospace, monospace; }
+  .no-match { font-family: 'Departure Mono', ui-monospace, monospace; font-size: 14px; color: rgba(255,255,255,.8); margin: 14px 0 0; word-break: break-all; }
+  .ligase { font-size: clamp(20px, 2.4vw, 28px); font-weight: 900; line-height: 1.25; margin: 26px 0 8px; }
+  .joke-row { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; margin: 6px 0 26px; color: rgba(255,255,255,.88); }
+  .joke-btn { font: inherit; font-size: 14px; font-weight: 700; color: #fff; background: rgba(255,255,255,.14); border: 1px solid rgba(255,255,255,.35); border-radius: 999px; padding: 6px 14px; cursor: pointer; }
+  .joke-btn:hover { background: rgba(255,255,255,.24); }
+  .joke-btn:focus-visible { outline: 2px solid #fff; outline-offset: 3px; }
+  @keyframes bpIn { to { opacity: 1; transform: none; } }
+  @keyframes badFlash { 50% { transform: scale(1.25); box-shadow: 0 0 0 5px rgba(255,123,123,.35); } }
+  body.motion-off .bp, body.motion-off .bp .b { animation: none !important; opacity: 1; transform: none; }
+  @media (max-width: 480px) { .bp .b { width: 26px; height: 26px; font-size: 13px; } .strand-art { gap: 6px 3px; } }
+  @media (prefers-reduced-motion: reduce) { .bp, .bp .b { animation: none !important; opacity: 1; transform: none; } }
+</style>
+<link rel="stylesheet" href="css/subnav.css?v=p72">
+</head>
+<body data-dna-bg data-dna-fixed>
+  <header class="site-nav">
+    <a class="site-nav-logo" href="index.html" aria-label="ExP Lab home"><img class="logo-fade" src="images/research_rbf.png" alt="" /><img class="logo-fade" src="images/research_helix.png" alt="" /><img class="logo-fade" src="images/research_jablonski.png" alt="" /></a>
+    <button type="button" class="site-nav-burger" id="siteNavBurger" aria-label="Menu" aria-expanded="false" aria-controls="siteNavMenu"><svg viewBox="0 0 48 48" width="30" height="30" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" aria-hidden="true"><path d="M10 15h28M10 24h28M10 33h28"/></svg></button>
+    <ul class="site-nav-menu" id="siteNavMenu">
+      <li class="motion-switch-item"><span class="motion-label">Motion: <span class="motion-label-state" id="motionLabelState">On</span></span>
+        <label class="motion-switch" title="Toggle animations (applies across the whole site)"><input type="checkbox" id="motionCheckbox" checked aria-label="Animations"><span class="motion-slider"></span></label></li>
+      <li><a href="index.html">Home</a></li><li><a href="research.html">Research</a></li><li><a href="index.html#s4">Team</a></li><li><a href="publications.html">Publications</a></li><li><a href="join.html">Join</a></li>
+    </ul>
+  </header>
+
+  <main>
+    <h1>Page not found</h1>
+    <p class="intro">That page doesn’t exist, or it has moved.</p>
+    <div class="strand-art" id="strand" role="img" aria-label="A DNA double strand trying to pair with the website: one base is mismatched and the strand has a break"></div>
+    <p class="no-match" id="noMatch"></p>
+    <p class="ligase">This page has a strand break. We’re sending ligase.</p>
+    <div class="joke-row"><span id="joke"></span><button type="button" class="joke-btn" id="jokeBtn">Another one</button></div>
+    <p><a href="index.html" class="go-link">Re-anneal at home</a></p>
+    <p><a href="research.html" class="go-link">Research</a></p>
+    <p><a href="publications.html" class="go-link">Publications</a></p>
+    <p><a href="join.html" class="go-link">Join the team</a></p>
+    <p><a href="#" data-mail class="go-link">Get in touch</a></p>
+  </main>
+  <script>
+    (function () {
+      var path = decodeURIComponent(location.pathname + location.search) || '/';
+      var B = 'ATGC', COMP = { A: 'T', T: 'A', G: 'C', C: 'G' };
+      var COL = { A: '#f08ab8', T: '#cdb8ee', G: '#ffffff', C: '#e58bb0' };
+      // the dead address becomes the strand: each character picks a base, so every broken link gives its own sequence
+      var seq = [], s = path.replace(/[^a-z0-9]/gi, '') || 'notfound';
+      var N = innerWidth < 480 ? 10 : 16;
+      for (var i = 0; i < N; i++) seq.push(B[(s.charCodeAt(i % s.length) + i * 7) % 4]);
+      var bad = N === 16 ? 9 : 7, nick = N === 16 ? 5 : 3, art = document.getElementById('strand');
+      seq.forEach(function (top, i) {
+        var bp = document.createElement('div'); bp.className = 'bp' + (i === bad ? ' bad' : '') + (i === nick ? ' nick' : '');
+        bp.style.animationDelay = (i * 0.07) + 's';
+        var bot = i === bad ? B[(B.indexOf(COMP[top]) + 1) % 4] : COMP[top];
+        bp.innerHTML = '<div class="b" style="background:' + COL[top] + '">' + top + '</div><div class="rung"></div><div class="b bot" style="background:' + COL[bot] + '">' + bot + (i === bad ? '' : '') + '</div>';
+        art.appendChild(bp);
+      });
+      var lab = document.createElement('div'); lab.className = 'nick-label'; lab.textContent = 'nick in the lower backbone (base ' + (nick + 1) + ')  ·  mismatch ✕ (base ' + (bad + 1) + ')';
+      art.appendChild(lab);
+      document.getElementById('noMatch').textContent = 'No complementary sequence found at ' + path;
+      var jokes = [
+        'Why did the DNA strand get lost? It couldn’t find its complement.',
+        '404: sequencing error. Please resubmit your base pairs.',
+        'We went looking for this page, but it denatured on the way.',
+        'This link was a perfect match. Until base ' + (bad + 1) + '.',
+        'Helicase is on its way. It’s unwinding the problem.'
+      ], k = 0, el = document.getElementById('joke');
+      el.textContent = jokes[0];
+      document.getElementById('jokeBtn').addEventListener('click', function () { k = (k + 1) % jokes.length; el.textContent = jokes[k]; });
+    })();
+  </script>
+
+  <script type="module">
+    import { initDnaBackground } from './js/dna-bg.js';
+    try { initDnaBackground(); } catch (e) { console.warn(e); }
+    import { getStoredMotionPreference, setStoredMotionPreference } from './js/motion-state.js';
+    const checkbox = document.getElementById('motionCheckbox');
+    const labelState = document.getElementById('motionLabelState');
+    const enabled = getStoredMotionPreference();
+    if (checkbox) checkbox.checked = enabled;
+    if (labelState) labelState.textContent = enabled ? 'On' : 'Off';
+    checkbox?.addEventListener('change', () => {
+      setStoredMotionPreference(checkbox.checked);
+      if (labelState) labelState.textContent = checkbox.checked ? 'On' : 'Off';
+    });
+  </script>
+<script src="js/subnav.js" defer></script>
+<script src="js/contact.js?v=p69" defer></script>
+</body>
+</html>

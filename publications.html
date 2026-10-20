@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Publications – ExP Lab</title>
+<meta name="description" content="Publications from the ExP Lab and Jeffrey Gorman: DNA-assembled chromophores, exciton dynamics, organic semiconductors and photochemistry." />
+<meta name="theme-color" content="#7D6B9D" />
+<meta property="og:title" content="Publications – ExP Lab" />
+<meta property="og:type" content="website" />
+<style>
+  :root {
+    --color-primary: #f08ab8;
+    --dna-bg-color: rgba(255,255,255,0.06);
+    --color-bg-left: #B8A5D6;
+    --color-bg-right: #DBA5CD;
+    --color-text-light: #ffffff;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    color: var(--color-text-light);
+    background: linear-gradient(135deg, #7D6B9D 0%, #6A5B8A 100%);
+    background-attachment: fixed;
+    isolation: isolate;
+    min-height: 100vh;
+  }
+  .dna-bg { position: fixed; inset: 0; width: 100%; height: 100%; z-index: -1; pointer-events: none; display: block; }
+  .pub-tools { display:flex; flex-wrap:wrap; gap:12px 16px; align-items:center; margin:0 0 8px; }
+  .pub-search { flex:1 1 220px; min-width:0; font:inherit; font-size:15px; color:#fff; background:rgba(0,0,0,.18); border:1px solid rgba(255,255,255,.3); border-radius:999px; padding:9px 16px; }
+  .pub-search::placeholder { color:rgba(255,255,255,.65); }
+  .pub-search:focus-visible, .pub-year-select:focus-visible, .chip:focus-visible { outline:2px solid #fff; outline-offset:2px; }
+  .pub-year-select { font:inherit; font-size:15px; color:#fff; background:rgba(0,0,0,.18); border:1px solid rgba(255,255,255,.3); border-radius:999px; padding:9px 14px; }
+  .pub-year-select option { color:#222; }
+  .chips { display:flex; flex-wrap:wrap; gap:8px; margin:0 0 10px; }
+  .chip { font:inherit; font-size:14px; font-weight:600; color:#fff; background:transparent; border:1px solid rgba(255,255,255,.4); border-radius:999px; padding:6px 14px; cursor:pointer; }
+  .chip[aria-pressed="true"] { background:#fff; color:#4b3d6b; border-color:#fff; }
+  .pub-status { font-size:14px; opacity:.85; margin:0 0 6px; min-height:1.4em; }
+  .pub-entry[hidden] { display:none; }
+  .pub-empty { padding:30px 0; opacity:.9; }
+  .top-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 24px 5%;
+  }
+  .top-bar-right {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+  .motion-label {
+    color: var(--color-primary);
+    font-size: 14px;
+    font-weight: 600;
+    white-space: nowrap;
+  }
+  .motion-label-state { display: inline-block; min-width: 22px; }
+  .motion-switch {
+    position: relative;
+    display: inline-block;
+    width: 40px;
+    height: 22px;
+    cursor: pointer;
+    vertical-align: middle;
+  }
+  .motion-switch input { opacity: 0; width: 0; height: 0; position: absolute; }
+  .motion-slider {
+    position: absolute;
+    inset: 0;
+    background: rgba(178, 45, 100, 0.25);
+    border: 1px solid rgba(178, 45, 100, 0.5);
+    border-radius: 22px;
+    transition: background 0.2s ease, border-color 0.2s ease;
+  }
+  .motion-slider::before {
+    content: '';
+    position: absolute;
+    height: 16px;
+    width: 16px;
+    left: 2px;
+    top: 2px;
+    background: var(--color-primary);
+    border-radius: 50%;
+    transition: transform 0.2s ease;
+  }
+  .motion-switch input:checked + .motion-slider {
+    background: var(--color-primary);
+    border-color: var(--color-primary);
+  }
+  .motion-switch input:checked + .motion-slider::before {
+    background: #fff;
+    transform: translateX(18px);
+  }
+  .back-link {
+    color: var(--color-text-light);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 15px;
+    opacity: 0.9;
+  }
+  .back-link:hover { opacity: 1; }
+  .back-link::before { content: '← '; }
+  .logo {
+    font-weight: 900;
+    letter-spacing: -1px;
+    font-size: 20px;
+  }
+  .logo-exp {
+    color: var(--color-primary);
+  }
+  main {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 40px 5% 120px;
+  }
+  h1 {
+    font-size: clamp(36px, 6vw, 64px);
+    font-weight: 900;
+    letter-spacing: -1px;
+    margin: 20px 0 10px;
+  }
+  .intro {
+    font-size: clamp(16px, 1.6vw, 20px);
+    max-width: 700px;
+    opacity: 0.95;
+    margin-bottom: 50px;
+  }
+  .pub-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+  .pub-entry {
+    display: grid;
+    grid-template-columns: 140px 1fr;
+    gap: 30px;
+    padding: 26px 0;
+    border-top: 1px solid rgba(255,255,255,0.25);
+    align-items: start;
+  }
+  .pub-list .pub-entry:first-child { border-top: none; }
+  .pub-year {
+    font-size: 15px;
+    font-weight: 700;
+    opacity: 0.85;
+    letter-spacing: 1px;
+  }
+  .pub-entry h2 {
+    margin: 0 0 8px;
+    font-size: clamp(18px, 2vw, 22px);
+    font-weight: 900;
+  }
+  .pub-entry p {
+    margin: 0;
+    font-size: var(--font-size-base, 16px);
+    line-height: 1.55;
+    opacity: 0.95;
+  }
+  .pub-entry h2 a { color: inherit; text-decoration: none; }
+  .pub-entry h2 a:hover, .pub-entry h2 a:focus-visible { text-decoration: underline; }
+  .intro a { color: inherit; text-decoration: underline; }
+  .pub-entry .authors { font-size: 14px; opacity: 0.85; }
+  .sr-only { position: absolute !important; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
+  .pub-entry .journal {
+    display: inline-block;
+    margin-top: 10px;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    opacity: 0.8;
+  }
+  @media (max-width: 600px) {
+    .pub-entry {
+      grid-template-columns: 1fr;
+      gap: 6px;
+    }
+  }
+
+  /* ── Stacked-PAH figure (process colours = honeycomb legend) ── */
+  @font-face { font-family:'Departure Mono'; src:url('fonts/DepartureMono-Regular.woff2') format('woff2'); font-display:swap; }
+  .pah-figure { scroll-margin-top: 90px; }
+  .pub-entry .pah-figure { margin: 18px 0 4px; }
+  .pah-figure {
+    --honeycomb-bullet-active-photon:#b22d64; --honeycomb-bullet-active-energy:#894495; --honeycomb-bullet-active-electron:#512940;
+    --pah-card:#F0E0EA; --pah-edge:#6A5B8A; --pah-face:#ffffff; --pah-face-o:#E3D6F0; --pah-hatch:#B8A5D6;
+    --pah-por:#B8A5D6; --pah-por-edge:#6A5B8A; --pah-line:#7D6B9D; --pah-text:#512940;
+    margin:20px 0 28px; padding:16px 16px 12px; background:var(--pah-card); color:var(--pah-text);
+    border-radius:14px; box-shadow:0 6px 24px rgba(40,25,70,.28);
+  }
+  .pah-figure .pah-svg { display:block; width:100%; height:auto; max-height:70vh; }
+  .pah-label { font-family:'Departure Mono','DM Mono',ui-monospace,monospace; font-size:28px; fill:var(--pah-text); }
+  .pah-dim   { font-family:'Departure Mono','DM Mono',ui-monospace,monospace; font-size:22px; fill:var(--pah-text); }
+  .pah-photon { fill:var(--honeycomb-bullet-active-photon); font-family:'Inter',ui-sans-serif,system-ui,sans-serif; font-style:italic; } /* Departure Mono has no Greek nu */
+  .pah-legend { display:flex; flex-wrap:wrap; gap:6px 22px; justify-content:center; list-style:none; margin:8px 0 0; padding:0;
+    font-family:'Departure Mono',ui-monospace,monospace; font-size:13px; letter-spacing:.04em; }
+  .pah-legend li { color:rgba(81,41,64,.45); transition:color .25s; -webkit-text-stroke:.5px currentColor; }
+  .pah-legend li::before { content:'○'; margin-right:.5em; }
+  .pah-legend li.on { color:var(--c); animation:pah-pulse 1.1s ease-in-out infinite; }
+  .pah-legend li.on::before { content:'●'; }
+  .pah-legend [data-k="photon"]   { --c:var(--honeycomb-bullet-active-photon); }
+  .pah-legend [data-k="energy"]   { --c:var(--honeycomb-bullet-active-energy); }
+  .pah-legend [data-k="electron"] { --c:var(--honeycomb-bullet-active-electron); }
+  @keyframes pah-pulse { 50% { opacity:.7; } }
+  .pah-figure figcaption { display:flex; flex-wrap:wrap; gap:8px 16px; align-items:center; justify-content:space-between; margin-top:10px;
+    font-size:.85rem; line-height:1.4; color:var(--pah-text); }
+  .pah-replay { font:inherit; font-size:.8rem; color:#fff; background:var(--honeycomb-bullet-active-photon); border:0; border-radius:999px; padding:6px 14px; cursor:pointer; }
+  .pah-replay:hover { background:#8f2350; } .pah-replay:focus-visible { outline:3px solid #512940; outline-offset:2px; }
+  @media (max-width:600px) { .pah-figure { padding:10px 8px; } .pah-legend { font-size:11px; gap:4px 14px; } }
+  @media (prefers-reduced-motion:reduce) { .pah-legend li.on { animation:none; } }
+  .pah-atom { font-family:'Departure Mono','DM Mono',ui-monospace,monospace; font-size:17px; fill:var(--pah-text); paint-order:stroke; stroke:var(--pah-face-o); stroke-width:4px; }
+  .pah-figure figcaption a { color:var(--honeycomb-bullet-active-photon); }
+</style>
+<link rel="stylesheet" href="css/subnav.css?v=p72">
+<style id="site-footer-css">.site-footer{padding:28px 16px 22px;text-align:center;font:12px/1.4 Inter,"Helvetica Neue",Arial,sans-serif;letter-spacing:.02em;color:rgba(255,255,255,.55);position:relative;z-index:1}</style>
+</head>
+<body data-dna-bg data-dna-fixed>
+  <header class="site-nav">
+    <a class="site-nav-logo" href="index.html" aria-label="ExP Lab home"><img class="logo-fade" src="images/research_rbf.png" alt="" /><img class="logo-fade" src="images/research_helix.png" alt="" /><img class="logo-fade" src="images/research_jablonski.png" alt="" /></a>
+    <label class="motion-switch site-nav-motion-mobile" title="Toggle animations"><input type="checkbox" id="motionCheckboxMobile" checked aria-label="Animations"><span class="motion-slider"></span></label>
+    <button type="button" class="site-nav-burger" id="siteNavBurger" aria-label="Menu" aria-expanded="false" aria-controls="siteNavMenu"><svg viewBox="0 0 48 48" width="34" height="34" fill="none" stroke="currentColor" stroke-linecap="round" aria-hidden="true" focusable="false"><path class="hb-curve" d="M7 6 Q24 74 41 6" stroke-width="2.5"/><line class="hb-l1" x1="16" y1="33" x2="32" y2="33" stroke-width="4"/><line class="hb-l2" x1="12.5" y1="23" x2="35.5" y2="23" stroke-width="4"/><line class="hb-l3" x1="9.5" y1="13" x2="38.5" y2="13" stroke-width="4"/></svg></button>
+    <ul class="site-nav-menu" id="siteNavMenu">
+      <li class="motion-switch-item"><span class="motion-label">Motion: <span class="motion-label-state" id="motionLabelState">On</span></span>
+        <label class="motion-switch" title="Toggle animations (applies across the whole site)"><input type="checkbox" id="motionCheckbox" checked aria-label="Animations"><span class="motion-slider"></span></label></li>
+      <li><a href="index.html">Home</a></li><li><a href="research.html">Research</a></li><li><a href="index.html#s4">Team</a></li><li><a href="publications.html" aria-current="page">Publications</a></li><li><a href="join.html">Join</a></li>
+    </ul>
+  </header>
+
+  <main>
+    <h1>Publications</h1>
+    <p class="intro">Journal articles, reviews and conference papers, newest first. For the full, up-to-date list see <a href="https://scholar.google.co.uk/citations?hl=en&amp;user=dAKlZOAAAAAJ&amp;view_op=list_works&amp;sortby=pubdate" target="_blank" rel="noopener">Google Scholar<span class="sr-only"> (opens in a new tab)</span></a>.</p>
+
+    
+
+    
+
+
+
+    <div class="pub-tools">
+      <input class="pub-search" id="pubSearch" type="search" placeholder="Search title, author or journal" aria-label="Search publications">
+      <select class="pub-year-select" id="pubYear" aria-label="Filter by year"><option value="">All years</option></select>
+    </div>
+    <div class="chips" id="pubChips" role="group" aria-label="Filter by topic">
+      <button type="button" class="chip" data-topic="" aria-pressed="true">All</button>
+      <button type="button" class="chip" data-topic="dna" aria-pressed="false">DNA</button>
+      <button type="button" class="chip" data-topic="excitons" aria-pressed="false">Excitons &amp; photophysics</button>
+      <button type="button" class="chip" data-topic="other" aria-pressed="false">Materials, devices &amp; other</button>
+    </div>
+    <p class="pub-status" id="pubStatus" role="status" aria-live="polite"></p>
+    <p class="pub-empty" id="pubEmpty" hidden>No publications match those filters.</p>
+
+    <div class="pub-list" id="pubList"></div>
+  </main>
+  <script src="data/publications.js" defer></script>
+  <script src="js/pubs-render.js" defer></script>
+  <script type="module">
+    import { initDnaBackground } from './js/dna-bg.js';
+    try { initDnaBackground(); } catch (e) { console.warn(e); }
+    import { getStoredMotionPreference, setStoredMotionPreference } from './js/motion-state.js';
+    const checkbox = document.getElementById('motionCheckbox');
+    const labelState = document.getElementById('motionLabelState');
+    const enabled = getStoredMotionPreference();
+    if (checkbox) checkbox.checked = enabled;
+    if (labelState) labelState.textContent = enabled ? 'On' : 'Off';
+    checkbox?.addEventListener('change', () => {
+      setStoredMotionPreference(checkbox.checked);
+      if (labelState) labelState.textContent = checkbox.checked ? 'On' : 'Off';
+    });
+
+
+    // ── process-colour figures: play when scrolled into view; respect the Motion toggle ──
+    (window.PUBS_READY || Promise.resolve()).then(() => document.querySelectorAll('.pah-figure').forEach(fig => {
+      const svg = fig.querySelector('svg'), btn = fig.querySelector('.pah-replay');
+      const END = +fig.dataset.end || 8;
+      const lis = [...fig.querySelectorAll('.pah-legend li')].map(li => ({ li, w: li.dataset.win.split(',').map(Number) }));
+      const vars = [...fig.querySelectorAll('.pah-var')];
+      let raf = 0, played = false;
+      const light = t => lis.forEach(({ li, w }) => li.classList.toggle('on', t >= w[0] && t < w[1]));
+      const motionOn = () => !!(checkbox && checkbox.checked);
+      // symmetry breaking is random: each replay picks which PDI ends up with the electron
+      const pickVariant = () => { if (!vars.length) return; const k = Math.floor(Math.random() * vars.length); vars.forEach((v, i) => v.setAttribute('display', i === k ? 'inline' : 'none')); };
+      function showEnd() { cancelAnimationFrame(raf); svg.pauseAnimations(); svg.setCurrentTime(END); light(END - .01); }
+      function play(force) {
+        if (force !== true && !motionOn()) { showEnd(); return; }   // the Replay button forces it: plays once even with Motion Off
+        cancelAnimationFrame(raf); pickVariant(); svg.setCurrentTime(0); svg.unpauseAnimations();
+        const tick = () => { const t = svg.getCurrentTime(); light(t); if (t < END) raf = requestAnimationFrame(tick); else { svg.pauseAnimations(); light(END - .01); } };
+        tick();
+      }
+      svg.pauseAnimations(); svg.setCurrentTime(0);
+      new IntersectionObserver((es, io) => { if (es[0].isIntersecting && !played) { played = true; play(); io.disconnect(); } }, { threshold: 0.4 }).observe(fig);
+      btn.addEventListener('click', () => play(true));
+      checkbox?.addEventListener('change', () => { if (played) (motionOn() ? play() : showEnd()); });
+    }));
+
+    // ── filters (search + year + topic) ──
+    const entries = [...document.querySelectorAll('.pub-entry')];
+    const q = document.getElementById('pubSearch'), ySel = document.getElementById('pubYear');
+    const chips = [...document.querySelectorAll('#pubChips .chip')];
+    const status = document.getElementById('pubStatus'), empty = document.getElementById('pubEmpty');
+    [...new Set(entries.map(e => e.dataset.year))].forEach(y => ySel.add(new Option(y, y)));
+    let topic = '';
+    function apply() {
+      const term = q.value.trim().toLowerCase(), yr = ySel.value;
+      let shown = 0, first = null;
+      entries.forEach(e => {
+        const ok = (!yr || e.dataset.year === yr)
+          && (!topic || e.dataset.topics.split(' ').includes(topic))
+          && (!term || e.textContent.toLowerCase().includes(term));
+        e.hidden = !ok; e.style.borderTop = '';
+        if (ok) { shown++; if (!first) first = e; }
+      });
+      if (first) first.style.borderTop = 'none';
+      empty.hidden = shown > 0;
+      status.textContent = shown === entries.length ? entries.length + ' publications' : shown + ' of ' + entries.length + ' publications';
+    }
+    q.addEventListener('input', apply); ySel.addEventListener('change', apply);
+    chips.forEach(c => c.addEventListener('click', () => {
+      topic = c.dataset.topic; chips.forEach(x => x.setAttribute('aria-pressed', String(x === c))); apply();
+    }));
+    apply();
+  </script>
+<script src="js/subnav.js" defer></script>
+<footer class="site-footer">© 2026 Jeffrey Gorman. All rights reserved.</footer>
+</body>
+</html>

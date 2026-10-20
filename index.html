@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- (zoom is allowed: blocking pinch-zoom locks out people with low vision) -->
+  <title>ExP Lab – Excitonics & Photochemistry</title>
+  <meta name="description" content="The ExP Lab (Excitonics &amp; Photochemistry) at Durham University, led by Dr Jeffrey Gorman: DNA-programmed organic semiconductors, exciton dynamics and photochemistry." />
+  <meta name="author" content="Jeffrey Gorman" />
+  <meta name="theme-color" content="#7D6B9D" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="ExP Lab" />
+  <meta property="og:title" content="ExP Lab – Excitonics &amp; Photochemistry" />
+  <meta property="og:description" content="DNA-programmed organic semiconductors, exciton dynamics and photochemistry at Durham University." />
+  <!-- TODO once the site has a URL: add <link rel="canonical">, og:url and og:image (a 1200x630 picture, e.g. the DNA helix + logo) -->
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- EXTERNAL FONTS & LIBRARIES -->
+  <!-- Departure Mono is self-hosted: see @font-face in css/styles.css and /fonts -->
+  <link rel="preload" href="fonts/DepartureMono-Regular.woff2" as="font" type="font/woff2" crossorigin />
+  <script src="js/gsap.min.js" defer></script>
+
+  <!-- OUR CSS (with global variables) -->
+  <link rel="stylesheet" href="css/styles.min.css?v=p79" />
+  <link rel="stylesheet" href="css/pah-card.min.css?v=p70">
+<style id="site-footer-css">#s6 .site-footer{position:absolute;left:0;right:0;bottom:14px;text-align:center;font:12px/1.4 Inter,"Helvetica Neue",Arial,sans-serif;letter-spacing:.02em;color:rgba(255,255,255,.55);pointer-events:none;z-index:2}</style>
+</head>
+<body>
+
+  <!-- Hero video tint: the same result as screening the page pink over the video (out = v*(1-c) + c), as one filter. Colours are filled in from --color-secondary by main.js. -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><filter id="heroTint" color-interpolation-filters="sRGB"><feComponentTransfer><feFuncR type="linear" slope="0.1686" intercept="0.8314"/><feFuncG type="linear" slope="0.3529" intercept="0.6471"/><feFuncB type="linear" slope="0.2353" intercept="0.7647"/></feComponentTransfer></filter></svg>
+
+  <!-- ─── NAVBAR ─── -->
+  <nav class="navbar" id="navbar" aria-label="Main">
+    <div class="navbar-logo">
+      <!-- three cross-fading versions of one logo: only the first is announced -->
+      <img src="images/research_rbf.png" alt="ExP Lab" class="logo-fade" />
+      <img src="images/research_helix.png" alt="" class="logo-fade" />
+      <img src="images/research_jablonski.png" alt="" class="logo-fade" />
+    </div>
+    <ul class="navbar-menu">
+      <li class="motion-switch-item">
+        <span class="motion-label" id="motionLabel">Motion: <span class="motion-label-state" id="motionLabelState">On</span></span>
+        <label class="motion-switch" title="Toggle animations">
+          <input type="checkbox" id="motionCheckbox" checked aria-label="Animations">
+          <span class="motion-slider"></span>
+        </label>
+      </li>
+      <li><a href="#" data-section="s1" class="nav-link active">Home</a></li>
+      <li><a href="#" data-section="s2" class="nav-link">Research</a></li>
+      <li><a href="#" data-section="s4" class="nav-link">Team</a></li>
+      <li><a href="#" data-section="s5" class="nav-link">Publications</a></li>
+      <li><a href="#" data-section="s6" class="nav-link">Join</a></li>
+    </ul>
+    <label class="motion-switch motion-switch-mobile" title="Toggle animations">
+      <input type="checkbox" id="motionCheckboxMobile" checked aria-label="Animations">
+      <span class="motion-slider"></span>
+    </label>
+    <button type="button" class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false" aria-controls="mobileMenu"><svg viewBox="0 0 48 48" width="34" height="34" fill="none" stroke="currentColor" stroke-linecap="round" aria-hidden="true" focusable="false"><path class="hb-curve" d="M7 6 Q24 74 41 6" stroke-width="2.5"/><line class="hb-l1" x1="16" y1="33" x2="32" y2="33" stroke-width="4"/><line class="hb-l2" x1="12.5" y1="23" x2="35.5" y2="23" stroke-width="4"/><line class="hb-l3" x1="9.5" y1="13" x2="38.5" y2="13" stroke-width="4"/></svg></button>
+  </nav>
+
+  <!-- ─── MOBILE MENU ─── -->
+  <nav class="mobile-menu-overlay" id="mobileMenu" aria-label="Mobile">
+    <div class="mobile-menu-content">
+      <a href="#" data-section="s1" class="mobile-nav-link">Home</a>
+      <a href="#" data-section="s2" class="mobile-nav-link">Research</a>
+      <a href="#" data-section="s4" class="mobile-nav-link">Team</a>
+      <a href="#" data-section="s5" class="mobile-nav-link">Publications</a>
+      <a href="#" data-section="s6" class="mobile-nav-link">Join</a>
+    </div>
+  </nav>
+
+  <!-- ─── SIDE NAV (dots) ─── -->
+
+  <!-- ─── SMOOTH SCROLL CONTAINER ─── -->
+  <main id="smooth-content">
+
+    <!-- SECTION 1 – HERO -->
+    <section class="section-1" id="s1">
+      <!-- Real page heading for screen readers / search engines. The big
+           animated "ExP Lab" title below is built from separate letters,
+           so it's hidden from screen readers (it would be read as
+           "E, x, citonics, P, hotochemistry") and this reads instead. -->
+      <h1 class="sr-only">ExP Lab: Excitonics &amp; Photochemistry Lab, Department of Chemistry, Durham University</h1>
+      <video class="hero-video" autoplay loop muted playsinline preload="auto" poster="video/hero-poster.jpg" aria-hidden="true">
+        <source src="video/hero.mp4" type="video/mp4" />
+        <source src="https://videos.pexels.com/video-files/3191572/3191572-hd_1920_1080_25fps.mp4" type="video/mp4" />
+      </video>
+      <div class="video-overlay"></div>
+      <div class="hero-corner-label top-left" aria-hidden="true">Durham<br>University</div>
+      <div class="hero-corner-label bottom-right" aria-hidden="true">Department of<br>Chemistry</div>
+      <aside class="vacancy-card" id="vacancyCard" hidden aria-labelledby="vacancyTag">
+        <p class="vacancy-tag" id="vacancyTag">PhD studentship</p>
+        <p class="vacancy-title" id="vacancyTitle"></p>
+        <p class="vacancy-note" id="vacancyNote" hidden></p>
+        <a class="vacancy-apply" id="vacancyLink" href="join.html#phd">Details &amp; apply <span aria-hidden="true">→</span></a>
+      </aside>
+      <aside class="news-strip" id="newsStrip" aria-labelledby="newsStripTitle">
+        <h2 class="news-strip-title" id="newsStripTitle">News</h2>
+        <ul class="news-strip-list" id="newsStripList"></ul>
+        <a class="news-strip-all" href="news.html">All news <span aria-hidden="true">→</span></a>
+      </aside>
+      <div class="scroll-prompt" id="scrollPrompt" role="button" tabindex="0" aria-label="What we do: go to Research">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M12 5v14M19 12l-7 7-7-7" />
+        </svg>
+        <span>What we do</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M12 5v14M19 12l-7 7-7-7" />
+        </svg>
+      </div>
+    </section>
+
+    <!-- ─── TITLE OVERLAY ─── -->
+    <div class="title-wrapper" id="masterTitle" aria-hidden="true">
+      <div class="word-box" id="centering-container">
+        <div class="word" id="lw"><span>E</span><span id="x-char">x</span><span class="fade-text">citonics</span></div>
+        <div class="word" id="rw"><span>P</span><span class="fade-text">hotochemistry</span></div>
+        <div class="lab-subtitle" id="labSubtitle">Lab</div>
+      </div>
+    </div>
+
+    <!-- SECTION 2 – RESEARCH -->
+    <section class="section-2" id="s2">
+      <div class="section-nav top" id="s2NavUp" role="button" tabindex="0" aria-label="Previous section">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M12 19V5M5 12l7-7 7 7" />
+        </svg>
+      </div>
+
+      <!-- LEFT COLUMN -->
+      <div class="col col-left" id="colLeft" data-dna-bg data-dna-group="s2">
+        <h2 class="sr-only">Excitonics</h2>
+        <div class="content-grid">
+          <div class="reveal" style="width:100%;">
+            <!-- ===== EDIT SECTION 2 – LEFT TEXT HERE ===== -->
+            <div class="truncatable-wrapper">
+              <div class="truncatable-para">
+                <span class="text-span">
+                  <span class="txt-full">We synthesise organic semiconductors and precisely control their intermolecular distance using DNA. By tailoring how excited molecules communicate, we aim to create next‑generation materials for energy conversion, sensing, and quantum information technologies.</span><span class="txt-short">We synthesise organic semiconductors and use DNA to control how they interact and share energy.</span>
+                </span>
+              </div>
+              <a href="research.html" class="arrow-link" id="arrowLeft" aria-label="Read more about our excitonics research">→</a>
+            </div>
+            <!-- ===== END EDITABLE TEXT ===== -->
+          </div>
+          <div id="honeycomb-container" role="img" aria-label="Animation: light is absorbed by one molecule in a honeycomb lattice, and its energy hops from molecule to molecule (photon absorbed, energy transfer, charge transfer)."></div>
+        </div>
+      </div>
+
+      <!-- RIGHT COLUMN -->
+      <div class="col col-right" id="colRight" data-dna-bg data-dna-group="s2">
+        <h2 class="sr-only">Photochemistry</h2>
+        <div class="content-grid-reactor">
+          <div class="reveal" style="width:100%;">
+            <!-- ===== EDIT SECTION 2 – RIGHT TEXT HERE ===== -->
+            <div class="truncatable-wrapper">
+              <div class="truncatable-para">
+                <span class="text-span">
+                  <span class="txt-full">We are interested in using light to unlock new modes of organic reactivity. Our research explores how energy transfer, electron transfer, and spin dynamics can be combined to control reaction pathways, enabling selective transformations that are difficult or impossible to achieve using conventional thermal chemistry.</span><span class="txt-short">Light-driven energy and electron transfer open reactions that heat alone can't achieve.</span>
+                </span>
+              </div>
+              <a href="research.html" class="arrow-link" id="arrowRight" aria-label="Read more about our photochemistry research">→</a>
+            </div>
+            <!-- ===== END EDITABLE TEXT ===== -->
+          </div>
+          <div id="reactor-site-wrapper" class="reactor-active" role="img" aria-label="Animation: a lamp shines light into a stirred flask to drive a photoredox reaction.">
+            <div id="master-layout">
+              <!-- LAMP -->
+              <div id="lamp-wrapper">
+                <div id="lamp-container">
+                  <div id="bulb">
+                    <div class="filament-rod" style="margin-left:-22px;"></div>
+                    <div class="filament-rod" style="margin-left:18px;"></div>
+                    <svg id="arc-svg" viewBox="0 0 100 40">
+                      <path class="arc-path" d="M 30 20 L 35 15 L 45 25 L 55 10 L 65 25 L 75 20" />
+                    </svg>
+                  </div>
+                </div>
+              </div>
+
+              <!-- PHOTON FIELD (arrows) – generated by reactor.js -->
+              <div id="photon-field-wrapper">
+                <svg id="photon-arrows-svg" class="photon-field">
+                  <g id="photon-lines-group"></g>
+                </svg>
+              </div>
+
+              <!-- FLASK -->
+              <div id="flask-scene">
+                <div id="flask-container">
+                  <div class="stir-bar" id="stirrer"></div>
+                  <div id="flask-shadow"></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- REACTOR OVERLAY LABELS (edit these texts directly) -->
+            <div id="reactor-labels-overlay">
+              <div class="reactor-label light-text" id="light-label">LIGHT</div>
+              <div class="reactor-label photoredox-text" id="photoredox-label">PHOTOREDOX</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-nav bottom" id="s2NavDown" role="button" tabindex="0" aria-label="Next section">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M12 5v14M19 12l-7 7-7-7" />
+        </svg>
+      </div>
+    </section>
+
+    <!-- SECTION 3 – DNA -->
+    <section class="section-3 dot-lattice" id="s3">
+      <div class="section-nav top" id="s3NavUp" role="button" tabindex="0" aria-label="Previous section">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M12 19V5M5 12l7-7 7 7" />
+        </svg>
+      </div>
+      <h2 class="dna-title">Why DNA?</h2>
+      <div class="dna" id="dna-root" style="--total:13;" aria-hidden="true">
+      <svg class="dna-annot" viewBox="-250 -40 610 320" aria-hidden="true" focusable="false">
+        <g data-at="0.2"><path d="M0 -10V-18M110 -10V-18M0 -14H110" class="ln"/><text x="55" y="-24" text-anchor="middle" class="dna-label">~2 nm</text></g>
+        <g data-at="1.5"><path d="M-8 204.6H-16M-8 226.2H-16M-12 204.6V226.2" class="ln"/><path d="M-16 215.4H-80" class="ln"/><text x="-86" y="211" text-anchor="end" class="dna-label">0.35 nm</text><text x="-86" y="227" text-anchor="end" class="dna-label">per base pair</text></g>
+        <g data-at="0.5"><path d="M-2 64.5H-80" class="ln"/><circle cx="-2" cy="64.5" r="1.6" class="dot"/><text x="-86" y="62" text-anchor="end" class="dna-label"><tspan class="b-a">A</tspan>=<tspan class="b-t">T</tspan></text><text x="-86" y="76" text-anchor="end" class="dna-label"><tspan class="b-c">C</tspan>≡<tspan class="b-g">G</tspan></text></g>
+        <g data-at="2.7"><path d="M-80 183.1H-61" class="ln"/><text x="-86" y="187" text-anchor="end" class="dna-label">semiconductor</text></g>
+      </svg></div>
+      <div class="dna-info">
+        <h3>Programmable assembly</h3>
+        <ul>
+          <li><svg class="dna-ic" width="44" height="28" viewBox="0 0 44 28" aria-hidden="true" focusable="false"><path class="hb-line" pathLength="1" d="M22 14H9"/><path class="hb-line" pathLength="1" d="M22 14H35"/><circle class="dot hb-dot" cx="9" cy="14" r="5"/><circle class="dot2 hb-dot" cx="35" cy="14" r="5"/></svg><span>Robust self-assembly</span></li>
+          <li><svg class="dna-ic" width="44" height="44" viewBox="0 0 44 44" aria-hidden="true" focusable="false"><g transform="translate(37 -2.4) rotate(90) scale(1.15)"><path d="M3 22h38M3 22v-4M12 22v-4M21 22v-4M30 22v-4M39 22v-4"/><circle class="bs bs0" cx="3" cy="14.5" r="3.1" fill="#b22d64"/><circle class="bs bs1" cx="12" cy="14.5" r="3.1" fill="#4B3B61"/><circle class="bs bs2" cx="21" cy="14.5" r="3.1" fill="#d9a7c4"/><circle class="bs bs3" cx="30" cy="14.5" r="3.1" fill="#7653b0"/><circle class="bs bs4" cx="39" cy="14.5" r="3.1" fill="#b22d64"/><g class="hop"><circle cx="3" cy="14.5" r="3.1"/></g></g></svg><span>0.35 nm spatial resolution</span></li>
+          <li><svg class="dna-ic" width="44" height="44" viewBox="0 0 44 44" aria-hidden="true" focusable="false"><g transform="translate(37 -2.4) rotate(90) scale(1.15)"><path d="M3 22h38M3 22v-4M12 22v-4M21 22v-4M30 22v-4M39 22v-4"/><path d="M21 22V12"/><defs><radialGradient id="dyeGlow"><stop offset="0" stop-color="#fff" stop-opacity=".5"/><stop offset=".45" stop-color="#fff" stop-opacity=".22"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></radialGradient></defs><circle class="dyeHalo" cx="21" cy="8" r="10"/><circle class="dotW" cx="21" cy="8" r="4.5"/></g></svg><span>Chemically editable<span class="ph-only"> (e.g. semiconductor)</span></span></li>
+        </ul>
+      </div>
+      <div class="section-nav bottom" id="s3NavDown" role="button" tabindex="0" aria-label="Next section">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M12 5v14M19 12l-7 7-7-7" />
+        </svg>
+      </div>
+    </section>
+
+    <!-- SECTION 4 – TEAM -->
+    <section class="section-4 dot-lattice" id="s4">
+      <div class="section-nav top" id="s4NavUp" role="button" tabindex="0" aria-label="Previous section">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M12 19V5M5 12l7-7 7 7" />
+        </svg>
+      </div>
+
+
+      <h2 class="team-heading">Meet the Team</h2>
+      <!-- TEAM GRID — photos + names only; filled in by js/team-render.js
+           from js/team-data.js (add/remove people there) -->
+      <ul class="team-tiles" id="teamTiles" aria-label="Team members"></ul>
+
+      <!-- BIO PANEL — opens when a photo is clicked (see js/team-bio.js) -->
+      <div class="team-bio" id="teamBio" role="dialog" aria-modal="true" aria-labelledby="teamBioName">
+        <button type="button" class="team-bio-close" aria-label="Close bio">×</button>
+        <div class="team-bio-photo"></div>
+        <div class="team-bio-body">
+          <h3 class="team-bio-name" id="teamBioName"></h3>
+          <p class="team-bio-role"></p>
+          <p class="team-bio-text"></p>
+        </div>
+      </div>
+
+      <div class="section-nav bottom" id="s4NavDown" role="button" tabindex="0" aria-label="Next section">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M12 5v14M19 12l-7 7-7-7" />
+        </svg>
+      </div>
+    </section>
+
+    <!-- SECTION 5 – PUBLICATIONS -->
+    <section class="section-5 dot-lattice" id="s5">
+      <div class="section-nav top" id="s5NavUp" role="button" tabindex="0" aria-label="Previous section"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 19V5M5 12l7-7 7 7" /></svg></div>
+      <h2 class="sr-only">Publications</h2>
+      <a href="publications.html" class="all-pubs-link">All Publications <span class="all-pubs-arrow">→</span></a>
+
+      <!-- PUBLICATIONS — wide screens: 3 columns, image above text.
+           Tall (portrait) screens: 3 rows, image left, text right.
+           Edit data/publications.js to change what shows here. -->
+      <div class="pubs-grid" id="pubsGrid">
+        <!-- filled in by js/pubs-render.js from data/publications.js (papers that have a "card") -->
+      
+      </div>
+
+      <div class="section-nav bottom" id="s5NavDown" role="button" tabindex="0" aria-label="Next section"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M19 12l-7 7-7-7" /></svg></div>
+    </section>
+
+    <!-- SECTION 6 – JOIN -->
+    <section class="section-6 join-section dot-lattice" id="s6">
+      <div class="section-nav top" id="s6NavUp" role="button" tabindex="0" aria-label="Previous section"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 19V5M5 12l7-7 7 7" /></svg></div>
+      <h2>Join the Team</h2>
+      <p class="reveal join-intro">
+        We're looking to expand the team, and welcome applicants with backgrounds in
+        synthetic organic chemistry, biosciences, or materials chemistry/spectroscopy —
+        we're especially keen to support cross-disciplinary training.
+      </p>
+
+      <a class="vacancy-mini reveal" id="vacancyMini" href="join.html#phd" hidden></a>
+
+      <div class="join-links">
+        <a href="join.html#phd" class="join-link reveal">PhD Studentships <span class="all-pubs-arrow">→</span></a>
+        <a href="join.html#postdoc" class="join-link reveal">Postdoctoral Fellowships <span class="all-pubs-arrow">→</span></a>
+        <a href="join.html#internships" class="join-link reveal">Undergraduate Summer Internships <span class="all-pubs-arrow">→</span></a>
+      </div>
+
+      <a href="#" data-mail class="join-contact-link">Get in touch <span class="all-pubs-arrow">→</span></a>
+
+      <div class="join-images">
+        <a href="https://www.youtube.com/watch?v=UVepoXddTW4" target="_blank" rel="noopener" title="Oslo Pride: TRYGG (video)"><img src="images/home_progress.svg" alt="Progress Pride flag: watch the Oslo Pride video &quot;TRYGG&quot; on what rainbow colours mean (opens in a new tab)" width="512" height="325" /></a>
+        <a href="https://dur.ac.uk/about-us/professional-services/equality-diversity-inclusion/networks/disability/" target="_blank" rel="noopener" title="Durham University Disability Network"><img src="images/home_disab.png" alt="Disability Pride flag: Durham University Disability Network (opens in a new tab)" width="400" height="300" /></a>
+      </div>
+    <footer class="site-footer">© 2026 Jeffrey Gorman. All rights reserved.</footer>
+</section>
+
+  </main> <!-- /smooth-content -->
+
+
+
+  <!-- OUR MODULAR JAVASCRIPT -->
+  <script src="data/team.js" defer></script>
+  <script src="data/news.js" defer></script>
+  <script src="data/vacancy.js?v=p79" defer></script>
+  <script src="data/publications.js" defer></script>
+  <script src="js/pubs-render.js" defer></script>
+  <script src="js/vacancy.js?v=p79" defer></script>
+  <script type="module" src="js/main.min.js?v=p71"></script>
+  <script type="module" src="js/pah-card.min.js?v=p79"></script>
+
+    
+
+<script src="js/contact.js?v=p70" defer></script>
+</body>
+</html>

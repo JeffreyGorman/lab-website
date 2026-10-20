@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Join the Team – ExP Lab</title>
+<style>
+  :root {
+    --dna-bg-color: rgba(255,255,255,0.06);
+    --color-primary: #b22d64;
+    --color-bg-left: #B8A5D6;
+    --color-bg-right: #DBA5CD;
+    --color-text-light: #ffffff;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    color: var(--color-text-light);
+    background: linear-gradient(135deg, #7D6B9D 0%, #6A5B8A 100%);
+    background-attachment: fixed;
+    isolation: isolate;
+    min-height: 100vh;
+  }
+  .top-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 24px 5%;
+  }
+  .top-bar-right {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+  .logo { font-weight: 900; letter-spacing: -1px; font-size: 20px; }
+  .logo-exp { color: var(--color-primary); }
+  .back-link {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 15px;
+    opacity: 0.9;
+  }
+  .back-link:hover { opacity: 1; }
+  .back-link::before { content: '← '; }
+  .motion-label { color: #fff; font-size: 14px; font-weight: 600; white-space: nowrap; }
+  .motion-label-state { display: inline-block; min-width: 22px; }
+  .motion-switch { position: relative; display: inline-block; width: 40px; height: 22px; cursor: pointer; vertical-align: middle; }
+  .motion-switch input { opacity: 0; width: 0; height: 0; position: absolute; }
+  .motion-slider { position: absolute; inset: 0; background: rgba(255,255,255,0.25); border: 1px solid rgba(255,255,255,0.6); border-radius: 22px; transition: background 0.2s ease, border-color 0.2s ease; }
+  .motion-slider::before { content: ''; position: absolute; height: 16px; width: 16px; left: 2px; top: 2px; background: #fff; border-radius: 50%; transition: transform 0.2s ease; }
+  .motion-switch input:checked + .motion-slider { background: #fff; }
+  .motion-switch input:checked + .motion-slider::before { background: var(--color-primary); transform: translateX(18px); }
+
+  main {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 10px 5% 100px;
+  }
+  h1 {
+    font-size: clamp(36px, 6vw, 60px);
+    font-weight: 900;
+    letter-spacing: -1px;
+    margin: 10px 0 20px;
+  }
+  .intro {
+    font-size: clamp(16px, 1.6vw, 20px);
+    line-height: 1.6;
+    opacity: 0.95;
+    margin-bottom: 20px;
+  }
+  .backgrounds-list {
+    margin: 0 0 50px;
+    padding-left: 20px;
+    line-height: 1.8;
+    opacity: 0.95;
+  }
+  section.join-block {
+    padding: 40px 0;
+    border-top: 1px solid rgba(255,255,255,0.25);
+    scroll-margin-top: 30px; /* so #anchors don't land flush under the very top edge */
+  }
+  section.join-block:first-of-type { border-top: none; }
+  section.join-block h2 {
+    font-size: clamp(24px, 3vw, 32px);
+    font-weight: 900;
+    margin-bottom: 16px;
+    color: #fff;
+  }
+  section.join-block p {
+    line-height: 1.65;
+    opacity: 0.95;
+    margin-bottom: 14px;
+  }
+  section.join-block ul {
+    line-height: 1.8;
+    opacity: 0.95;
+    padding-left: 20px;
+  }
+  .contact-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 40px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 17px;
+  }
+  .contact-link:hover { opacity: 0.85; }
+  .join-block a { color: inherit; text-decoration: underline; }
+  .intro a { color: #fff; font-weight: 700; text-decoration: underline; text-underline-offset: 3px; }
+  .sr-only { position: absolute !important; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
+  .dna-bg { position: fixed; inset: 0; width: 100%; height: 100%; z-index: -1; pointer-events: none; display: block; }
+  /* Consistency pass 2: frosted cards like the home page, arrow links instead of underlined bullets */
+  section.join-block { padding: 28px clamp(20px, 3vw, 36px); margin: 0 0 24px; background: rgba(255,255,255,0.1); -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.2); border-radius: 12px; }
+  section.join-block:first-of-type { margin-top: 8px; border-top: 1px solid rgba(255,255,255,0.2); }
+  section.join-block ul { list-style: none; padding-left: 0; opacity: 1; }
+  section.join-block li { margin: 0 0 6px; line-height: 1.5; }
+
+  /* Consistency pass 3: match Research — dark hero, then full-width coloured bands with pink headings */
+  main { max-width: 1100px; padding: 10px 5% 0; }
+  h1 { color: #fff; margin: 10px 0 10px; }
+  .intro { max-width: 700px; opacity: 0.85; margin-bottom: 24px; }
+  .backgrounds-list { max-width: 700px; margin: 0 0 24px; padding-left: 20px; }
+  main > .intro:last-of-type { margin-bottom: 50px; }
+  section.join-block { width: 100vw; position: relative; left: 50%; transform: translateX(-50%); padding: 60px 5%; margin: 0; background: none; -webkit-backdrop-filter: none; backdrop-filter: none; border: 0; border-radius: 0; }
+  section.join-block:first-of-type { margin-top: 0; border: 0; }
+  .join-inner { max-width: 1100px; margin: 0 auto; }
+  .join-inner > * { max-width: 700px; }
+  section.join-block.block-excitonics { background: linear-gradient(135deg, #B8A5D6 0%, #9D8BC4 100%); }
+  section.join-block.block-photochem { background: linear-gradient(135deg, #DBA5CD 0%, #C895BD 100%); }
+  section.join-block.block-dna { background: linear-gradient(135deg, #A890C8 0%, #9380B5 100%); }
+  section.join-block h2 { font-size: clamp(24px, 3vw, 34px); color: var(--color-primary); }
+  section.join-block p { font-size: 16px; line-height: 1.6; }
+  .go-link { margin: 50px 0 80px; }
+  @media (max-width: 768px) { section.join-block { padding: 28px 20px; } }
+  /* Consistency pass 4: one left edge for hero + bands; bands tint the page but sit BEHIND the A/T/C/G background */
+  main { width: 90%; max-width: 1100px; padding: 10px 0 0; }
+  /* The coloured bands sit BEHIND the A/T/C/G background, but their text and links must stay clickable: the band colour now lives
+     on a ::before at z-index -2, while the section itself is an ordinary (non-stacking) box above the page. */
+  section.join-block { z-index: auto; transform: none; left: auto; margin-left: calc(50% - 50vw); }
+  section.join-block::before { content: ""; position: absolute; inset: 0; z-index: -2; pointer-events: none; }
+  section.join-block.block-excitonics { background: none; }
+  section.join-block.block-photochem { background: none; }
+  section.join-block.block-dna { background: none; }
+  section.join-block.block-excitonics::before { background: linear-gradient(135deg, #B8A5D6 0%, #9D8BC4 100%); }
+  section.join-block.block-photochem::before { background: linear-gradient(135deg, #DBA5CD 0%, #C895BD 100%); }
+  section.join-block.block-dna::before { background: linear-gradient(135deg, #A890C8 0%, #9380B5 100%); }
+</style>
+<link rel="stylesheet" href="css/subnav.css?v=p72">
+<link rel="stylesheet" href="css/vacancy.css?v=p79">
+<style id="site-footer-css">.site-footer{padding:28px 16px 22px;text-align:center;font:12px/1.4 Inter,"Helvetica Neue",Arial,sans-serif;letter-spacing:.02em;color:rgba(255,255,255,.55);position:relative;z-index:1}</style>
+</head>
+<body data-dna-bg data-dna-fixed>
+  <header class="site-nav">
+    <a class="site-nav-logo" href="index.html" aria-label="ExP Lab home"><img class="logo-fade" src="images/research_rbf.png" alt="" /><img class="logo-fade" src="images/research_helix.png" alt="" /><img class="logo-fade" src="images/research_jablonski.png" alt="" /></a>
+    <label class="motion-switch site-nav-motion-mobile" title="Toggle animations"><input type="checkbox" id="motionCheckboxMobile" checked aria-label="Animations"><span class="motion-slider"></span></label>
+    <button type="button" class="site-nav-burger" id="siteNavBurger" aria-label="Menu" aria-expanded="false" aria-controls="siteNavMenu"><svg viewBox="0 0 48 48" width="34" height="34" fill="none" stroke="currentColor" stroke-linecap="round" aria-hidden="true" focusable="false"><path class="hb-curve" d="M7 6 Q24 74 41 6" stroke-width="2.5"/><line class="hb-l1" x1="16" y1="33" x2="32" y2="33" stroke-width="4"/><line class="hb-l2" x1="12.5" y1="23" x2="35.5" y2="23" stroke-width="4"/><line class="hb-l3" x1="9.5" y1="13" x2="38.5" y2="13" stroke-width="4"/></svg></button>
+    <ul class="site-nav-menu" id="siteNavMenu">
+      <li class="motion-switch-item"><span class="motion-label">Motion: <span class="motion-label-state" id="motionLabelState">On</span></span>
+        <label class="motion-switch" title="Toggle animations (applies across the whole site)"><input type="checkbox" id="motionCheckbox" checked aria-label="Animations"><span class="motion-slider"></span></label></li>
+      <li><a href="index.html">Home</a></li><li><a href="research.html">Research</a></li><li><a href="index.html#s4">Team</a></li><li><a href="publications.html">Publications</a></li><li><a href="join.html" aria-current="page">Join</a></li>
+    </ul>
+  </header>
+
+  <main>
+    <h1>Join the Team</h1>
+    <p class="intro">
+      We're looking to expand the team, and welcome applicants with backgrounds in:
+    </p>
+    <ul class="backgrounds-list">
+      <li>Synthetic organic chemistry</li>
+      <li>Biosciences</li>
+      <li>Materials chemistry / spectroscopy</li>
+    </ul>
+    <p class="intro">
+      We're especially keen to support cross-disciplinary training between these areas —
+      if your background doesn't fit neatly into one category, <a href="#" data-mail>get in touch</a> anyway.
+    </p>
+
+    <section class="join-block block-excitonics" id="phd"><div class="join-inner">
+      <h2>PhD Studentships</h2>
+      <div class="vacancy-ad" id="vacancyAd" hidden></div>
+      <p>Externally-funded PhD positions are advertised online as they become available.</p>
+      <p>If you're interested in joining but don't see an open studentship listed, other funding routes worth exploring include:</p>
+      <ul>
+        <li><a href="https://www.durham.ac.uk/departments/academic/science/research-excellence/science-doctoral-training/pgr-funding-routes/" target="_blank" rel="noopener">SCOPE / EPSRC Doctoral Landscape Award (DLA) studentships<span class="sr-only"> (opens in a new tab)</span></a></li>
+        <li><a href="https://www.durham.ac.uk/study/scholarships/international/chinese-scholarships-council/" target="_blank" rel="noopener">Chinese Scholarship Council (CSC) scholarships<span class="sr-only"> (opens in a new tab)</span></a></li>
+      </ul>
+      <p><a href="#" data-mail>Get in touch</a> to discuss a potential project and funding route.</p>
+    </div></section>
+
+    <section class="join-block block-photochem" id="postdoc"><div class="join-inner">
+      <h2>Postdoctoral Fellowships</h2>
+      <p>Grant-funded postdoctoral positions are advertised online as they become available.</p>
+      <p>We're also very happy to support strong candidates applying for their own individual fellowship funding, including:</p>
+      <ul>
+        <li><a href="https://royalcommission1851.org/" target="_blank" rel="noopener">Royal Commission for the Exhibition of 1851 Research Fellowship<span class="sr-only"> (opens in a new tab)</span></a></li>
+        <li><a href="https://www.leverhulme.ac.uk/early-career-fellowships" target="_blank" rel="noopener">Leverhulme Early Career Fellowship<span class="sr-only"> (opens in a new tab)</span></a></li>
+        <li><a href="https://marie-sklodowska-curie-actions.ec.europa.eu/actions/postdoctoral-fellowships" target="_blank" rel="noopener">Marie Skłodowska-Curie Actions<span class="sr-only"> (opens in a new tab)</span></a></li>
+        <li><a href="https://royalsociety.org/grants/newton-international/" target="_blank" rel="noopener">Newton International Fellowship<span class="sr-only"> (opens in a new tab)</span></a></li>
+        <li><a href="https://www.embo.org/funding/fellowships-grants-and-career-support/postdoctoral-fellowships/" target="_blank" rel="noopener">EMBO Fellowship<span class="sr-only"> (opens in a new tab)</span></a></li>
+        <li><a href="https://royalsociety.org/grants/career-development-fellowship/" target="_blank" rel="noopener">Career Development Fellowship<span class="sr-only"> (opens in a new tab)</span></a></li>
+        <li><a href="https://daphnejackson.org/" target="_blank" rel="noopener">Daphne Jackson Fellowship<span class="sr-only"> (opens in a new tab)</span></a> (for researchers returning after a career break)</li>
+      </ul>
+      <p><a href="#" data-mail>Get in touch</a> as early as possible before a funding deadline so we have time to develop a strong proposal together.</p>
+    </div></section>
+
+    <section class="join-block block-dna" id="internships"><div class="join-inner">
+      <h2>Undergraduate Summer Internships</h2>
+      <p>A limited number of paid summer research placements are available each year for undergraduate students, including via the <a href="https://www.rsc.org/prizes-funding/funding/find-funding/undergraduate-research-bursaries/" target="_blank" rel="noopener">RSC Undergraduate Research Bursary<span class="sr-only"> (opens in a new tab)</span></a> scheme.</p>
+      <p>Places are competitive and limited, so please <a href="#" data-mail>get in touch</a> well ahead of any application deadlines.</p>
+    </div></section>
+
+    <a href="#" data-mail class="go-link">Get in touch</a>
+  </main>
+
+  <script type="module">
+    import { initDnaBackground } from './js/dna-bg.js';
+    try { initDnaBackground(); } catch (e) { console.warn(e); }
+    import { getStoredMotionPreference, setStoredMotionPreference } from './js/motion-state.js';
+    const checkbox = document.getElementById('motionCheckbox');
+    const labelState = document.getElementById('motionLabelState');
+    const enabled = getStoredMotionPreference();
+    if (checkbox) checkbox.checked = enabled;
+    if (labelState) labelState.textContent = enabled ? 'On' : 'Off';
+    checkbox?.addEventListener('change', () => {
+      setStoredMotionPreference(checkbox.checked);
+      if (labelState) labelState.textContent = checkbox.checked ? 'On' : 'Off';
+    });
+  </script>
+<script src="data/vacancy.js?v=p79" defer></script>
+<script src="js/vacancy.js?v=p79" defer></script>
+<script src="js/subnav.js" defer></script>
+<footer class="site-footer">© 2026 Jeffrey Gorman. All rights reserved.</footer>
+<script src="js/contact.js?v=p69" defer></script>
+</body>
+</html>

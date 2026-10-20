@@ -1,0 +1,10 @@
+# Cloudflare Pages / Workers static-asset headers: let browsers keep big, rarely-changing files so repeat visits are instant.
+# (HTML, data/, js/ and css/ are left on the default so edits show up straight away.)
+/video/*
+  Cache-Control: public, max-age=2592000
+/fonts/*
+  Cache-Control: public, max-age=2592000
+/images/*
+  Cache-Control: public, max-age=604800
+/animations/*
+  Cache-Control: public, max-age=86400

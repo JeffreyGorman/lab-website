@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 300" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Placeholder for a graphical abstract">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#A890C8"/>
+      <stop offset="1" stop-color="#DBA5CD"/>
+    </linearGradient>
+  </defs>
+  <rect width="480" height="300" fill="url(#g)"/>
+  <g fill="none" stroke="#fff" stroke-opacity="0.55" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="170" y="85" width="140" height="100" rx="10"/>
+    <circle cx="208" cy="119" r="13"/>
+    <path d="M170 172 L215 138 L250 164 L277 145 L310 172"/>
+  </g>
+  <text x="240" y="228" text-anchor="middle" font-family="ui-monospace, Menlo, monospace" font-size="16" fill="#fff" fill-opacity="0.85" letter-spacing="1.5">GRAPHICAL ABSTRACT</text>
+</svg>
