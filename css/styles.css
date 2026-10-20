@@ -2677,8 +2677,8 @@ body.nav-on-dark .vacancy-card { display: none; }
 .vacancy-mini.is-open { grid-template-columns: minmax(0, 1fr); grid-template-rows: auto; grid-template-areas: "head" "art" "foot"; row-gap: 10px; padding: 14px 18px 16px; }
 .vacancy-mini.is-open .vacancy-mini-head, .vacancy-mini.is-open .vacancy-mini-foot { align-self: auto; }
 .vacancy-mini.is-open .vacancy-mini-title { font-size: clamp(16px, 2.2vw, 22px); font-weight: 900; color: #f08ab8; }
-.vacancy-mini.is-open .vacancy-mini-art { justify-self: center; width: min(100%, calc((100vh - 620px) * 1080 / 940)); min-width: 120px; border-radius: 12px; }
-@media (max-width: 768px) { .vacancy-mini.is-open .vacancy-mini-art { width: min(100%, calc((100vh - 540px) * 1080 / 940)); } }
+.vacancy-mini.is-open .vacancy-mini-art { justify-self: center; width: min(100%, calc((100vh - 450px) * 1080 / 940)); min-width: 120px; border-radius: 12px; }
+@media (max-width: 768px) { .vacancy-mini.is-open { padding: 12px 12px 14px; } .vacancy-mini.is-open .vacancy-mini-art { width: min(100%, calc((100vh - 360px) * 1080 / 940)); } }
 .vacancy-mini.is-open .vacancy-mini-note { font-size: 14px; }
 .vacancy-mini.is-open .vacancy-mini-go { justify-self: start; padding: 8px 16px; border-radius: 30px; background: #b22d64; color: #fff; font-size: 14px; }
 .vacancy-mini.flipping > * { animation: vmFade 0.45s ease both; }
@@ -2686,11 +2686,12 @@ body.nav-on-dark .vacancy-card { display: none; }
 @media (max-height: 700px) and (max-width: 768px) { .vacancy-mini.is-open .vacancy-mini-note { display: none; } }
 /* ...and the rest of the section gives way (the same idea as the other cards shrinking on the publications grid) */
 .join-section .join-intro { max-height: 320px; overflow: hidden; transition: max-height 0.5s ease, opacity 0.4s ease, margin 0.5s ease; }
-.join-section .join-links { transition: gap 0.5s ease, margin 0.5s ease; }
+.join-section .join-links { max-height: 260px; transition: gap 0.5s ease, margin 0.5s ease, max-height 0.5s ease, opacity 0.4s ease; }
+.join-section h2 { max-height: 90px; transition: max-height 0.5s ease, opacity 0.4s ease, margin 0.5s ease; }
 .join-section.vacancy-open .join-intro { max-height: 0; opacity: 0; margin-top: 0; margin-bottom: 0; }
-.join-section.vacancy-open .join-links { gap: 2px; margin-bottom: 4px; }
+.join-section.vacancy-open .join-links { max-height: 0; opacity: 0; overflow: hidden; margin-top: 0; margin-bottom: 0; }
 .join-section.vacancy-open .join-images { display: none; }
-.join-section.vacancy-open h2 { margin-bottom: 14px; }
+.join-section.vacancy-open h2 { max-height: 0; opacity: 0; overflow: hidden; margin: 0; }
 @media (prefers-reduced-motion: reduce) { .join-section .join-intro, .join-section .join-links, .vacancy-mini.flipping > * { transition: none; animation: none; } }
 body.nav-on-dark .vacancy-card { display: none; }
 
