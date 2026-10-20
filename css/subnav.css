@@ -77,3 +77,10 @@ html.is-safari .growing-line, html.is-safari .arrow-tip, html.is-safari .vortex-
 }
 html.is-safari .reactor-active .arc-path { animation-name: arcFadeS; }
 html.is-safari .reactor-active .filament-rod { animation-name: bulbPowerS; }
+
+
+/* Android has no Helvetica Neue / Helvetica / Arial (it quietly swaps in Roboto or Samsung's own font), so the text looked different.
+   On Android only (main.js / subnav.js add .is-android) use Arimo, a free font with the same shapes and widths as Arial. */
+@font-face { font-family: 'Arimo Web'; src: url('../fonts/Arimo-Regular.woff2') format('woff2'); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: 'Arimo Web'; src: url('../fonts/Arimo-Bold.woff2') format('woff2'); font-weight: 700 900; font-style: normal; font-display: swap; }
+html.is-android body, html.is-android .site-nav, html.is-android button, html.is-android input, html.is-android textarea { font-family: 'Arimo Web', 'Helvetica Neue', Helvetica, Arial, sans-serif; }

@@ -84,7 +84,8 @@ cards.forEach(c => {
     cards.forEach(o => { if (o === c) return; o.waiting = false; if (o.playing) { o.played = false; showEnd(o); } });
     c.waiting = false; play(c, true);
   };
-  if (c.zoomEl) document.addEventListener('keydown', e => { if (e.key === 'Escape' && c.zoomed) showEnd(c); });   // (the thumbnail itself is a link to the Join page)
+  if (c.zoomEl) document.addEventListener('keydown', e => { if (e.key === 'Escape' && c.zoomed) showEnd(c); });
+  if (c.zoomEl) document.addEventListener('click', e => { if (c.zoomed && !(e.target.closest && e.target.closest('.vacancy-mini'))) showEnd(c); });   // click anywhere outside the open card to close it   // (the thumbnail itself is a link to the Join page)
   else c.svg.addEventListener('click', go);
   if (holder && !c.zoomEl) holder.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); go(); } });
 });

@@ -1,5 +1,6 @@
 /* Mobile menu toggle for the shared sub-page top bar. */
 (function () {
+  if (/android/i.test(navigator.userAgent)) document.documentElement.classList.add('is-android');   // Android has no Helvetica/Arial: subnav.css then uses Arimo
   if (/firefox|fxios/i.test(navigator.userAgent)) document.documentElement.classList.add('is-firefox');
   if (/^((?!chrome|android|crios|fxios).)*safari/i.test(navigator.userAgent)) document.documentElement.classList.add('is-safari');   // lets the CSS drop effects Safari draws slowly
   var b = document.getElementById('siteNavBurger'), m = document.getElementById('siteNavMenu');

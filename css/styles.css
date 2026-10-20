@@ -2731,3 +2731,38 @@ html.is-ios-webkit .section-1 { --hero-video-backdrop: #000; }
   .join-images img { height: 24px; }
 }
 @media (max-width: 768px) and (orientation: portrait) and (max-height: 650px) { .join-images { display: none; } }
+
+/* Desktop/laptop, opened PhD card: words and title stacked on the left, the picture on the right and as tall as the screen allows */
+@media (min-width: 769px) {
+  .vacancy-mini.is-open {
+    --art-w: clamp(380px, calc((100svh - 330px) * 1080 / 940), 800px);
+    width: fit-content; max-width: 100%;
+    grid-template-columns: minmax(260px, 340px) var(--art-w);
+    grid-template-rows: auto auto 1fr;
+    grid-template-areas: "head art" "foot art" "rest art";
+    column-gap: 28px; row-gap: 14px; padding: 22px 24px;
+  }
+  .vacancy-mini.is-open .vacancy-mini-head, .vacancy-mini.is-open .vacancy-mini-foot { align-self: start; }
+  .vacancy-mini.is-open .vacancy-mini-title { font-size: clamp(20px, 1.9vw, 30px); line-height: 1.25; }
+  .vacancy-mini.is-open .vacancy-mini-tag { font-size: 13px; }
+  .vacancy-mini.is-open .vacancy-mini-note { font-size: 15px; }
+  .vacancy-mini.is-open .vacancy-mini-art { width: var(--art-w); min-width: 0; justify-self: stretch; align-self: center; }
+}
+/* Short desktop windows (laptops): the Join section must fit — the intro never squeezes away and the logos stay on the page */
+@media (min-width: 769px) and (max-height: 800px) {
+  .join-section > * { flex: none; }
+  .section-6 { padding-top: 100px; padding-bottom: 12px; }
+  .section-6 h2 { font-size: 40px; margin-bottom: 12px; }
+  .join-intro { margin-bottom: 14px; line-height: 1.45; }
+  .vacancy-mini { margin-bottom: 12px; }
+  .join-links { gap: 6px; margin-bottom: 8px; }
+  .join-images { margin-top: 8px; }
+  .join-images img { height: 28px; }
+}
+@media (min-width: 769px) and (max-height: 640px) { .join-images { display: none; } }
+
+/* Android has no Helvetica Neue / Helvetica / Arial (it quietly swaps in Roboto or Samsung's own font), so the text looked different.
+   On Android only (main.js / subnav.js add .is-android) use Arimo, a free font with the same shapes and widths as Arial. */
+@font-face { font-family: 'Arimo Web'; src: url('../fonts/Arimo-Regular.woff2') format('woff2'); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: 'Arimo Web'; src: url('../fonts/Arimo-Bold.woff2') format('woff2'); font-weight: 700 900; font-style: normal; font-display: swap; }
+html.is-android body, html.is-android .site-nav, html.is-android button, html.is-android input, html.is-android textarea { font-family: 'Arimo Web', 'Helvetica Neue', Helvetica, Arial, sans-serif; }
