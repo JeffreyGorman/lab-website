@@ -40,7 +40,7 @@
     grid.textContent = '';
     PUBS.filter(function (p) { return p.card && p.card.file; }).slice(0, 3).forEach(function (p) {
       var art = el('article', 'card pub-card reveal');
-      var img = el('div', 'pub-img pah-img'); img.setAttribute('role', 'button'); img.setAttribute('tabindex', '0'); img.setAttribute('aria-label', 'Replay the animation');
+      var img = el('div', 'paper-img pah-img'); img.setAttribute('role', 'button'); img.setAttribute('tabindex', '0'); img.setAttribute('aria-label', 'Replay the animation');
       var body = el('div', 'pub-body');
       body.appendChild(el('h3', null, esc(p.card.label || p.journal || '')));
       var t = el('p', 'pub-title'); var a = el('a', 'pub-card-link', p.title); a.href = 'publications.html#fig-' + (p.id || ''); t.appendChild(a); body.appendChild(t);

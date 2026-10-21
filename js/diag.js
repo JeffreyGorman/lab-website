@@ -17,8 +17,8 @@
     var g = document.getElementById('pubsGrid');
     L.push('grid:' + r(g) + ' cols:' + (g ? getComputedStyle(g).gridTemplateColumns : '-'));
     document.querySelectorAll('.pub-card').forEach(function (c, i) {
-      var im = c.querySelector('.pub-img'), s = c.querySelector('svg'), cs = im && getComputedStyle(im);
-      L.push('card' + i + ' ' + r(c) + ' img:' + r(im) + ' svg:' + r(s) + (cs ? ' disp:' + cs.display + ' flex:' + cs.flex + ' minH:' + cs.minHeight + ' pos:' + cs.position : ' NO .pub-img') + ' cls:' + c.className.replace(/card pub-card /, ''));
+      var im = c.querySelector('.paper-img'), s = c.querySelector('svg'), cs = im && getComputedStyle(im);
+      L.push('card' + i + ' ' + r(c) + ' img:' + r(im) + ' svg:' + r(s) + (cs ? ' disp:' + cs.display + ' flex:' + cs.flex + ' minH:' + cs.minHeight + ' pos:' + cs.position : ' NO .paper-img') + ' cls:' + c.className.replace(/card pub-card /, ''));
     });
     L.push(errs.join(' | '));
     box.textContent = L.join('\n');

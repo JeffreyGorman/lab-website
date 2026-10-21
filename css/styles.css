@@ -1358,8 +1358,8 @@ body.nav-on-dark .navbar-menu a.active::after {
   display: flex;
   flex-direction: column;
 }
-.pub-img { flex-shrink: 0; }
-.pub-img img {
+.paper-img { flex-shrink: 0; }
+.paper-img img {
   display: block;
   width: 100%;
   aspect-ratio: 16 / 10;
@@ -1394,13 +1394,13 @@ body.nav-on-dark .navbar-menu a.active::after {
     gap: clamp(12px, 2svh, 24px);
   }
   .pub-card { flex-direction: row; }
-  .pub-img {
+  .paper-img {
     position: relative;
     flex: 0 0 36%;
     min-width: 0;
     min-height: 120px;
   }
-  .pub-img img {                       /* fills the row's full height */
+  .paper-img img {                       /* fills the row's full height */
     position: absolute;
     inset: 0;
     width: 100%;
@@ -1424,7 +1424,7 @@ body.nav-on-dark .navbar-menu a.active::after {
 
 /* Small / short screens: trim so everything still fits on one screen */
 @media (max-height: 680px) and (min-aspect-ratio: 1/1) {      /* short landscape windows */
-  .pub-img img { max-height: 20svh; }
+  .paper-img img { max-height: 20svh; }
 }
 @media (max-height: 700px) and (max-aspect-ratio: 1/1) {      /* small portrait phones */
   .pub-card .pub-blurb { display: none; }
@@ -1434,7 +1434,7 @@ body.nav-on-dark .navbar-menu a.active::after {
 /* Short landscape phones: keep all three columns on screen — smaller picture,
    compact title, no blurb */
 @media (max-height: 500px) and (orientation: landscape) {
-  .pub-img img { aspect-ratio: 16 / 6; max-height: 18svh; }
+  .paper-img img { aspect-ratio: 16 / 6; max-height: 18svh; }
   .pub-body { padding: 10px 12px; }
   .pub-card h3 { font-size: 11px; margin-bottom: 4px; }
   .pub-card .pub-title { font-size: var(--font-size-small); margin: 0; }
@@ -2342,17 +2342,17 @@ body.motion-off .dna-ic .g1, body.motion-off .dna-ic .g2 { transform: none; }
 /* ─── Phones / portrait: the card that is playing grows to full width, the other two shrink to slim rows ─── */
 @media (max-aspect-ratio: 1/1) {
   .pub-card { flex-wrap: wrap; transition: opacity .4s ease; }
-  .pub-card .pub-img { transition: flex-basis .5s ease, min-height .5s ease; }
-  .pubs-grid.has-focus .pub-card:not(.focus) .pub-img { flex-basis: 24%; min-height: 64px; }
+  .pub-card .paper-img { transition: flex-basis .5s ease, min-height .5s ease; }
+  .pubs-grid.has-focus .pub-card:not(.focus) .paper-img { flex-basis: 24%; min-height: 64px; }
   .pubs-grid.has-focus .pub-card:not(.focus) .pub-blurb,
   .pubs-grid.has-focus .pub-card:not(.focus) h3 { display: none; }
   .pubs-grid.has-focus .pub-card:not(.focus) .pub-body { padding: 8px 12px; }
   .pubs-grid.has-focus .pub-card:not(.focus) .pub-title { font-size: var(--font-size-small); }
-  .pubs-grid.has-focus .pub-card.focus .pub-img { flex-basis: 100%; min-height: clamp(220px, 36svh, 380px); }
+  .pubs-grid.has-focus .pub-card.focus .paper-img { flex-basis: 100%; min-height: clamp(220px, 36svh, 380px); }
   .pubs-grid.has-focus .pub-card.focus .pub-body { flex-basis: 100%; }
   .pubs-grid.has-focus .pub-card.focus .pub-blurb { display: none; }
 }
-@media (prefers-reduced-motion: reduce) { .pub-card .pub-img { transition: none; } }
+@media (prefers-reduced-motion: reduce) { .pub-card .paper-img { transition: none; } }
 
 /* A–T pairs pink, C–G pairs white: same key in the labels and in the background letters */
 .dna-annot .b-a, .dna-annot .b-t, .dna-annot .b-c, .dna-annot .b-g { stroke: rgba(255,255,255,0.9); stroke-width: 3px; paint-order: stroke; stroke-linejoin: round; }
@@ -2363,10 +2363,10 @@ body.motion-off .dna-ic .g1, body.motion-off .dna-ic .g2 { transform: none; }
 
 /* short phones: the growing card must leave room for all three */
 @media (max-aspect-ratio: 1/1) and (max-height: 780px) {
-  .pubs-grid.has-focus .pub-card.focus .pub-img { min-height: 24svh; }
+  .pubs-grid.has-focus .pub-card.focus .paper-img { min-height: 24svh; }
   .pubs-grid.has-focus .pub-card.focus h3 { display: none; }
   .pubs-grid.has-focus .pub-card.focus .pub-body { padding: 8px 14px; }
-  .pubs-grid.has-focus .pub-card:not(.focus) .pub-img { min-height: 52px; }
+  .pubs-grid.has-focus .pub-card:not(.focus) .paper-img { min-height: 52px; }
   .pubs-grid.has-focus .pub-card:not(.focus) .pub-body { padding: 6px 12px; }
   .pubs-grid.has-focus { gap: 8px; }
 }

@@ -77,7 +77,7 @@ cards.forEach(c => {
     if (!v) { c.visible = false; c.waiting = false; showEnd(c); c.svg.dispatchEvent(new Event('pah-done')); }
   }, { threshold: 0.6 }).observe((c.zoomEl && c.zoomEl.closest('.vacancy-mini')) || c.svg);   // (a growing card is watched as a whole: its picture is clipped while the card changes height)
   // clicking (or pressing Enter on) the picture replays it once, even with Motion Off; the title links to the Publications page
-  const holder = c.svg.closest('.pub-img') || c.svg.parentElement;
+  const holder = c.svg.closest('.paper-img') || c.svg.parentElement;
   // A reader's click always wins over the automatic sequence: any other card that is playing or queued is stopped on its
   // finished frame (and will still get its own turn afterwards, see kick())
   const go = () => {
