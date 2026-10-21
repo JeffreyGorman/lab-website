@@ -26,6 +26,22 @@ const pick = c => { if (!c.vars.length) return; const k = Math.floor(Math.random
 // publication cards; when it finishes it settles back to the small card.
 function flip(box, change) {
   const h0 = box.getBoundingClientRect().height; clearTimeout(box._ft);
+  if (isIOS) {
+    // iPhone/iPad: re-laying the card out on every frame is what stutters. Switch to the final layout once, then reveal it
+    // (growing: uncover it from the top with a clip; shrinking: quick fade-in). Neither changes the layout while it plays.
+    const rad = getComputedStyle(box).borderTopLeftRadius || '0px';
+    change(); box.style.height = ''; const h1 = box.getBoundingClientRect().height;
+    box.classList.add('flipping');
+    if (h1 > h0 + 2) {
+      box.style.clipPath = 'inset(0 0 ' + (h1 - h0) + 'px 0 round ' + rad + ')'; void box.offsetHeight;
+      box.style.transition = 'clip-path 0.5s ease'; box.style.clipPath = 'inset(0 0 0 0 round ' + rad + ')';
+    } else {
+      box.style.opacity = '0'; void box.offsetHeight;
+      box.style.transition = 'opacity 0.3s ease'; box.style.opacity = '1';
+    }
+    box._ft = setTimeout(() => { box.style.clipPath = ''; box.style.opacity = ''; box.style.transition = ''; box.classList.remove('flipping'); }, 540);
+    return;
+  }
   change(); box.style.height = ''; const h1 = box.getBoundingClientRect().height;
   box.classList.add('flipping'); box.style.overflow = 'hidden'; box.style.height = h0 + 'px'; void box.offsetHeight;
   box.style.transition = 'height 0.5s ease'; box.style.height = h1 + 'px';
