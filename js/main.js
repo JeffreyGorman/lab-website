@@ -15,6 +15,7 @@ import { initDnaBackground } from './dna-bg.js';
 import { initTeamBio } from './team-bio.js';
 import './s2-expand.js';
 import './replay.js';
+import { initLagCheck } from './lag-check.js';
 if (/android/i.test(navigator.userAgent)) document.documentElement.classList.add('is-android');   // Android has no Helvetica/Arial: see the Arimo rule at the end of styles.css
 if (/firefox|fxios/i.test(navigator.userAgent)) document.documentElement.classList.add('is-firefox');   // Firefox rasterises will-change layers at a fixed low resolution (blurry bulb/flask on phones)
 if (/^((?!chrome|android|crios|fxios).)*safari/i.test(navigator.userAgent)) document.documentElement.classList.add('is-safari');   // lets the CSS drop the effects Safari renders slowly
@@ -236,6 +237,13 @@ function initMotionToggle() {
     cb.addEventListener('change', () => { if (window.__endReplay) window.__endReplay(); applyMotionState(cb.checked); });
   });
   window.__replayMotion = (on, target) => applyMotionState(on, false, true, target);
+  // "Lag": the lag check (lag-check.js) switched Motion off for this visit; flag it beside the switch until the reader decides
+  const lagTag = document.createElement('span'); lagTag.className = 'lag-tag'; lagTag.textContent = 'Lag'; lagTag.hidden = true; lagTag.setAttribute('role', 'status');
+  const lagTagM = lagTag.cloneNode(true); lagTagM.classList.add('lag-tag-mobile');
+  const deskItem = document.querySelector('.motion-switch-item'); if (deskItem) deskItem.insertBefore(lagTag, deskItem.firstChild);
+  const mobSwitch = document.querySelector('.motion-switch-mobile'); if (mobSwitch && mobSwitch.parentNode) mobSwitch.parentNode.insertBefore(lagTagM, mobSwitch);
+  window.__lagOff = () => { applyMotionState(false, false); document.body.classList.add('lag-mode'); lagTag.hidden = false; lagTagM.hidden = false; };
+  checkboxes.forEach(cb => cb.addEventListener('change', () => { document.body.classList.remove('lag-mode'); lagTag.hidden = true; lagTagM.hidden = true; }));
 
   // Sync UI/state to whatever was stored from a previous page, if it's off
   if (window.MOTION_ENABLED === false) {
@@ -335,6 +343,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initArrowLinks();
   setupResizeObserver();
   initMotionToggle();
+  initLagCheck();
   positionBottomRightCornerLabel();
   alignCornerLabelsToNavbar();
 

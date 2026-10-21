@@ -2767,3 +2767,16 @@ html.is-ios-webkit .section-1 { --hero-video-backdrop: #000; }
 @font-face { font-family: 'Arimo Web'; src: url('../fonts/Arimo-Regular.woff2') format('woff2'); font-weight: 400; font-style: normal; font-display: swap; }
 @font-face { font-family: 'Arimo Web'; src: url('../fonts/Arimo-Bold.woff2') format('woff2'); font-weight: 700 900; font-style: normal; font-display: swap; }
 html.is-android body, html.is-android .site-nav, html.is-android button, html.is-android input, html.is-android textarea { font-family: 'Arimo Web', 'Helvetica Neue', Helvetica, Arial, sans-serif; }
+
+
+/* "Lag": a flag beside the Motion switch when the lag check turned Motion off (js/lag-check.js, main.js) — a dark pill with a glowing
+   outline so it reads on the pink hero and on the purple sections alike; the switch itself goes white with a pink glow */
+.lag-tag { font-family: 'Departure Mono', ui-monospace, Menlo, monospace; font-size: 12px; line-height: 1.3; letter-spacing: 1px; text-transform: uppercase; color: #fff; background: #512940; padding: 3px 9px 2px; border-radius: 12px; box-shadow: 0 0 0 2px #f08ab8, 0 0 12px 2px rgba(240,138,184,.8); white-space: nowrap; }
+.lag-tag[hidden] { display: none; }
+.lag-tag-mobile { position: fixed; top: 29px; right: 128px; z-index: 5001; }
+@media (max-width: 1024px) { .lag-tag-mobile { top: 18px; } .lag-tag:not(.lag-tag-mobile) { display: none; } }
+@media (min-width: 1025px) { .lag-tag-mobile { display: none; } }
+body.lag-mode .motion-slider { background: #fff; border-color: #512940; box-shadow: 0 0 0 3px #f08ab8, 0 0 14px 4px rgba(240,138,184,.85); }
+body.lag-mode .motion-slider::before { background: #b22d64; }
+body.lag-mode.motion-off .motion-slider, body.lag-mode.motion-off .lag-tag { animation: lagPulse 1.6s ease-in-out infinite !important; }
+@keyframes lagPulse { 0%, 100% { opacity: 1; } 50% { opacity: .6; } }
