@@ -10,6 +10,8 @@ const cards = [...document.querySelectorAll('.pah-card-svg')].map(svg => ({
 // Portrait screens: the card that is playing grows to full width and the others shrink (see styles.css)
 const grid = document.getElementById('pubsGrid');
 const portrait = window.matchMedia('(max-aspect-ratio: 1/1)');
+const isIOS = /iphone|ipad|ipod/i.test(navigator.userAgent) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+if (isIOS) document.documentElement.classList.add('is-ios');   // iPhone/iPad only: lighter card-growing animation (see styles.css)
 let focused = null;
 function setFocus(c) {
   focused = c;
@@ -55,7 +57,11 @@ function play(c, force) {
     const tick = () => { if (c.svg.getCurrentTime() >= c.END) finish(c); else c.raf = requestAnimationFrame(tick); };
     tick();
   };
-  if (!c.zoomEl) return start();
+  if (!c.zoomEl) {
+    // iPhone/iPad (WebKit) stutters when the picture is being redrawn while its card is still growing: let the card finish growing first
+    if (isIOS && portrait.matches && grid) return void (c.zt = setTimeout(() => { if (c.playing) start(); }, 560));
+    return start();
+  }
   // grow first (once the page has stopped sliding), then run the animation at the bigger size
   const settle = () => { if (!c.playing) return; if (window.__sliding) return void (c.zt = setTimeout(settle, 120)); c.zt = setTimeout(() => { if (!c.playing) return; zoomIn(c); c.zt = setTimeout(() => { if (c.playing) start(); }, 600); }, 300); };
   settle();

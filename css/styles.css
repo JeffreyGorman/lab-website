@@ -2780,3 +2780,9 @@ body.lag-mode .motion-slider { background: #fff; border-color: #512940; box-shad
 body.lag-mode .motion-slider::before { background: #b22d64; }
 body.lag-mode.motion-off .motion-slider, body.lag-mode.motion-off .lag-tag { animation: lagPulse 1.6s ease-in-out infinite !important; }
 @keyframes lagPulse { 0%, 100% { opacity: 1; } 50% { opacity: .6; } }
+
+/* iPhone/iPad (pah-card.js adds .is-ios): WebKit stutters when the Join advert grows while the rest of the section also animates its height and margins.
+   Here the intro text and links simply drop out (a quick fade), so the advert card is the only thing that animates its size. */
+html.is-ios .join-section .join-intro,
+html.is-ios .join-section .join-links,
+html.is-ios .join-section h2 { transition: opacity .25s ease; }
