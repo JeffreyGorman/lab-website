@@ -24,6 +24,7 @@ let rightHome = 0;
 // you scroll — so the opening "ExP Lab" can be big on every screen without
 // limiting how big "Photochemistry" can be at the end (and vice versa).
 let startScale = 1;
+let heroShiftY = 0;   // phones/tablets: lifts the opening title so its middle sits at the middle of the screen
 let lastProgress = 0; // last applied 0..1 progress, re-applied after a resize
 
 // Font-size shrink applied when the split words wouldn't fit their columns
@@ -95,7 +96,7 @@ export function getTitleFinalBottom() {
 function applyTitleTransform(progress, vh) {
   const targetY = titleTargetY(vh);
   masterTitle.style.transform =
-    `translateY(${progress * targetY}px) scale(${titleScaleAt(progress)})`;
+    `translateY(${progress * targetY + (1 - progress) * heroShiftY}px) scale(${titleScaleAt(progress)})`;
   scheduleCrispTitle();
 }
 
@@ -220,6 +221,13 @@ export function calculateOffsets() {
     const byWidth = (vw * TITLE_START_WIDTH) / Math.max(expWidth, 1);
     const byHeight = (getVH() * TITLE_START_MAX_HEIGHT) / Math.max(blockHeight, 1);
     startScale = Math.max(1, Math.min(byWidth, byHeight, TITLE_START_MAX_SCALE));
+
+    // On phones and tablets the title wrapper starts at 50% of the screen height, so the title sits below the middle.
+    // Measure how far to lift it so the opening "ExP / Lab" is centred vertically; the lift fades out as the title travels down.
+    heroShiftY = 0;
+    if (masterTitle && window.innerWidth <= 1024) {
+      heroShiftY = getVH() / 2 - (masterTitle.offsetTop + masterTitle.offsetHeight / 2);
+    }
 
     const lwCurrentCenter = lwRect.left + (lwFullWidth / 2);
     const rwCurrentCenter = rwRect.left + (rwFullWidth / 2);
