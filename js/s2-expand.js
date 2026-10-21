@@ -12,6 +12,8 @@ const rw = document.getElementById('rw');
 const mq = window.matchMedia('(max-width: 768px)');
 const BIG = 0.88;           // open column's share of the screen width
 let open = null;            // 'left' | 'right' | null
+const isIOS = /iphone|ipad|ipod/i.test(navigator.userAgent) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+if (isIOS) document.documentElement.classList.add('is-ios');
 
 if (sec && L && R) {
   // small cues, built here so the markup stays as it was
@@ -67,7 +69,10 @@ if (sec && L && R) {
     if (rw) { rw.style.translate = on === 'right' ? -d + 'px' : '0px'; rw.style.opacity = on === 'left' ? '0' : ''; }
     // once the columns have settled, let the animations refit the free space under the text
     clearTimeout(t1); clearTimeout(t2); clearTimeout(t3);
-    t1 = setTimeout(settle, 450); t2 = setTimeout(settle, 700); t3 = setTimeout(() => settle(true), 900); clearTimeout(t4); t4 = setTimeout(() => sec.classList.remove('s2-busy'), 3500);   // safety net
+    // iPhone/iPad: the columns switch at once (no width transition, so no transitionend either), so use short timers and bring the text back straight away
+    const k = isIOS ? 0.3 : 1;
+    if (isIOS) setTimeout(showText, 120);
+    t1 = setTimeout(settle, 450 * k); t2 = setTimeout(settle, 700 * k); t3 = setTimeout(() => settle(true), 900 * k); clearTimeout(t4); t4 = setTimeout(() => sec.classList.remove('s2-busy'), 3500);   // safety net
   }
 
   // refit the animations the moment the columns have really finished moving (slow phones take longer than the timers)

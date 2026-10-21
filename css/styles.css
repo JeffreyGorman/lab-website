@@ -2781,13 +2781,8 @@ body.lag-mode .motion-slider::before { background: #b22d64; }
 body.lag-mode.motion-off .motion-slider, body.lag-mode.motion-off .lag-tag { animation: lagPulse 1.6s ease-in-out infinite !important; }
 @keyframes lagPulse { 0%, 100% { opacity: 1; } 50% { opacity: .6; } }
 
-/* iPhone/iPad (pah-card.js adds .is-ios): WebKit stutters when the Join advert grows while the rest of the section also animates its height and margins.
-   Here the intro text and links simply drop out (a quick fade), so the advert card is the only thing that animates its size. */
-html.is-ios .join-section .join-intro,
-html.is-ios .join-section .join-links,
-html.is-ios .join-section h2 { transition: opacity .25s ease; }
-
-/* iPhone/iPad: publication cards switch layout in one go, the card that starts playing fades/settles in (no per-frame resizing) */
-html.is-ios .pub-card, html.is-ios .pub-card .paper-img { transition: none !important; }
-html.is-ios .pubs-grid.has-focus .pub-card.focus { animation: iosCardIn .35s ease both; }
-@keyframes iosCardIn { from { opacity: .4; transform: scale(.97); } to { opacity: 1; transform: none; } }
+/* iPhone/iPad (s2-expand.js adds .is-ios): WebKit stutters when the research columns change width while their text and the two big animations
+   are being re-laid out on every frame. Here the columns switch width in one go while the text and animations are hidden, then everything fades back in. */
+@media (max-width: 768px) {
+  html.is-ios .section-2 { transition: none !important; }
+}

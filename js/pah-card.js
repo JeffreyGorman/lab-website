@@ -10,8 +10,6 @@ const cards = [...document.querySelectorAll('.pah-card-svg')].map(svg => ({
 // Portrait screens: the card that is playing grows to full width and the others shrink (see styles.css)
 const grid = document.getElementById('pubsGrid');
 const portrait = window.matchMedia('(max-aspect-ratio: 1/1)');
-const isIOS = /iphone|ipad|ipod/i.test(navigator.userAgent) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
-if (isIOS) document.documentElement.classList.add('is-ios');   // iPhone/iPad only: lighter card-growing animation (see styles.css)
 let focused = null;
 function setFocus(c) {
   focused = c;
@@ -26,22 +24,6 @@ const pick = c => { if (!c.vars.length) return; const k = Math.floor(Math.random
 // publication cards; when it finishes it settles back to the small card.
 function flip(box, change) {
   const h0 = box.getBoundingClientRect().height; clearTimeout(box._ft);
-  if (isIOS) {
-    // iPhone/iPad: re-laying the card out on every frame is what stutters. Switch to the final layout once, then reveal it
-    // (growing: uncover it from the top with a clip; shrinking: quick fade-in). Neither changes the layout while it plays.
-    const rad = getComputedStyle(box).borderTopLeftRadius || '0px';
-    change(); box.style.height = ''; const h1 = box.getBoundingClientRect().height;
-    box.classList.add('flipping');
-    if (h1 > h0 + 2) {
-      box.style.clipPath = 'inset(0 0 ' + (h1 - h0) + 'px 0 round ' + rad + ')'; void box.offsetHeight;
-      box.style.transition = 'clip-path 0.5s ease'; box.style.clipPath = 'inset(0 0 0 0 round ' + rad + ')';
-    } else {
-      box.style.opacity = '0'; void box.offsetHeight;
-      box.style.transition = 'opacity 0.3s ease'; box.style.opacity = '1';
-    }
-    box._ft = setTimeout(() => { box.style.clipPath = ''; box.style.opacity = ''; box.style.transition = ''; box.classList.remove('flipping'); }, 540);
-    return;
-  }
   change(); box.style.height = ''; const h1 = box.getBoundingClientRect().height;
   box.classList.add('flipping'); box.style.overflow = 'hidden'; box.style.height = h0 + 'px'; void box.offsetHeight;
   box.style.transition = 'height 0.5s ease'; box.style.height = h1 + 'px';
@@ -73,11 +55,7 @@ function play(c, force) {
     const tick = () => { if (c.svg.getCurrentTime() >= c.END) finish(c); else c.raf = requestAnimationFrame(tick); };
     tick();
   };
-  if (!c.zoomEl) {
-    // iPhone/iPad (WebKit) stutters when the picture is being redrawn while its card is still growing: let the card finish growing first
-    if (isIOS && portrait.matches && grid) return void (c.zt = setTimeout(() => { if (c.playing) start(); }, 560));
-    return start();
-  }
+  if (!c.zoomEl) return start();
   // grow first (once the page has stopped sliding), then run the animation at the bigger size
   const settle = () => { if (!c.playing) return; if (window.__sliding) return void (c.zt = setTimeout(settle, 120)); c.zt = setTimeout(() => { if (!c.playing) return; zoomIn(c); c.zt = setTimeout(() => { if (c.playing) start(); }, 600); }, 300); };
   settle();
@@ -95,8 +73,13 @@ cards.forEach(c => {
   c.svg.pauseAnimations(); c.svg.setCurrentTime(c.END);   // start on the finished frame so there is always something to look at
   new IntersectionObserver(es => {
     const v = es[0].isIntersecting;
-    if (v && !c.visible) { c.visible = true; request(c); }
-    if (!v) { c.visible = false; c.waiting = false; showEnd(c); c.svg.dispatchEvent(new Event('pah-done')); }
+    if (v && !c.visible) {
+      c.visible = true;
+      // already seen once: show the finished frame (the browser restarts a hidden figure from time 0) and do not autoplay again
+      if (c.played && !c.zoomEl) { c.svg.pauseAnimations(); c.svg.setCurrentTime(c.END); } else request(c);
+    }
+    // a publication card that has been on screen once and then left (reader scrolled on to Join and back up) stays on its finished frame: no second autoplay (click it to replay)
+    if (!v) { if (c.visible && !c.zoomEl) c.played = true; c.visible = false; c.waiting = false; showEnd(c); c.svg.dispatchEvent(new Event('pah-done')); }
   }, { threshold: 0.6 }).observe((c.zoomEl && c.zoomEl.closest('.vacancy-mini')) || c.svg);   // (a growing card is watched as a whole: its picture is clipped while the card changes height)
   // clicking (or pressing Enter on) the picture replays it once, even with Motion Off; the title links to the Publications page
   const holder = c.svg.closest('.paper-img') || c.svg.parentElement;
