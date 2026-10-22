@@ -27,14 +27,14 @@ window.TEAM_MEMBERS = [
   {
     initials: 'AW',
     name: 'Anna Wantenaar',
-    title: 'MChem Student',
+    title: 'Alumni \'26 MChem Student',
     role: 'MChem student',
     bio: "I'm Anna, a master's student at Durham University working on photoredox catalysis."
   },
   {
     initials: 'KM',
     name: 'Katharina Mills',
-    title: 'UROP',
+    title: 'Alumni \'26 UROP',
     role: 'Undergraduate summer research student',
     bio: "I'm Kat, an undergraduate summer research student. My project involves screening the triplet activity of photoredox catalysts and the synthesis of organic photosensitisers."
   },
