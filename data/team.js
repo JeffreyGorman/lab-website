@@ -51,9 +51,9 @@ window.TEAM_MEMBERS = [
     name: 'Jessica Dixon',
     title: 'MChem Student',
     role: 'MChem student',
-    photo: false,
-    bio: "I'm Jess, an MChem student working on the synthesis of DNA-conjugated photocages."
+    bio: "Hi! I'm Jess, a Masters student at Durham. My project is exploring organic dyes as visible light-activated photocages for biological molecules."
+"
   },
   // ── Add new team members here (the list sorts itself by surname) ──
-  // { initials: 'AB', name: 'Ada Byte', title: 'Postdoc', role: 'Postdoctoral researcher', bio: '...' },
+  // { initials: 'AB', name: 'Ada Bye', title: 'Postdoc', role: 'Postdoctoral researcher', bio: '...' },
 ];;
