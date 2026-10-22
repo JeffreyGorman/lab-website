@@ -84,3 +84,15 @@ html.is-safari .reactor-active .filament-rod { animation-name: bulbPowerS; }
 @font-face { font-family: 'Arimo Web'; src: url('../fonts/Arimo-Regular.woff2') format('woff2'); font-weight: 400; font-style: normal; font-display: swap; }
 @font-face { font-family: 'Arimo Web'; src: url('../fonts/Arimo-Bold.woff2') format('woff2'); font-weight: 700 900; font-style: normal; font-display: swap; }
 html.is-android body, html.is-android .site-nav, html.is-android button, html.is-android input, html.is-android textarea { font-family: 'Arimo Web', 'Helvetica Neue', Helvetica, Arial, sans-serif; }
+
+/* Phones/tablets: put the Motion switch and the burger exactly where the home page has them (same size, same spot), so they do not jump between pages */
+@media (max-width:1024px){
+  .site-nav .site-nav-motion-mobile{position:fixed;top:29px;right:78px;margin:0;width:40px;height:22px;z-index:5001}
+  .site-nav .site-nav-motion-mobile .motion-slider::before{height:16px;width:16px;left:2px;top:2px}
+  .site-nav .site-nav-motion-mobile input:checked+.motion-slider::before{transform:translateX(18px)}
+  .site-nav-burger{position:fixed;top:13px;right:20px;margin:0;padding:10px;z-index:5001}
+}
+@media (orientation:landscape) and (max-height:500px){
+  .site-nav .site-nav-motion-mobile{top:17px}
+  .site-nav-burger{top:1px}
+}
