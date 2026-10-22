@@ -44,7 +44,7 @@ window.TEAM_MEMBERS = [
     title: 'PhD Student',
     role: 'PhD student',
     photo: false,   // photo: false = no photo yet, use the default avatar
-    bio: "I'm Becca, a PhD student working on on-DNA semiconductor reactivity. I did my MChem at Newcastle University."
+    bio: " "
   },   // photo: false = no photo yet, use the default avatar
   {
     initials: 'JD',
