@@ -20,7 +20,8 @@ window.TEAM_MEMBERS = [
   {
     initials: 'JG',
     name: 'Jeffrey Gorman',
-    title: 'PI',                       // short label shown over the photo (top left)
+    title: 'Fellow',                       // short label shown over the photo (top left)
+//    title: 'Fellow',                       // short label shown over the photo (top left)
     role: 'Materials Research Fellow',
     bio: "Jeff leads the 'Excitonics and Photochemistry Lab' at Durham as the Materials Research Fellow. Jeff earned his PhD from Cambridge University in 2020, where he worked with Prof. Sir Richard Friend to pioneer new molecular assembly methods for semiconductors crucial for solar energy harvesting. He focused on deterministic, size-defined structures to study the evolution of excitons. Next, Jeff spent five years at MIT, working with Prof. Mark Bathe to develop DNA 'origami' nanoparticles that array hundreds of molecular systems with high spatial and orientation fidelity, advancing applications in molecular computing."
   },
@@ -44,7 +45,7 @@ window.TEAM_MEMBERS = [
     title: 'PhD Student',
     role: 'PhD student',
     photo: false,   // photo: false = no photo yet, use the default avatar
-    bio: " "
+    bio: "Co-supervised with Prof. Gareth Williams. "
   },   // photo: false = no photo yet, use the default avatar
   {
     initials: 'JD',
